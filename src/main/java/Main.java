@@ -1,5 +1,7 @@
-import UI.Example.ExampleViewModel;
-import UI.Example.ExampleView;
+import UI.ExampleViewModel;
+import UI.ExampleView;
+import UI.Login.LoginView;
+import UI.Login.LoginViewModel;
 import de.saxsys.mvvmfx.FluentViewLoader;
 import de.saxsys.mvvmfx.ViewTuple;
 import javafx.application.Application;
@@ -19,7 +21,7 @@ public class Main extends Application
         primaryStage.setTitle("Test MMPI 2");
 
         //Obtengo el FXML
-        ViewTuple<ExampleView, ExampleViewModel> viewTuple = FluentViewLoader.fxmlView(ExampleView.class).load();
+        ViewTuple<LoginView, LoginViewModel> viewTuple = FluentViewLoader.fxmlView(LoginView.class).load();
 
         //Cargo la escena
         primaryStage.setScene(new Scene(viewTuple.getView()));

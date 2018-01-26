@@ -1,4 +1,4 @@
-package UI.Example;
+package UI;
 
 import de.saxsys.mvvmfx.ViewModel;
 import javafx.beans.property.SimpleStringProperty;
