@@ -10,14 +10,14 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="704.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Login.LoginView">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Login.LoginView">
    <children>
       <ImageView fitHeight="45.0" fitWidth="341.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@gg.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="259.0" layoutY="133.0" prefHeight="358.0" prefWidth="242.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="379.0" layoutY="173.0" prefHeight="358.0" prefWidth="242.0" style="-fx-background-color: #000000;">
          <children>
             <AnchorPane layoutX="33.0" layoutY="102.0" prefHeight="200.0" prefWidth="176.0" style="-fx-background-color: #465312;">
                <children>
