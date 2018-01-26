@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -9,21 +10,26 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="577.0" prefWidth="844.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Login.LoginView">
+<AnchorPane prefHeight="704.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Login.LoginView">
    <children>
-      <AnchorPane layoutX="32.0" layoutY="91.0" prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <PasswordField alignment="CENTER" layoutX="20.0" layoutY="88.0" promptText="Contraseña">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font>
-            </PasswordField>
-         </children>
-      </AnchorPane>
-      <ImageView fitHeight="58.0" fitWidth="264.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="45.0" fitWidth="341.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@gg.jpg" />
          </image>
       </ImageView>
+      <AnchorPane layoutX="259.0" layoutY="133.0" prefHeight="358.0" prefWidth="242.0" style="-fx-background-color: #000000;">
+         <children>
+            <AnchorPane layoutX="33.0" layoutY="102.0" prefHeight="200.0" prefWidth="176.0" style="-fx-background-color: #465312;">
+               <children>
+                  <PasswordField alignment="CENTER" layoutX="8.0" layoutY="48.0" promptText="Contraseña">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </PasswordField>
+                  <Button layoutX="8.0" layoutY="127.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="Button" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
