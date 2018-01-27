@@ -5,8 +5,25 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ExampleView">
-   <children>
-      <Label fx:id="helloLabel" layoutX="286.0" layoutY="192.0" />
-   </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1125.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Pane prefHeight="82.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </top>
+   <left>
+      <Pane prefHeight="222.0" prefWidth="103.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Pane prefHeight="222.0" prefWidth="110.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <Pane prefHeight="96.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="168.0" layoutY="99.0" mnemonicParsing="false" text="Button" AnchorPane.leftAnchor="168.0" AnchorPane.rightAnchor="167.0" AnchorPane.topAnchor="99.0" />
+            <Button layoutX="168.0" layoutY="41.0" mnemonicParsing="false" text="Button" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
