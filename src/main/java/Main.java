@@ -19,9 +19,11 @@ public class Main extends Application
 
         //Nombre del escenario
         primaryStage.setTitle("Test MMPI 2");
-        primaryStage.setResizable(false);
+        //primaryStage.setResizable(false);
         primaryStage.setMaxHeight(700);
         primaryStage.setMaxWidth(1125);
+        primaryStage.setMinHeight(450);
+        primaryStage.setMinWidth(600);
         primaryStage.setHeight(700);
         primaryStage.setWidth(1125);
 
