@@ -19,6 +19,11 @@ public class Main extends Application
 
         //Nombre del escenario
         primaryStage.setTitle("Test MMPI 2");
+        primaryStage.setResizable(false);
+        primaryStage.setMaxHeight(700);
+        primaryStage.setMaxWidth(1125);
+        primaryStage.setHeight(700);
+        primaryStage.setWidth(1125);
 
         //Obtengo el FXML
         ViewTuple<LoginView, LoginViewModel> viewTuple = FluentViewLoader.fxmlView(LoginView.class).load();
