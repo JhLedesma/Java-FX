@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="830.0" prefWidth="1545.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="568.0" layoutY="138.0" text="Soy un Label">
+         <font>
+            <Font size="73.0" />
+         </font>
+      </Label>
+      <Button layoutX="674.0" layoutY="387.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="140.0" text="I am Button" />
+   </children>
+</AnchorPane>
