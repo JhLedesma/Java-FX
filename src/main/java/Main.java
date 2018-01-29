@@ -25,6 +25,7 @@ public class Main extends Application
         primaryStage.setMinHeight(450);
         primaryStage.setMinWidth(600);
         primaryStage.setHeight(700);
+        
         primaryStage.setWidth(1125);
 
         //Obtengo el FXML
