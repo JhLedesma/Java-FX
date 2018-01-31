@@ -1,7 +1,6 @@
 package Model.FamiliaFXML;
 
-import Model.FamiliaFXML.FamilyFXML;
-import UI.Login.View1920x1080.LoginView1920x1080;
+import UI.Login.Login1920x1080.LoginView1920x1080;
 import UI.Login.LoginViewModel;
 import de.saxsys.mvvmfx.FluentViewLoader;
 import de.saxsys.mvvmfx.ViewTuple;

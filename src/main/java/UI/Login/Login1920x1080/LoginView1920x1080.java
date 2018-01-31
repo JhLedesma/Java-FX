@@ -1,4 +1,4 @@
-package UI.Login.View1920x1080;
+package UI.Login.Login1920x1080;
 
 import UI.Login.LoginViewModel;
 import de.saxsys.mvvmfx.FxmlView;

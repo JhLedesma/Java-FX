@@ -1,4 +1,4 @@
-package UI.Login.View1280x1024;
+package UI.Login.Login1280x1024;
 
 import UI.Login.LoginViewModel;
 import de.saxsys.mvvmfx.FxmlView;
