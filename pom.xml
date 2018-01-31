@@ -37,6 +37,14 @@
             <version>0.8</version>
         </dependency>
         <dependency>
+<<<<<<< HEAD
+            <groupId>com.jfoenix</groupId>
+            <artifactId>jfoenix</artifactId>
+            <version>8.0.1</version>
+        </dependency>
+        <dependency>
+=======
+>>>>>>> a98ffd2539dc6fedc5473546c5b9dafff13221a5
             <groupId>de.jensd</groupId>
             <artifactId>fontawesomefx</artifactId>
             <version>8.9</version>

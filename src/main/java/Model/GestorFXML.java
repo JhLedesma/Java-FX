@@ -8,8 +8,18 @@ import java.awt.*;
 
 public class GestorFXML
 {
+    private static FamilyFXML instance;
 
     public FamilyFXML getFamily()
+    {
+        if(instance == null)
+        {
+            this.buscarFamily();
+        }
+        return instance;
+    }
+
+    public void buscarFamily()
     {
         Dimension screenSeize = Toolkit.getDefaultToolkit().getScreenSize();
         double width = screenSeize.getWidth();
@@ -17,11 +27,11 @@ public class GestorFXML
 
         if (width == 1920.0 && height == 1080.0)
         {
-            return new FXML1920x1080();
+            instance = new FXML1920x1080();
         }
         else
         {
-            return new FXML1280x1024();
+            instance = new FXML1280x1024();
         }
     }
 
