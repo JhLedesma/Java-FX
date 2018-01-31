@@ -1,13 +1,6 @@
 import Model.GestorFXML;
-import UI.Login.View1920x1080.LoginView1920x1080;
-import UI.Login.LoginViewModel;
-import de.saxsys.mvvmfx.FluentViewLoader;
-import de.saxsys.mvvmfx.ViewTuple;
 import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.awt.*;
 
 public class Main extends Application
 {

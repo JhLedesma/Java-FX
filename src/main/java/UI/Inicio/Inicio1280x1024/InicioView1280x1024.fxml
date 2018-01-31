@@ -8,7 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="UI.Login.View1280x1024.LoginView1280x1024"
+            fx:controller="UI.Inicio.Inicio1280x1024.InicioView1280x1024"
             prefHeight="400.0" prefWidth="600.0">
 
 </AnchorPane>
