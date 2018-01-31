@@ -1,5 +1,7 @@
 package Model.FamiliaFXML;
 
+import UI.Inicio.Inicio1280x1024.InicioView1280x1024;
+import UI.Inicio.InicioViewModel;
 import UI.Login.LoginViewModel;
 import UI.Login.Login1280x1024.LoginView1280x1024;
 import de.saxsys.mvvmfx.FluentViewLoader;
@@ -13,7 +15,7 @@ public class FXML1280x1024 extends FamilyFXML {
     public Stage loadLogin() {
         Stage stage = this.createStage(1125, 750, 600, 450, 1125, 750);
 
-        ViewTuple<LoginView1280x1024, LoginViewModel> viewTuple = FluentViewLoader.fxmlView(LoginView1280x1024.class).load();
+        ViewTuple<InicioView1280x1024, InicioViewModel> viewTuple = FluentViewLoader.fxmlView(InicioView1280x1024.class).load();
 
         stage.setScene(new Scene(viewTuple.getView()));
 
