@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="200.0" prefWidth="1318.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ListaAspirantes.ListaApirantes1920x1080.ItemListView1920x1080">
+   <children>
+      <MaterialDesignIconView id="foto" fill="#5b5a5a" glyphName="ACCOUNT_CIRCLE" layoutX="32.0" layoutY="175.0" size="200" wrappingWidth="191.0" />
+      <Pane layoutX="1079.0" layoutY="32.0">
+         <children>
+            <JFXButton id="btnResultado" layoutX="-1.0" prefHeight="46.0" prefWidth="178.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Ver Resultados">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton id="btnOpciones" layoutY="78.0" prefHeight="46.0" prefWidth="178.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Opciones">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <FontAwesomeIconView glyphName="PLUS" layoutX="21.0" layoutY="108.0" size="22" wrappingWidth="14.428571701049805" />
+         </children>
+      </Pane>
+      <GridPane layoutX="260.0" layoutY="39.0" prefHeight="116.0" prefWidth="789.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="127.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="0.0" prefWidth="111.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="162.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="222.0" minWidth="10.0" prefWidth="202.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="24.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="44.0" minHeight="9.0" prefHeight="15.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Nombre">
+               <font>
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Label>
+            <Label id="nombre" text="Usuario" textFill="#6f6f6f" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label text="Apellido" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Label>
+            <Label id="apellido" text="Usuario" textFill="#6f6f6f" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label text="Edad" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Label>
+            <Label id="edad" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label text="Sexo" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Label>
+            <Label id="sexo" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label text="Estado Civil" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Label>
+            <Label id="estadoCivil" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label text="Espacialista" GridPane.columnIndex="3">
+               <font>
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Label>
+            <Label id="especialista" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label text="Fecha" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Label>
+            <Label id="fecha" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label text="Diagnostico" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Label>
+            <Label id="diagnostico" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label text="Titulacion Maxima" GridPane.columnIndex="4">
+               <font>
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Label>
+            <Label id="titulacion" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <Line endX="930.0" layoutX="361.0" layoutY="200.0" startX="-100.0" stroke="#bfbebe" />
+   </children>
+</AnchorPane>
