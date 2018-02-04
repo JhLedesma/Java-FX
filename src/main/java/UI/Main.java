@@ -19,9 +19,8 @@ public class Main extends Application
         //Nombre del escenario
         primaryStage.setTitle("Test MMPI 2");
 
-       primaryStage = new GestorFXML().getFamily().loadLogin();
+       primaryStage = new GestorFXML().getFamily().loadListaAspirantes();
        primaryStage.show();
-
 
     }
 }

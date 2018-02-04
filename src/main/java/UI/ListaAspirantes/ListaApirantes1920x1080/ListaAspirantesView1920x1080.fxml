@@ -12,7 +12,7 @@
     <children>
         <AnchorPane prefHeight="830.0" prefWidth="228.0" style="-fx-background-color: #cccccc;">
             <children>
-                <JFXButton layoutX="57.0" layoutY="39.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50; -fx-region-border: #DDDDDD;" text=" ">
+                <JFXButton layoutX="57.0" layoutY="39.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
                     <font>
                         <Font name="Arial" size="20.0" />
                     </font>
@@ -32,7 +32,7 @@
                 <FontAwesomeIconView glyphName="GEAR" layoutX="97.0" layoutY="783.0" size="42" />
             </children>
         </AnchorPane>
-        <JFXListView id="list" fx:id="listview" layoutX="228.0" prefHeight="830.0" prefWidth="1318.0" />
+        <JFXListView id="list" fx:id="listview" layoutX="228.0" prefHeight="830.0" prefWidth="1318.0" style="-fx-background-color: #FFFFFF;" />
     </children>
 
 </AnchorPane>
