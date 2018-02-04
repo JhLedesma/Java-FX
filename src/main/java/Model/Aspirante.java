@@ -1,6 +1,8 @@
 package Model;
 
-public class Aspirante {
+import BD.TipoDeRepositorio;
+
+public class Aspirante implements TipoDeRepositorio {
 
     private String nombre;
     private String apellido;
