@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.text.Font?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Line?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="UI.ListaAspirantes.ListaApirantes1920x1080.ItemListView1920x1080"
-            prefHeight="400.0" prefWidth="600.0">
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="203.0" prefWidth="1292.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ListaAspirantes.ListaApirantes1920x1080.ItemListView1920x1080">
     <children>
         <MaterialDesignIconView id="foto" fill="#5b5a5a" glyphName="ACCOUNT_CIRCLE" layoutX="32.0" layoutY="175.0" size="200" wrappingWidth="191.0" />
         <Pane layoutX="1079.0" layoutY="32.0">
@@ -53,7 +51,7 @@
                         <Font name="Arial" size="22.0" />
                     </font>
                 </Label>
-                <Label id="nombre" text="Usuario" textFill="#6f6f6f" GridPane.rowIndex="1">
+                <Label id="nombre" fx:id="nombre" text="Usuario" textFill="#6f6f6f" GridPane.rowIndex="1">
                     <font>
                         <Font name="Arial" size="18.0" />
                     </font>
@@ -63,7 +61,7 @@
                         <Font name="Arial" size="22.0" />
                     </font>
                 </Label>
-                <Label id="apellido" text="Usuario" textFill="#6f6f6f" GridPane.rowIndex="4">
+                <Label id="apellido" fx:id="apellido" text="Usuario" textFill="#6f6f6f" GridPane.rowIndex="4">
                     <font>
                         <Font name="Arial" size="18.0" />
                     </font>
@@ -73,7 +71,7 @@
                         <Font name="Arial" size="22.0" />
                     </font>
                 </Label>
-                <Label id="edad" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Label id="edad" fx:id="edad" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <font>
                         <Font name="Arial" size="18.0" />
                     </font>
@@ -83,7 +81,7 @@
                         <Font name="Arial" size="22.0" />
                     </font>
                 </Label>
-                <Label id="sexo" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                <Label id="sexo" fx:id="sexo" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="1" GridPane.rowIndex="4">
                     <font>
                         <Font name="Arial" size="18.0" />
                     </font>
@@ -93,7 +91,7 @@
                         <Font name="Arial" size="22.0" />
                     </font>
                 </Label>
-                <Label id="estadoCivil" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                <Label id="estadoCivil" fx:id="estadoCivil" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="2" GridPane.rowIndex="1">
                     <font>
                         <Font name="Arial" size="18.0" />
                     </font>
@@ -103,7 +101,7 @@
                         <Font name="Arial" size="22.0" />
                     </font>
                 </Label>
-                <Label id="especialista" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                <Label id="especialista" fx:id="especialista" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="3" GridPane.rowIndex="1">
                     <font>
                         <Font name="Arial" size="18.0" />
                     </font>
@@ -113,7 +111,7 @@
                         <Font name="Arial" size="22.0" />
                     </font>
                 </Label>
-                <Label id="fecha" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                <Label id="fecha" fx:id="fecha" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="2" GridPane.rowIndex="4">
                     <font>
                         <Font name="Arial" size="18.0" />
                     </font>
@@ -123,7 +121,7 @@
                         <Font name="Arial" size="22.0" />
                     </font>
                 </Label>
-                <Label id="diagnostico" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                <Label id="diagnostico" fx:id="diagnostico" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="3" GridPane.rowIndex="4">
                     <font>
                         <Font name="Arial" size="18.0" />
                     </font>
@@ -133,14 +131,14 @@
                         <Font name="Arial" size="22.0" />
                     </font>
                 </Label>
-                <Label id="titulacion" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                <Label id="titulacion" fx:id="titulacion" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="4" GridPane.rowIndex="1">
                     <font>
                         <Font name="Arial" size="18.0" />
                     </font>
                 </Label>
             </children>
         </GridPane>
-        <Line endX="930.0" layoutX="361.0" layoutY="200.0" startX="-100.0" stroke="#bfbebe" />
+        <Line endX="910.0" layoutX="361.0" layoutY="200.0" startX="-100.0" stroke="#bfbebe" />
     </children>
 
 </AnchorPane>

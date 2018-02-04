@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ListaAspirantes.ListaApirantes1920x1080.ListaAspirantesView1920x1080">
+<AnchorPane prefHeight="830.0" prefWidth="1545.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ListaAspirantes.ListaApirantes1920x1080.ListaAspirantesView1920x1080">
 
     <children>
         <AnchorPane prefHeight="830.0" prefWidth="228.0" style="-fx-background-color: #cccccc;">
@@ -32,7 +32,7 @@
                 <FontAwesomeIconView glyphName="GEAR" layoutX="97.0" layoutY="783.0" size="42" />
             </children>
         </AnchorPane>
-        <JFXListView id="list" layoutX="228.0" prefHeight="830.0" prefWidth="1318.0" />
+        <JFXListView id="list" fx:id="listview" layoutX="228.0" prefHeight="830.0" prefWidth="1318.0" />
     </children>
 
 </AnchorPane>
