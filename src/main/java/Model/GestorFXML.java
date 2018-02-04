@@ -27,11 +27,11 @@ public class GestorFXML
 
         if (width == 1920.0 && height == 1080.0)
         {
-            instance = new FXML1920x1080();
+            instance = new FXML1920x1080(830, 1545, 450, 600, 830, 1545);
         }
         else
         {
-            instance = new FXML1280x1024();
+            instance = new FXML1280x1024(750, 1125, 450, 600, 750, 1125);
         }
     }
 

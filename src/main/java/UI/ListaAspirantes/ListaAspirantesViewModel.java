@@ -1,30 +1,28 @@
 package UI.ListaAspirantes;
 
+import BD.Repositorios.RepoAspirantes;
 import Model.Aspirante;
-import com.jfoenix.controls.JFXListView;
 import de.saxsys.mvvmfx.ViewModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class ListaAspirantesViewModel implements ViewModel
 {
     ObservableList<ItemListViewModel> listaItems = FXCollections.observableArrayList();
 
-    public void buscarItems()
+    public ObservableList<ItemListViewModel> getListaItems()
     {
-        /*Limpiar listaItems*/
-        List<Aspirante> aspirantes = new ArrayList<Aspirante>() /*Repo*/;
-        listaItems.addAll(aspirantes.stream().map(ItemListViewModel::new).collect(Collectors.toList()));
+        this.buscarItems();
+        return listaItems;
     }
 
-    public ObservableList<ItemListViewModel> getListaItems() {
-        return listaItems;
+    private void buscarItems()
+    {
+        listaItems.clear();
+        final List<Aspirante> aspirantes = RepoAspirantes.getInstance().buscarListaDeObjetos();
+        listaItems.addAll(aspirantes.stream().map(ItemListViewModel::new).collect(Collectors.toList()));
     }
 
 }

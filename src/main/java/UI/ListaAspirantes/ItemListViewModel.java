@@ -2,20 +2,22 @@ package UI.ListaAspirantes;
 
 import Model.Aspirante;
 import de.saxsys.mvvmfx.ViewModel;
+import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.value.ObservableStringValue;
 
 public class ItemListViewModel implements ViewModel {
 
-    private StringProperty nombre = new SimpleStringProperty();
-    private StringProperty apellido = new SimpleStringProperty();
-    private StringProperty edad = new SimpleStringProperty();
-    private StringProperty sexo = new SimpleStringProperty();
-    private StringProperty estadoCivil = new SimpleStringProperty();
-    private StringProperty fecha = new SimpleStringProperty();
-    private StringProperty especialista = new SimpleStringProperty();
-    private StringProperty diagnostico = new SimpleStringProperty();
-    private StringProperty titulacion = new SimpleStringProperty();
+    private ReadOnlyStringWrapper  nombre = new ReadOnlyStringWrapper ();
+    private ReadOnlyStringWrapper  apellido = new ReadOnlyStringWrapper ();
+    private ReadOnlyStringWrapper  edad = new ReadOnlyStringWrapper ();
+    private ReadOnlyStringWrapper  sexo = new ReadOnlyStringWrapper ();
+    private ReadOnlyStringWrapper  estadoCivil = new ReadOnlyStringWrapper ();
+    private ReadOnlyStringWrapper  fecha = new ReadOnlyStringWrapper ();
+    private ReadOnlyStringWrapper  especialista = new ReadOnlyStringWrapper ();
+    private ReadOnlyStringWrapper  diagnostico = new ReadOnlyStringWrapper ();
+    private ReadOnlyStringWrapper  titulacion = new ReadOnlyStringWrapper();
 
     public ItemListViewModel(Aspirante aspirante)
     {
@@ -30,111 +32,49 @@ public class ItemListViewModel implements ViewModel {
         this.titulacion.set(aspirante.getTitulacion());
     }
 
-    public String getNombre() {
-        return nombre.get();
+    public ObservableStringValue nombreProperty()
+    {
+        return nombre.getReadOnlyProperty();
     }
 
-    public StringProperty nombreProperty() {
-        return nombre;
+    public ObservableStringValue apellidoProperty()
+    {
+        return apellido.getReadOnlyProperty();
     }
 
-    public void setNombre(String nombre) {
-        this.nombre.set(nombre);
+    public ObservableStringValue edadProperty()
+    {
+        return edad.getReadOnlyProperty();
     }
 
-    public String getApellido() {
-        return apellido.get();
+    public ObservableStringValue sexoProperty()
+    {
+        return sexo.getReadOnlyProperty();
     }
 
-    public StringProperty apellidoProperty() {
-        return apellido;
+    public ObservableStringValue estadoCivilProperty()
+    {
+        return estadoCivil.getReadOnlyProperty();
     }
 
-    public void setApellido(String apellido) {
-        this.apellido.set(apellido);
+    public ObservableStringValue fechaProperty()
+    {
+        return fecha.getReadOnlyProperty();
     }
 
-    public String getEdad() {
-        return edad.get();
+    public ObservableStringValue especialistaProperty()
+    {
+        return especialista.getReadOnlyProperty();
     }
 
-    public StringProperty edadProperty() {
-        return edad;
+    public ObservableStringValue diagnosticoProperty()
+    {
+        return diagnostico.getReadOnlyProperty();
     }
 
-    public void setEdad(String edad) {
-        this.edad.set(edad);
+    public ObservableStringValue titulacionProperty()
+    {
+        return titulacion.getReadOnlyProperty();
     }
 
-    public String getSexo() {
-        return sexo.get();
-    }
-
-    public StringProperty sexoProperty() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo.set(sexo);
-    }
-
-    public String getEstadoCivil() {
-        return estadoCivil.get();
-    }
-
-    public StringProperty estadoCivilProperty() {
-        return estadoCivil;
-    }
-
-    public void setEstadoCivil(String estadoCivil) {
-        this.estadoCivil.set(estadoCivil);
-    }
-
-    public String getFecha() {
-        return fecha.get();
-    }
-
-    public StringProperty fechaProperty() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha.set(fecha);
-    }
-
-    public String getEspecialista() {
-        return especialista.get();
-    }
-
-    public StringProperty especialistaProperty() {
-        return especialista;
-    }
-
-    public void setEspecialista(String especialista) {
-        this.especialista.set(especialista);
-    }
-
-    public String getDiagnostico() {
-        return diagnostico.get();
-    }
-
-    public StringProperty diagnosticoProperty() {
-        return diagnostico;
-    }
-
-    public void setDiagnostico(String diagnostico) {
-        this.diagnostico.set(diagnostico);
-    }
-
-    public String getTitulacion() {
-        return titulacion.get();
-    }
-
-    public StringProperty titulacionProperty() {
-        return titulacion;
-    }
-
-    public void setTitulacion(String titulacion) {
-        this.titulacion.set(titulacion);
-    }
 }

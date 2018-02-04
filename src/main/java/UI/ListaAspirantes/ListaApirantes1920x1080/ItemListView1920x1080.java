@@ -39,7 +39,8 @@ public class ItemListView1920x1080 implements FxmlView<ItemListViewModel> {
     private Label titulacion;
 
 
-    public void initialize() {
+    public void initialize()
+    {
         nombre.textProperty().bind(viewModel.nombreProperty());
         apellido.textProperty().bind(viewModel.apellidoProperty());
         edad.textProperty().bind(viewModel.edadProperty());
