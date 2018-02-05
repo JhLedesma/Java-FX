@@ -1,38 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.text.Font?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-            prefHeight="400.0" prefWidth="600.0">
-    <children>
-        <JFXButton layoutX="57.0" layoutY="39.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50; -fx-region-border: #DDDDDD;" text=" ">
-            <font>
-                <Font name="Arial" size="20.0" />
-            </font>
-        </JFXButton>
-        <FontAwesomeIconView glyphName="ARROW_LEFT" layoutX="98.0" layoutY="75.0" size="40" />
-        <JFXButton layoutX="57.0" layoutY="391.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
-            <font>
-                <Font name="Arial" size="20.0" />
-            </font>
-        </JFXButton>
-        <JFXButton layoutX="57.0" layoutY="745.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
-            <font>
-                <Font name="Arial" size="20.0" />
-            </font>
-        </JFXButton>
-        <MaterialDesignIconView glyphName="HOME" layoutX="93.0" layoutY="431.0" size="45" />
-        <FontAwesomeIconView glyphName="GEAR" layoutX="97.0" layoutY="783.0" size="42" />
-    </children>
-
+<AnchorPane prefHeight="800.0" prefWidth="228.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="57.0" layoutY="39.0">
+         <children>
+            <JFXButton prefHeight="46.0" prefWidth="115.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <FontAwesomeIconView glyphName="ARROW_LEFT" layoutX="40.0" layoutY="36.0" size="40" />
+         </children>
+      </Pane>
+      <Pane layoutX="57.0" layoutY="391.0">
+         <children>
+            <JFXButton prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <MaterialDesignIconView glyphName="HOME" layoutX="35.0" layoutY="39.0" size="45" />
+         </children>
+      </Pane>
+      <Pane layoutX="57.0" layoutY="723.0">
+         <children>
+            <JFXButton prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <FontAwesomeIconView glyphName="GEAR" layoutX="40.0" layoutY="38.0" size="42" />
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>

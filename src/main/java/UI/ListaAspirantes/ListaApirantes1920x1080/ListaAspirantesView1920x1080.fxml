@@ -5,34 +5,47 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="830.0" prefWidth="1545.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ListaAspirantes.ListaApirantes1920x1080.ListaAspirantesView1920x1080">
 
     <children>
-        <AnchorPane prefHeight="830.0" prefWidth="228.0" style="-fx-background-color: #cccccc;">
-            <children>
-                <JFXButton layoutX="57.0" layoutY="39.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
-                    <font>
-                        <Font name="Arial" size="20.0" />
-                    </font>
-                </JFXButton>
-                <FontAwesomeIconView glyphName="ARROW_LEFT" layoutX="98.0" layoutY="75.0" size="40" />
-                <JFXButton layoutX="57.0" layoutY="391.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
-                    <font>
-                        <Font name="Arial" size="20.0" />
-                    </font>
-                </JFXButton>
-                <JFXButton layoutX="57.0" layoutY="745.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
-                    <font>
-                        <Font name="Arial" size="20.0" />
-                    </font>
-                </JFXButton>
-                <MaterialDesignIconView glyphName="HOME" layoutX="93.0" layoutY="431.0" size="45" />
-                <FontAwesomeIconView glyphName="GEAR" layoutX="97.0" layoutY="783.0" size="42" />
-            </children>
-        </AnchorPane>
         <JFXListView id="list" fx:id="listview" layoutX="228.0" prefHeight="830.0" prefWidth="1318.0" style="-fx-background-color: #FFFFFF;" />
+      <AnchorPane prefHeight="800.0" prefWidth="228.0" style="-fx-background-color: #cccccc;">
+         <children>
+            <Pane layoutX="57.0" layoutY="39.0">
+               <children>
+                  <JFXButton prefHeight="46.0" prefWidth="115.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
+                     <font>
+                        <Font name="Arial" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <FontAwesomeIconView glyphName="ARROW_LEFT" layoutX="40.0" layoutY="36.0" size="40" />
+               </children>
+            </Pane>
+            <Pane layoutX="57.0" layoutY="391.0">
+               <children>
+                  <JFXButton prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
+                     <font>
+                        <Font name="Arial" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <MaterialDesignIconView glyphName="HOME" layoutX="35.0" layoutY="39.0" size="45" />
+               </children>
+            </Pane>
+            <Pane layoutX="57.0" layoutY="723.0">
+               <children>
+                  <JFXButton prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
+                     <font>
+                        <Font name="Arial" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <FontAwesomeIconView glyphName="GEAR" layoutX="40.0" layoutY="38.0" size="42" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
     </children>
 
 </AnchorPane>

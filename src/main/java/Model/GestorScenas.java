@@ -32,7 +32,7 @@ public class GestorScenas
 
         if (width == 1920.0 && height == 1080.0)
         {
-            familyFXML = new FXML1920x1080(830, 1545, 450, 600, 830, 1545);
+            familyFXML = new FXML1920x1080(850, 1545, 450, 600, 840, 1545);
         }
         else
         {
@@ -48,11 +48,7 @@ public class GestorScenas
         stageApp = newStageApp;
     }
 
-    public static void setSceneAppStage(ViewTuple viewTuple)
-    {
-        stageApp.setScene(new Scene(viewTuple.getView()));
-
-    }
+    public static void setSceneAppStage(ViewTuple viewTuple) { stageApp.setScene(new Scene(viewTuple.getView())); }
 
     public static Stage createStage(int maxHeight, int maxWidth, int minHeight, int minWidth, int height, int width)
     {
