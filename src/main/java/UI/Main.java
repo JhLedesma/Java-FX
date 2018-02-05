@@ -1,26 +1,26 @@
 package UI;
 
-import Model.GestorFXML;
-import UI.Login.LoginViewModel;
-import com.jfoenix.controls.JFXListView;
+import Model.GestorScenas;
 import javafx.application.Application;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class Main extends Application
 {
+
     public static void main(String...args){
         Application.launch(args);
     }
 
     @Override
-    public void start(Stage primaryStage) {
-
+    public void start(Stage primaryStage)
+    {
         //Nombre del escenario
         primaryStage.setTitle("Test MMPI 2");
 
-       primaryStage = new GestorFXML().getFamily().loadListaAspirantes();
-       primaryStage.show();
+        GestorScenas.setStageApp(primaryStage);
+
+        GestorScenas.getFamily().showListaAspirantes();
 
     }
+
 }

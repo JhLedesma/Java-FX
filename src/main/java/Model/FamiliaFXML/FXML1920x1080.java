@@ -1,13 +1,8 @@
 package Model.FamiliaFXML;
 
 import UI.ListaAspirantes.ListaApirantes1920x1080.ListaAspirantesView1920x1080;
-import UI.ListaAspirantes.ListaAspirantesViewModel;
 import UI.Login.Login1920x1080.LoginView1920x1080;
-import UI.Login.LoginViewModel;
 import de.saxsys.mvvmfx.FluentViewLoader;
-import de.saxsys.mvvmfx.ViewTuple;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 public class FXML1920x1080 extends FamilyFXML
 {
@@ -17,27 +12,22 @@ public class FXML1920x1080 extends FamilyFXML
     }
 
     @Override
-    public Stage loadLogin()
+    public void showLogin()
     {
-        Stage stage = this.createStage();
+        this.show(FluentViewLoader.fxmlView(LoginView1920x1080.class).load());
+    }
 
-        ViewTuple<LoginView1920x1080, LoginViewModel> viewTuple = FluentViewLoader.fxmlView(LoginView1920x1080.class).load();
 
-        stage.setScene(new Scene(viewTuple.getView()));
+    @Override
+    public void showListaAspirantes()
+    {
+        this.show(FluentViewLoader.fxmlView(ListaAspirantesView1920x1080.class).load());
 
-        return stage;
     }
 
     @Override
-    public Stage loadListaAspirantes()
-    {
-        Stage stage = this.createStage();
+    public void showInicio() {
 
-        ViewTuple<ListaAspirantesView1920x1080, ListaAspirantesViewModel> viewTuple = FluentViewLoader.fxmlView(ListaAspirantesView1920x1080.class).load();
-
-        stage.setScene(new Scene(viewTuple.getView()));
-
-        return stage;
     }
 
 }
