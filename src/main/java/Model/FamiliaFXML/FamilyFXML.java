@@ -17,11 +17,4 @@ public abstract class FamilyFXML
 
     public abstract void showInicio();
 
-    protected void show(ViewTuple viewTuple)
-    {
-        GestorScenas.setSceneAppStage(viewTuple);
-
-        GestorScenas.getStageApp().show();
-    }
-
 }

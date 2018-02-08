@@ -1,5 +1,6 @@
 package Model.FamiliaFXML;
 
+import Model.GestorScenas;
 import UI.ListaAspirantes.ListaApirantes1920x1080.ListaAspirantesView1920x1080;
 import UI.Login.Login1920x1080.LoginView1920x1080;
 import de.saxsys.mvvmfx.FluentViewLoader;
@@ -14,19 +15,19 @@ public class FXML1920x1080 extends FamilyFXML
     @Override
     public void showLogin()
     {
-        this.show(FluentViewLoader.fxmlView(LoginView1920x1080.class).load());
+        GestorScenas.show(FluentViewLoader.fxmlView(LoginView1920x1080.class).load().getView());
     }
 
 
     @Override
     public void showListaAspirantes()
     {
-        this.show(FluentViewLoader.fxmlView(ListaAspirantesView1920x1080.class).load());
-
+        GestorScenas.show(FluentViewLoader.fxmlView(ListaAspirantesView1920x1080.class).load().getView());
     }
 
     @Override
-    public void showInicio() {
+    public void showInicio()
+    {
 
     }
 

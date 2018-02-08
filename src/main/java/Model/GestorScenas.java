@@ -4,6 +4,7 @@ import Model.FamiliaFXML.FXML1280x1024;
 import Model.FamiliaFXML.FXML1920x1080;
 import Model.FamiliaFXML.FamilyFXML;
 import de.saxsys.mvvmfx.ViewTuple;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -15,14 +16,28 @@ public class GestorScenas
 
     private static Stage stageApp;
 
+
+
     public static FamilyFXML getFamily()
     {
         if(familyFXML == null)
         {
             buscarFamily();
         }
+
         return familyFXML;
     }
+
+    public static Stage getStageApp() {
+        return stageApp;
+    }
+
+    public static void setStageApp(Stage newStageApp) {
+        stageApp = newStageApp;
+    }
+
+
+
 
     private static void buscarFamily()
     {
@@ -40,15 +55,17 @@ public class GestorScenas
         }
     }
 
-    public static Stage getStageApp() {
-        return stageApp;
+
+
+    public static void show(Parent parent)
+    {
+        setSceneAppStage(parent);
+        stageApp.show();
     }
 
-    public static void setStageApp(Stage newStageApp) {
-        stageApp = newStageApp;
-    }
+    private static void setSceneAppStage(Parent parent) { stageApp.setScene(new Scene(parent)); }
 
-    public static void setSceneAppStage(ViewTuple viewTuple) { stageApp.setScene(new Scene(viewTuple.getView())); }
+
 
     public static Stage createStage(int maxHeight, int maxWidth, int minHeight, int minWidth, int height, int width)
     {
@@ -64,17 +81,15 @@ public class GestorScenas
         return stage;
     }
 
+
+
     public static void configStageApp(int maxHeight, int maxWidth, int minHeight, int minWidth, int height, int width)
     {
-        Stage stage = GestorScenas.getStageApp();
-
-        stage.setMaxHeight(maxHeight);
-        stage.setMaxWidth(maxWidth);
-        stage.setMinHeight(minHeight);
-        stage.setMinWidth(minWidth);
-        stage.setHeight(height);
-        stage.setWidth(width);
-
-        GestorScenas.setStageApp(stage);
+        stageApp.setMaxHeight(maxHeight);
+        stageApp.setMaxWidth(maxWidth);
+        stageApp.setMinHeight(minHeight);
+        stageApp.setMinWidth(minWidth);
+        stageApp.setHeight(height);
+        stageApp.setWidth(width);
     }
 }
