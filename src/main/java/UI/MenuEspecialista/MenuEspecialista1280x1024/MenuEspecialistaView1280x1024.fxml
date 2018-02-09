@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="750.0" prefWidth="1125.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.MenuEspecialista.MenuEspecialista1280x1024.MenuEspecialistaView1280x1024">
+   <children>
+      <AnchorPane layoutX="837.0" prefHeight="283.0" prefWidth="290.0" style="-fx-background-color: #123456;" />
+      <AnchorPane id="anchorpane" fx:id="anchorpane" layoutX="250.0" layoutY="-2.0" prefHeight="283.0" prefWidth="876.0" style="-fx-background-color: #000000;" />
+   </children>
+</AnchorPane>
