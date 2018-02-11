@@ -19,7 +19,9 @@ public class MenuEspecialistaView1280x1024 implements FxmlView<MenuEspecialistaV
         configurarTraslacion();
     }
 
-    @FXML private AnchorPane anchorpane;
+    @FXML private AnchorPane anchorpaneEvaluacion;
+
+    @FXML private AnchorPane anchorpaneBotones;
 
     @InjectViewModel
     private MenuEspecialistaViewModel viewModel;
@@ -27,18 +29,32 @@ public class MenuEspecialistaView1280x1024 implements FxmlView<MenuEspecialistaV
 
     public void configurarTraslacion() {
 
-        TranslateTransition traslacion = new TranslateTransition();
+        TranslateTransition traslacionAnchorpaneEvaluacion = new TranslateTransition();
 
-        anchorpane.setTranslateX(-250);
 
-        traslacion.setNode(anchorpane);
-        traslacion.setDuration(Duration.millis(1000));
-        traslacion.setFromX(250);
-        traslacion.setToX(0);
+        traslacionAnchorpaneEvaluacion.setNode(anchorpaneEvaluacion);
+        traslacionAnchorpaneEvaluacion.setDuration(Duration.millis(1000));
+        traslacionAnchorpaneEvaluacion.setFromX(-460);
+        traslacionAnchorpaneEvaluacion.setToX(0);
 
-        anchorpane.setOnMouseEntered(evt -> {
-            traslacion.setRate(1);
-            traslacion.play();
+        anchorpaneEvaluacion.setOnMouseEntered(evt -> {
+            traslacionAnchorpaneEvaluacion.setRate(-1);
+            traslacionAnchorpaneEvaluacion.play();
+        });
+
+        anchorpaneEvaluacion.setOnMouseExited(evt -> {
+            traslacionAnchorpaneEvaluacion.setRate(1);
+            traslacionAnchorpaneEvaluacion.play();
+        });
+
+        anchorpaneBotones.setOnMouseEntered(evt -> {
+            traslacionAnchorpaneEvaluacion.setRate(-1);
+            traslacionAnchorpaneEvaluacion.play();
+        });
+
+        anchorpaneBotones.setOnMouseExited(evt -> {
+            traslacionAnchorpaneEvaluacion.setRate(1);
+            traslacionAnchorpaneEvaluacion.play();
         });
 
     }
