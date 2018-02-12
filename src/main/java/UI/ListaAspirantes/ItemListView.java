@@ -8,52 +8,54 @@ import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
+import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Font;
 
 
 public abstract class ItemListView implements FxmlView<ItemListViewModel>
 {
     @InjectViewModel
-    private ItemListViewModel viewModel;
+    protected ItemListViewModel viewModel;
 
     @FXML
-    private Label nombre;
+    protected Label nombre;
 
     @FXML
-    private Label apellido;
+    protected Label apellido;
 
     @FXML
-    private Label edad;
+    protected Label edad;
 
     @FXML
-    private Label sexo;
+    protected Label sexo;
 
     @FXML
-    private Label estadoCivil;
+    protected Label estadoCivil;
 
     @FXML
-    private Label fecha;
+    protected Label fecha;
 
     @FXML
-    private Label especialista;
+    protected Label especialista;
 
     @FXML
-    private Label diagnostico;
+    protected Label diagnostico;
 
     @FXML
-    private Label titulacion;
+    protected Label titulacion;
 
     @FXML
-    private JFXButton opcion;
+    protected JFXButton opcion;
 
     @FXML
-    private JFXListView<Label> listView;
+    protected JFXListView<Label> listView;
 
-    JFXPopup popup = new JFXPopup();
+    protected JFXPopup popup = new JFXPopup();
 
-    boolean popupAbierto = false;
+    protected boolean popupAbierto = false;
 
 
     public void initialize()
@@ -71,7 +73,7 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
 
 //----------------------Popup------------------------//
     @FXML
-    public void exec(MouseEvent mouseEvent) {
+    protected void exec(MouseEvent mouseEvent) {
 
         if(!popupAbierto){
 
@@ -89,27 +91,30 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
     }
 
 
-    private void loadDateListView()
+    protected void loadDateListView()
     {
         for(int i=0; i<4;i++)
         {
             Label lbl = new Label("item" +i);
+            this.configSizeLabel(lbl);
             lbl.setGraphic(new MaterialDesignIconView(MaterialDesignIcon.ACCOUNT_CIRCLE));
             listView.getItems().add(lbl);
         }
     }
 
 
-    private void showPopup() {
-        listView.setVerticalGap(10.0);
-        listView.depthProperty().set(1);
-        listView.setExpanded(true);
+    protected void showPopup()
+    {
+        this.configListView();
 
         popup.setPopupContent(listView);
         popup.setStyle("-fx-background-color: transparent;");
         popup.show(opcion, JFXPopup.PopupVPosition.TOP, JFXPopup.PopupHPosition.LEFT, -190.0,10.0 );
-        listView.setVisible(true);
     }
+
+    protected abstract void configListView();
+
+    protected abstract void configSizeLabel(Label lbl);
 
 
 }

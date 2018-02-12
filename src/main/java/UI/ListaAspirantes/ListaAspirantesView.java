@@ -12,7 +12,7 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
     private ListaAspirantesViewModel viewModel;
 
     @FXML
-    JFXListView<ItemListViewModel> listview;
+    protected JFXListView<ItemListViewModel> listview;
 
     public void initialize()
     {
