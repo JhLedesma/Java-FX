@@ -16,7 +16,7 @@ public class MenuEspecialistaView1280x1024 implements FxmlView<MenuEspecialistaV
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        configurarTraslacion();
+        configurarEfectos();
     }
 
     @FXML private AnchorPane anchorpaneEvaluacion;
@@ -27,7 +27,7 @@ public class MenuEspecialistaView1280x1024 implements FxmlView<MenuEspecialistaV
     private MenuEspecialistaViewModel viewModel;
 
 
-    public void configurarTraslacion() {
+    public void configurarEfectos() {
 
         TranslateTransition traslacionAnchorpaneEvaluacion = new TranslateTransition();
 
