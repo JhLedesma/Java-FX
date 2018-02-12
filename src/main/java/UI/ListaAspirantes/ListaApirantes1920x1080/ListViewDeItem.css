@@ -41,4 +41,6 @@
     -fx-background-insets: 0;
     -fx-cell-vertical-margin: 10.0;
     -jfx-expanded:true;
+    -fx-background-color:transparent;
+    -fx-opacity: 0.0;
 }
