@@ -31,4 +31,10 @@ public class FXML1920x1080 extends FamilyFXML
 
     }
 
+    @Override
+    public void showMenuEspecialista()
+    {
+
+    }
+
 }

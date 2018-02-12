@@ -17,4 +17,6 @@ public abstract class FamilyFXML
 
     public abstract void showInicio();
 
+    public abstract void showMenuEspecialista();
+
 }

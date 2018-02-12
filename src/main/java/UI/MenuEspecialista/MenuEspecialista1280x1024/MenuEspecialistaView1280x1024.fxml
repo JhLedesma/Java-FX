@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1125.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.MenuEspecialista.MenuEspecialista1280x1024.MenuEspecialistaView1280x1024">
+   <children>
+      <AnchorPane fx:id="anchorpaneBotones" layoutX="665.0" prefHeight="362.0" prefWidth="461.0" style="-fx-background-color: #D8D8D8;">
+         <children>
+            <JFXButton layoutX="137.0" layoutY="74.0" prefHeight="57.0" prefWidth="188.0" ripplerFill="#c41616" style="-fx-background-color: #A4A4A4;" text="Alternativa 1" textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="137.0" layoutY="215.0" prefHeight="57.0" prefWidth="188.0" ripplerFill="#c41616" style="-fx-background-color: #A4A4A4;" text="Alternativa 2" textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="169.0" layoutY="358.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="369.0" prefWidth="958.0" style="-fx-background-color: #A4A4A4;">
+         <children>
+            <Label layoutX="150.0" layoutY="255.0" text="Resultados">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Text layoutX="537.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ver o eliminar los resultados de cualquiera de los tests realizados anteriormente" textAlignment="JUSTIFY" wrappingWidth="355.99993896484375">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="537.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imprimir los análisis realizados" textAlignment="JUSTIFY" wrappingWidth="355.99993896484375">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="537.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enviar por mail los resultados a cualquier destinatario" textAlignment="JUSTIFY" wrappingWidth="355.99993896484375">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="537.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificar los datos de los individuos previamente analizados" textAlignment="JUSTIFY" wrappingWidth="355.99993896484375">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="anchorpane" fx:id="anchorpaneEvaluacion" layoutX="169.0" layoutY="-3.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="362.0" prefWidth="958.0" style="-fx-background-color: #6E6E6E;">
+         <children>
+            <Label layoutX="150.0" layoutY="268.0" text="Evaluación">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Text layoutX="537.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingresar los valores de los tests realizados en papel para una rápida y completa corrección" textAlignment="JUSTIFY" wrappingWidth="355.99993896484375">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="537.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Disponibilidad de dos formas de ingresar los datos, para mayor velocidad y comodidad" textAlignment="JUSTIFY" wrappingWidth="355.99993896484375">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="727.0" prefWidth="169.0" style="-fx-background-color: #cccccc;">
+         <children>
+            <Pane layoutX="57.0" layoutY="39.0" />
+            <Pane layoutX="57.0" layoutY="391.0" />
+            <Pane layoutX="57.0" layoutY="723.0" />
+            <JFXButton layoutX="27.0" layoutY="352.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <MaterialDesignIconView glyphName="HOME" layoutX="64.0" layoutY="391.0" size="45" text="" />
+            <JFXButton layoutX="31.0" layoutY="653.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <FontAwesomeIconView glyphName="GEAR" layoutX="68.0" layoutY="692.0" size="42" text="" />
+            <JFXButton layoutX="27.0" layoutY="18.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <FontAwesomeIconView glyphName="ARROW_LEFT" layoutX="67.0" layoutY="54.0" size="40" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
