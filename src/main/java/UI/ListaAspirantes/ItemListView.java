@@ -2,17 +2,22 @@ package UI.ListaAspirantes;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
-import com.jfoenix.controls.JFXNodesList;
 import com.jfoenix.controls.JFXPopup;
+import de.jensd.fx.glyphs.GlyphIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
-import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
 
 
 public abstract class ItemListView implements FxmlView<ItemListViewModel>
@@ -53,6 +58,9 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
     @FXML
     protected JFXListView<Label> listView;
 
+    @FXML
+    protected FontAwesomeIconView plus;
+
     protected JFXPopup popup = new JFXPopup();
 
     protected boolean popupAbierto = false;
@@ -80,12 +88,14 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
             this.loadDateListView();
             this.showPopup();
             popupAbierto = true;
+            plus.setIcon(FontAwesomeIcon.MINUS);
 
         }else{
 
             popup.hide();
             popupAbierto = false;
             listView.getItems().clear();
+            plus.setIcon(FontAwesomeIcon.PLUS);
         }
 
     }
@@ -93,14 +103,27 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
 
     protected void loadDateListView()
     {
-        for(int i=0; i<4;i++)
-        {
-            Label lbl = new Label("item" +i);
-            this.configSizeLabel(lbl);
-            lbl.setGraphic(new MaterialDesignIconView(MaterialDesignIcon.ACCOUNT_CIRCLE));
-            listView.getItems().add(lbl);
-        }
+
+        createAndLoadLabel("Imprimir", new MaterialDesignIconView(MaterialDesignIcon.PRINTER));
+        createAndLoadLabel("Enviar Resultados", new MaterialDesignIconView(MaterialDesignIcon.EMAIL_OUTLINE));
+        createAndLoadLabel("Modificar Datos", new MaterialDesignIconView(MaterialDesignIcon.PENCIL));
+        createAndLoadLabel("Eliminar Registro", new MaterialDesignIconView(MaterialDesignIcon.DELETE));
+
     }
+
+    protected void createAndLoadLabel(String name, MaterialDesignIconView icon)
+    {
+        icon.setGlyphSize(getSizeIconLabel());
+        Label label = new Label(name);
+        label.setFont(Font.font("Arial",getSizeLabel()));
+        label.setGraphic(icon);
+        label.setGraphicTextGap(getGraphicTextGap());
+        label.setPadding(new Insets(getLabelPadding()));
+
+        listView.getItems().add(label);
+    }
+
+
 
 
     protected void showPopup()
@@ -109,12 +132,41 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
 
         popup.setPopupContent(listView);
         popup.setStyle("-fx-background-color: transparent;");
-        popup.show(opcion, JFXPopup.PopupVPosition.TOP, JFXPopup.PopupHPosition.LEFT, -190.0,10.0 );
+        popup.show(opcion, JFXPopup.PopupVPosition.TOP, JFXPopup.PopupHPosition.LEFT, popupInitialPositionX(), popupInitialPositionY());
     }
 
-    protected abstract void configListView();
 
-    protected abstract void configSizeLabel(Label lbl);
+    protected void configListView()
+    {
+        listView.depthProperty().set(1);
+        listView.setExpanded(true);
+        listView.setVisible(true);
+        listView.setPrefHeight(getAlturaListView());
+        listView.setVerticalGap(getVerticalGapListView());
+        listView.setPrefWidth(getAnchoListView());
+
+    }
+
+
+
+    protected abstract Double getSizeLabel();
+
+    protected abstract Double getSizeIconLabel();
+
+    protected abstract Double getGraphicTextGap();
+
+    protected abstract Double getLabelPadding();
+
+    protected abstract Double getAlturaListView();
+
+    protected abstract Double getVerticalGapListView();
+
+    protected abstract Double getAnchoListView();
+
+    protected abstract Double popupInitialPositionX();
+
+    protected abstract Double popupInitialPositionY();
+
 
 
 }

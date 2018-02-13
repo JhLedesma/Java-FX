@@ -30,7 +30,7 @@
                         <Font name="Arial" size="20.0" />
                     </font>
                 </JFXButton>
-                <FontAwesomeIconView glyphName="PLUS" layoutX="21.0" layoutY="108.0" size="22" wrappingWidth="14.428571701049805" />
+                <FontAwesomeIconView fx:id="plus" glyphName="PLUS" layoutX="21.0" layoutY="108.0" size="22" wrappingWidth="14.428571701049805" />
             </children>
         </Pane>
         <GridPane layoutX="260.0" layoutY="39.0" prefHeight="116.0" prefWidth="789.0">
