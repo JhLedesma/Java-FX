@@ -19,4 +19,6 @@ public abstract class FamilyFXML
 
     public abstract void showMenuEspecialista();
 
+    public abstract void showInputNormal();
+
 }
