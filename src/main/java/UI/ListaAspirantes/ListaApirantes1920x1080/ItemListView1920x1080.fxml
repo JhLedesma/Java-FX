@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXNodesList?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.control.Label?>
@@ -14,6 +16,7 @@
 
 <AnchorPane prefHeight="203.0" prefWidth="1292.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ListaAspirantes.ListaApirantes1920x1080.ItemListView1920x1080">
     <children>
+      <JFXListView fx:id="listView" layoutX="895.0" layoutY="12.0" prefHeight="175.0" prefWidth="178.0" stylesheets="@ListViewDeItem.css" visible="false" />
         <MaterialDesignIconView id="foto" fill="#5b5a5a" glyphName="ACCOUNT_CIRCLE" layoutX="32.0" layoutY="175.0" size="200" wrappingWidth="191.0" />
         <Pane layoutX="1079.0" layoutY="32.0">
             <children>
@@ -22,12 +25,12 @@
                         <Font name="Arial" size="20.0" />
                     </font>
                 </JFXButton>
-                <JFXButton id="btnOpciones" layoutY="78.0" prefHeight="46.0" prefWidth="178.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Opciones">
+                <JFXButton id="btnOpciones" fx:id="opcion" layoutY="78.0" onMouseClicked="#exec" prefHeight="46.0" prefWidth="178.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Opciones">
                     <font>
                         <Font name="Arial" size="20.0" />
                     </font>
                 </JFXButton>
-                <FontAwesomeIconView glyphName="PLUS" layoutX="21.0" layoutY="108.0" size="22" wrappingWidth="14.428571701049805" />
+                <FontAwesomeIconView fx:id="plus" glyphName="PLUS" layoutX="21.0" layoutY="108.0" size="22" wrappingWidth="14.428571701049805" />
             </children>
         </Pane>
         <GridPane layoutX="260.0" layoutY="39.0" prefHeight="116.0" prefWidth="789.0">
@@ -41,9 +44,10 @@
             <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="24.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="24.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="44.0" minHeight="9.0" prefHeight="15.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
                 <Label text="Nombre">
@@ -56,12 +60,12 @@
                         <Font name="Arial" size="18.0" />
                     </font>
                 </Label>
-                <Label text="Apellido" GridPane.rowIndex="3">
+                <Label text="Apellido" GridPane.rowIndex="4">
                     <font>
                         <Font name="Arial" size="22.0" />
                     </font>
                 </Label>
-                <Label id="apellido" fx:id="apellido" text="Usuario" textFill="#6f6f6f" GridPane.rowIndex="4">
+                <Label id="apellido" fx:id="apellido" text="Usuario" textFill="#6f6f6f" GridPane.rowIndex="5">
                     <font>
                         <Font name="Arial" size="18.0" />
                     </font>
@@ -76,12 +80,12 @@
                         <Font name="Arial" size="18.0" />
                     </font>
                 </Label>
-                <Label text="Sexo" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <Label text="Sexo" GridPane.columnIndex="1" GridPane.rowIndex="4">
                     <font>
                         <Font name="Arial" size="22.0" />
                     </font>
                 </Label>
-                <Label id="sexo" fx:id="sexo" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                <Label id="sexo" fx:id="sexo" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="1" GridPane.rowIndex="5">
                     <font>
                         <Font name="Arial" size="18.0" />
                     </font>
@@ -106,22 +110,22 @@
                         <Font name="Arial" size="18.0" />
                     </font>
                 </Label>
-                <Label text="Fecha" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                <Label text="Fecha" GridPane.columnIndex="2" GridPane.rowIndex="4">
                     <font>
                         <Font name="Arial" size="22.0" />
                     </font>
                 </Label>
-                <Label id="fecha" fx:id="fecha" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                <Label id="fecha" fx:id="fecha" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="2" GridPane.rowIndex="5">
                     <font>
                         <Font name="Arial" size="18.0" />
                     </font>
                 </Label>
-                <Label text="Diagnostico" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                <Label text="Diagnostico" GridPane.columnIndex="3" GridPane.rowIndex="4">
                     <font>
                         <Font name="Arial" size="22.0" />
                     </font>
                 </Label>
-                <Label id="diagnostico" fx:id="diagnostico" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                <Label id="diagnostico" fx:id="diagnostico" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="3" GridPane.rowIndex="5">
                     <font>
                         <Font name="Arial" size="18.0" />
                     </font>
@@ -139,6 +143,7 @@
             </children>
         </GridPane>
         <Line endX="910.0" layoutX="361.0" layoutY="200.0" startX="-100.0" stroke="#bfbebe" />
+      <JFXNodesList fx:id="node" layoutX="1025.0" layoutY="155.0" prefHeight="1.0" prefWidth="0.0" />
     </children>
 
 </AnchorPane>
