@@ -1,6 +1,8 @@
 package UI.MenuEspecialista.MenuEspecialista1280x1024;
 
+import Model.GestorScenas;
 import UI.MenuEspecialista.MenuEspecialistaViewModel;
+import com.jfoenix.controls.JFXButton;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.fxml.FXML;
@@ -23,14 +25,14 @@ public class MenuEspecialistaView1280x1024 implements FxmlView<MenuEspecialistaV
 
     @FXML private AnchorPane anchorpaneBotones;
 
-    @InjectViewModel
-    private MenuEspecialistaViewModel viewModel;
+    @FXML private JFXButton backButton;
+
+    @FXML private JFXButton alternativa1Button;
 
 
     public void configurarEfectos() {
 
         TranslateTransition traslacionAnchorpaneEvaluacion = new TranslateTransition();
-
 
         traslacionAnchorpaneEvaluacion.setNode(anchorpaneEvaluacion);
         traslacionAnchorpaneEvaluacion.setDuration(Duration.millis(1000));
@@ -55,6 +57,18 @@ public class MenuEspecialistaView1280x1024 implements FxmlView<MenuEspecialistaV
         anchorpaneBotones.setOnMouseExited(evt -> {
             traslacionAnchorpaneEvaluacion.setRate(1);
             traslacionAnchorpaneEvaluacion.play();
+        });
+
+        backButton.setOnMouseClicked(evt -> {
+
+            GestorScenas.getFamily().showInicio();
+
+        });
+
+        alternativa1Button.setOnMouseClicked(evt -> {
+
+            GestorScenas.getFamily().showInputNormal();
+
         });
 
     }

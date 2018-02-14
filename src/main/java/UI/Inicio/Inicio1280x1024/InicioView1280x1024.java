@@ -39,6 +39,12 @@ public class InicioView1280x1024 implements FxmlView<InicioViewModel>, Initializ
 
         });
 
+        imagenEspecialista.setOnMouseClicked(evt -> {
+
+            getMenuEspecialista();
+
+        });
+
         imagenAspirante.setOnMouseEntered(evt -> {
 
             imagenAspirante.setEffect(new DropShadow(20, Color.BLACK));
@@ -56,6 +62,12 @@ public class InicioView1280x1024 implements FxmlView<InicioViewModel>, Initializ
             GestorScenas.getFamily().showMenuEspecialista();
 
         });
+
+    }
+
+    private void getMenuEspecialista() {
+
+        GestorScenas.getFamily().showMenuEspecialista();
 
     }
 

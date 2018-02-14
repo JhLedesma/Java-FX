@@ -14,12 +14,12 @@
    <children>
       <AnchorPane fx:id="anchorpaneBotones" layoutX="665.0" prefHeight="362.0" prefWidth="461.0" style="-fx-background-color: #D8D8D8;">
          <children>
-            <JFXButton layoutX="137.0" layoutY="74.0" prefHeight="57.0" prefWidth="188.0" ripplerFill="#c41616" style="-fx-background-color: #A4A4A4;" text="Alternativa 1" textAlignment="CENTER">
+            <JFXButton fx:id="alternativa1Button" layoutX="137.0" layoutY="74.0" prefHeight="57.0" prefWidth="188.0" ripplerFill="#c41616" style="-fx-background-color: #A4A4A4;" text="Nombre a determinar" textAlignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="137.0" layoutY="215.0" prefHeight="57.0" prefWidth="188.0" ripplerFill="#c41616" style="-fx-background-color: #A4A4A4;" text="Alternativa 2" textAlignment="CENTER">
+            <JFXButton layoutX="137.0" layoutY="215.0" prefHeight="57.0" prefWidth="188.0" ripplerFill="#c41616" style="-fx-background-color: #A4A4A4;" text="(todavia no hace nada)" textAlignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -54,6 +54,9 @@
                </font>
             </Text>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
       <AnchorPane id="anchorpane" fx:id="anchorpaneEvaluacion" layoutX="169.0" layoutY="-3.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="362.0" prefWidth="958.0" style="-fx-background-color: #6E6E6E;">
          <children>
@@ -78,24 +81,39 @@
             <Pane layoutX="57.0" layoutY="39.0" />
             <Pane layoutX="57.0" layoutY="391.0" />
             <Pane layoutX="57.0" layoutY="723.0" />
-            <JFXButton layoutX="27.0" layoutY="352.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
+            <JFXButton layoutX="27.0" layoutY="334.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
+               <graphic>
+                  <MaterialDesignIconView glyphName="HOME" size="45" text="" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
-            <MaterialDesignIconView glyphName="HOME" layoutX="64.0" layoutY="391.0" size="45" text="" />
-            <JFXButton layoutX="31.0" layoutY="653.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
+            <JFXButton layoutX="27.0" layoutY="644.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
+               <graphic>
+                  <FontAwesomeIconView glyphName="GEAR" size="42" text="" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
-            <FontAwesomeIconView glyphName="GEAR" layoutX="68.0" layoutY="692.0" size="42" text="" />
-            <JFXButton layoutX="27.0" layoutY="18.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
+            <JFXButton fx:id="backButton" layoutX="27.0" layoutY="14.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
+               <graphic>
+                  <FontAwesomeIconView glyphName="ARROW_LEFT" size="40" text="" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
-            <FontAwesomeIconView glyphName="ARROW_LEFT" layoutX="67.0" layoutY="54.0" size="40" />
          </children>
       </AnchorPane>
    </children>

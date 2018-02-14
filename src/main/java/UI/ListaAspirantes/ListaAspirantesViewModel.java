@@ -52,7 +52,7 @@ public class ListaAspirantesViewModel implements ViewModel
     {
 //        FilteredList<ItemListViewModel> filteredData = new FilteredList<>(listaItems, i -> true);
 
-        String nombreFiltro = filtro.get();
+        String nombreFiltro = filtro.get().toUpperCase();
 
 //        if(nombreFiltro == null || nombreFiltro.length() == 0) {
 //            filteredData.setPredicate(i->true);
@@ -70,7 +70,7 @@ public class ListaAspirantesViewModel implements ViewModel
 //            listaItems.addAll(filteredData);
 
 
-            listaItems.setAll(listaItems.stream().filter(x->x.nombreProperty().get().contains(nombreFiltro)).collect(Collectors.toList()));
+            listaItems.setAll(listaItems.stream().filter(x->x.nombreProperty().get().toUpperCase().contains(nombreFiltro)).collect(Collectors.toList()));
 //        }
 
 
