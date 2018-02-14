@@ -36,7 +36,8 @@ public class ListaAspirantesViewModel implements ViewModel
         Aspirante aspirante1 = new Aspirante("Julian", "Ledesma", "21", "M", "Soltero", "09/04/1996", "Vieytes", "M", "Ingenieria en Sistemas");
         Aspirante aspirante2 = new Aspirante("Juan", "Ledesma", "21", "M", "Soltero", "09/04/1996", "Vieytes", "M", "Ingenieria en Sistemas");
         Aspirante aspirante3 = new Aspirante("Jeremerias", "Ledesma", "21", "M", "Soltero", "09/04/1996", "Vieytes", "M", "Ingenieria en Sistemas");
-        Aspirante aspirante4 = new Aspirante("Gonza", "Ledesma", "21", "M", "Soltero", "09/04/1996", "Vieytes", "M", "Ingenieria en Sistemas");
+        Aspirante aspirante4 = new Aspirante("Gonza", "Vieytes", "21", "M", "Soltero", "09/04/1996", "Vieytes", "M", "Ingenieria en Sistemas");
+        Aspirante aspirante5 = new Aspirante("Mauro", "Valencia", "21", "M", "Soltero", "09/04/1996", "Vieytes", "M", "Ingenieria en Sistemas");
 
         List<Aspirante> aspirantes = new ArrayList<Aspirante>();
         aspirantes.add(aspirante);
@@ -44,6 +45,7 @@ public class ListaAspirantesViewModel implements ViewModel
         aspirantes.add(aspirante2);
         aspirantes.add(aspirante3);
         aspirantes.add(aspirante4);
+        aspirantes.add(aspirante5);
 
         listaItems.addAll(aspirantes.stream().map(ItemListViewModel::new).collect(Collectors.toList()));
     }
@@ -70,10 +72,18 @@ public class ListaAspirantesViewModel implements ViewModel
 //            listaItems.addAll(filteredData);
 
 
-            listaItems.setAll(listaItems.stream().filter(x->x.nombreProperty().get().toUpperCase().contains(nombreFiltro)).collect(Collectors.toList()));
+            listaItems.setAll(listaItems.stream().filter(x-> coincideConNombre(nombreFiltro, x) || coincideConApellido(nombreFiltro, x)).collect(Collectors.toList()));
 //        }
 
 
+    }
+
+    private boolean coincideConApellido(String nombreFiltro, ItemListViewModel x) {
+        return x.apellidoProperty().get().toUpperCase().contains(nombreFiltro);
+    }
+
+    private boolean coincideConNombre(String nombreFiltro, ItemListViewModel x) {
+        return x.nombreProperty().get().toUpperCase().contains(nombreFiltro);
     }
 
 

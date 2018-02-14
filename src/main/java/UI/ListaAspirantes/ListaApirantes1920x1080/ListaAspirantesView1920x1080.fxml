@@ -52,7 +52,7 @@
       <AnchorPane layoutX="228.0" prefHeight="68.0" prefWidth="1318.0" style="-fx-background-color: #FFFFFF;">
          <children>
             <MaterialDesignIconView glyphName="MAGNIFY" layoutX="48.0" layoutY="46.0" size="35" wrappingWidth="34.285731822252274" />
-            <JFXTextField fx:id="filtroTextField" labelFloat="true" layoutX="90.0" layoutY="19.0" prefHeight="28.0" prefWidth="1189.0" promptText="Busque por Nombre" unFocusColor="#726e6e">
+            <JFXTextField fx:id="filtroTextField" labelFloat="true" layoutX="90.0" layoutY="19.0" prefHeight="28.0" prefWidth="1189.0" promptText="Busque por Nombre o por Apellido" unFocusColor="#726e6e">
                <font>
                   <Font size="14.0" />
                </font>
