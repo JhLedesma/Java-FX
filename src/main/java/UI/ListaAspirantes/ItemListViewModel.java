@@ -9,6 +9,7 @@ import javafx.beans.value.ObservableStringValue;
 
 public class ItemListViewModel implements ViewModel {
 
+    private Aspirante aspirante;
     private ReadOnlyStringWrapper  nombre = new ReadOnlyStringWrapper ();
     private ReadOnlyStringWrapper  apellido = new ReadOnlyStringWrapper ();
     private ReadOnlyStringWrapper  edad = new ReadOnlyStringWrapper ();
@@ -21,6 +22,7 @@ public class ItemListViewModel implements ViewModel {
 
     public ItemListViewModel(Aspirante aspirante)
     {
+        this.aspirante = aspirante;
         this.nombre.set(aspirante.getNombre());
         this.apellido.set(aspirante.getApellido());
         this.edad.set(aspirante.getEdad());
@@ -76,5 +78,7 @@ public class ItemListViewModel implements ViewModel {
     {
         return titulacion.getReadOnlyProperty();
     }
+
+    public Aspirante getAspirante() {return aspirante;}
 
 }
