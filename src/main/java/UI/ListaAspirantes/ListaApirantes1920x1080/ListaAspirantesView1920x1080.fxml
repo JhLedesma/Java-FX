@@ -2,16 +2,19 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="830.0" prefWidth="1545.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ListaAspirantes.ListaApirantes1920x1080.ListaAspirantesView1920x1080">
+<AnchorPane prefHeight="838.0" prefWidth="1545.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ListaAspirantes.ListaApirantes1920x1080.ListaAspirantesView1920x1080">
 
     <children>
-        <JFXListView fx:id="listview" layoutX="228.0" prefHeight="830.0" prefWidth="1318.0" style="-fx-background-color: #FFFFFF;" />
+        <JFXListView fx:id="listview" layoutX="228.0" layoutY="69.0" prefHeight="769.0" prefWidth="1318.0" style="-fx-background-color: #FFFFFF;" />
       <AnchorPane prefHeight="800.0" prefWidth="228.0" style="-fx-background-color: #cccccc;">
          <children>
             <Pane layoutX="57.0" layoutY="39.0">
@@ -46,6 +49,20 @@
             </Pane>
          </children>
       </AnchorPane>
+      <AnchorPane layoutX="228.0" prefHeight="68.0" prefWidth="1318.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <MaterialDesignIconView glyphName="MAGNIFY" layoutX="48.0" layoutY="46.0" size="35" wrappingWidth="34.285731822252274" />
+            <JFXTextField labelFloat="true" layoutX="90.0" layoutY="19.0" prefHeight="28.0" prefWidth="1189.0" promptText="Busque por Nombre" unFocusColor="#726e6e">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <Line endX="1215.0" fill="#eeeeee" layoutX="329.0" layoutY="69.0" startX="-100.0" stroke="#f2f2f2" />
     </children>
 
 </AnchorPane>

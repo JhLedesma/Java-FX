@@ -5,6 +5,7 @@ import Model.Aspirante;
 import de.saxsys.mvvmfx.ViewModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.ToolBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,5 +31,6 @@ public class ListaAspirantesViewModel implements ViewModel
 
         listaItems.addAll(aspirantes.stream().map(ItemListViewModel::new).collect(Collectors.toList()));
     }
+
 
 }

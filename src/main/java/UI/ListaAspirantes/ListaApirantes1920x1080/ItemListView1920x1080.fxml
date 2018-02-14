@@ -18,7 +18,7 @@
     <children>
       <JFXListView fx:id="listView" layoutX="895.0" layoutY="12.0" prefHeight="175.0" prefWidth="178.0" stylesheets="@ListViewDeItem.css" visible="false" />
         <MaterialDesignIconView id="foto" fill="#5b5a5a" glyphName="ACCOUNT_CIRCLE" layoutX="32.0" layoutY="175.0" size="200" wrappingWidth="191.0" />
-        <Pane layoutX="1079.0" layoutY="32.0">
+        <Pane layoutX="1079.0" layoutY="36.0">
             <children>
                 <JFXButton id="btnResultado" layoutX="-1.0" prefHeight="46.0" prefWidth="178.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Ver Resultados">
                     <font>
