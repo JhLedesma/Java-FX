@@ -10,11 +10,14 @@ import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
+import javafx.scene.control.MultipleSelectionModel;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
@@ -77,14 +80,17 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         especialista.textProperty().bind(viewModel.especialistaProperty());
         diagnostico.textProperty().bind(viewModel.diagnosticoProperty());
         titulacion.textProperty().bind(viewModel.titulacionProperty());
+
+        this.configPopup();
     }
 
-//----------------------Popup------------------------//
+    //----------------------Popup------------------------//
     @FXML
     protected void exec(MouseEvent mouseEvent) {
 
         if(!popupAbierto){
 
+            listView.getItems().clear();
             this.loadDateListView();
             this.showPopup();
             popupAbierto = true;
@@ -96,6 +102,7 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
             popupAbierto = false;
             listView.getItems().clear();
             plus.setIcon(FontAwesomeIcon.PLUS);
+
         }
 
     }
@@ -131,7 +138,6 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         this.configListView();
 
         popup.setPopupContent(listView);
-        popup.setStyle("-fx-background-color: transparent;");
         popup.show(opcion, JFXPopup.PopupVPosition.TOP, JFXPopup.PopupHPosition.LEFT, popupInitialPositionX(), popupInitialPositionY());
     }
 
@@ -145,6 +151,17 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         listView.setVerticalGap(getVerticalGapListView());
         listView.setPrefWidth(getAnchoListView());
 
+
+    }
+
+    private void configPopup() {
+//        popup.setOnAutoHide(event -> {
+//            plus.setIcon(FontAwesomeIcon.PLUS);
+//            popupAbierto = true;
+//            listView.getItems().clear();
+//        });
+        popup.autoHideProperty().setValue(false);
+        popup.setStyle("-fx-background-color: transparent;");
     }
 
 
