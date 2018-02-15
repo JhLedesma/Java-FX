@@ -18,26 +18,5 @@ public class ListaAspirantesView1920x1080 extends ListaAspirantesView /*implemen
         return CachedViewModelCellFactory.createForFxmlView(ItemListView1920x1080.class);
     }
 
-    /*@InjectViewModel
-    private ListaAspirantesViewModel viewModel;
 
-    @FXML
-    JFXListView<ItemListViewModel> listview;
-
-    public void initialize()
-    {
-        this.loadListView();
-    }
-
-    private void loadListView()
-    {
-        listview.setItems(viewModel.getListaItems());
-        ViewListCellFactory<ItemListViewModel> cell = crearCell();
-        listview.setCellFactory(cell);
-    }
-
-    private ViewListCellFactory<ItemListViewModel> crearCell()
-    {
-        return CachedViewModelCellFactory.createForFxmlView(ItemListView1920x1080.class);
-    }*/
 }

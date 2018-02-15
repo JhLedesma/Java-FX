@@ -1,5 +1,6 @@
 package UI.ListaAspirantes.ListaApirantes1920x1080;
 
+import Model.NotificationCenter;
 import UI.ListaAspirantes.ItemListView;
 
 public class ItemListView1920x1080 extends ItemListView

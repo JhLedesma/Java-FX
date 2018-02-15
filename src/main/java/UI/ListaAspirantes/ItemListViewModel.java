@@ -1,15 +1,16 @@
 package UI.ListaAspirantes;
 
+import BD.Repositorios.RepoAspirantes;
 import Model.Aspirante;
+import de.saxsys.mvvmfx.MvvmFX;
 import de.saxsys.mvvmfx.ViewModel;
+import de.saxsys.mvvmfx.utils.notifications.DefaultNotificationCenter;
+import de.saxsys.mvvmfx.utils.notifications.NotificationCenter;
 import javafx.beans.property.ReadOnlyStringWrapper;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javafx.beans.value.ObservableStringValue;
 
 public class ItemListViewModel implements ViewModel {
 
-    private Aspirante aspirante;
     private ReadOnlyStringWrapper  nombre = new ReadOnlyStringWrapper ();
     private ReadOnlyStringWrapper  apellido = new ReadOnlyStringWrapper ();
     private ReadOnlyStringWrapper  edad = new ReadOnlyStringWrapper ();
@@ -19,6 +20,9 @@ public class ItemListViewModel implements ViewModel {
     private ReadOnlyStringWrapper  especialista = new ReadOnlyStringWrapper ();
     private ReadOnlyStringWrapper  diagnostico = new ReadOnlyStringWrapper ();
     private ReadOnlyStringWrapper  titulacion = new ReadOnlyStringWrapper();
+
+    private Aspirante aspirante;
+
 
     public ItemListViewModel(Aspirante aspirante)
     {
@@ -32,6 +36,17 @@ public class ItemListViewModel implements ViewModel {
         this.especialista.set(aspirante.getEspecialista());
         this.diagnostico.set(aspirante.getDiagnostico());
         this.titulacion.set(aspirante.getTitulacion());
+    }
+
+    public void eliminarAspirante()
+    {
+        RepoAspirantes.getInstance().eliminarObjeto(aspirante);
+        this.notificarAspiranteEliminado();
+    }
+
+    private void notificarAspiranteEliminado()
+    {
+        Model.NotificationCenter.getInstance().publish("AspiranteEliminado");
     }
 
     public ObservableStringValue nombreProperty()
@@ -80,5 +95,6 @@ public class ItemListViewModel implements ViewModel {
     }
 
     public Aspirante getAspirante() {return aspirante;}
+
 
 }

@@ -29,7 +29,7 @@
         <dependency>
             <groupId>de.saxsys</groupId>
             <artifactId>mvvmfx</artifactId>
-            <version>1.5.2</version>
+            <version>1.7.0</version>
         </dependency>
         <dependency>
             <groupId>com.jfoenix</groupId>
