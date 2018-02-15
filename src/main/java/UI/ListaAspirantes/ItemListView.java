@@ -3,66 +3,46 @@ package UI.ListaAspirantes;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXPopup;
-import de.jensd.fx.glyphs.GlyphIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
-import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
-import javafx.scene.control.MultipleSelectionModel;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Font;
-import javafx.scene.text.TextAlignment;
 
 
 public abstract class ItemListView implements FxmlView<ItemListViewModel>
 {
-    @InjectViewModel
-    protected ItemListViewModel viewModel;
+    @InjectViewModel protected ItemListViewModel viewModel;
 
-    @FXML
-    protected Label nombre;
+    @FXML protected Label nombre;
 
-    @FXML
-    protected Label apellido;
+    @FXML protected Label apellido;
 
-    @FXML
-    protected Label edad;
+    @FXML protected Label edad;
 
-    @FXML
-    protected Label sexo;
+    @FXML protected Label sexo;
 
-    @FXML
-    protected Label estadoCivil;
+    @FXML protected Label estadoCivil;
 
-    @FXML
-    protected Label fecha;
+    @FXML protected Label fecha;
 
-    @FXML
-    protected Label especialista;
+    @FXML protected Label especialista;
 
-    @FXML
-    protected Label diagnostico;
+    @FXML protected Label diagnostico;
 
-    @FXML
-    protected Label titulacion;
+    @FXML protected Label titulacion;
 
-    @FXML
-    protected JFXButton opcion;
+    @FXML protected JFXButton opcion;
 
-    @FXML
-    protected JFXListView<Label> listView;
+    @FXML protected JFXListView<Label> listView;
 
-    @FXML
-    protected FontAwesomeIconView plus;
+    @FXML protected FontAwesomeIconView plus;
 
     protected JFXPopup popup = new JFXPopup();
 
@@ -80,13 +60,26 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         especialista.textProperty().bind(viewModel.especialistaProperty());
         diagnostico.textProperty().bind(viewModel.diagnosticoProperty());
         titulacion.textProperty().bind(viewModel.titulacionProperty());
-
-        this.configPopup();
     }
+
+
+
+
+    @FXML
+    protected void execEliminarRegistro(MouseEvent mouseEvent)
+    {
+        if(listView.getSelectionModel().getSelectedItem() == listView.getItems().get(3))
+        {
+            popup.hide();
+            viewModel.eliminarAspirante();
+        }
+    }
+
+
 
     //----------------------Popup------------------------//
     @FXML
-    protected void exec(MouseEvent mouseEvent) {
+    protected void execPopup(MouseEvent mouseEvent) {
 
         if(!popupAbierto){
 
@@ -110,15 +103,18 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
 
     protected void loadDateListView()
     {
+        Label imprimir = createLabel("Imprimir", new MaterialDesignIconView(MaterialDesignIcon.PRINTER));
+        Label enviarResultados = createLabel("Enviar Resultados", new MaterialDesignIconView(MaterialDesignIcon.EMAIL_OUTLINE));
+        Label modificarDatos = createLabel("Modificar Datos", new MaterialDesignIconView(MaterialDesignIcon.PENCIL));
+        Label eliminar = createLabel("Eliminar Registro", new MaterialDesignIconView(MaterialDesignIcon.DELETE));
 
-        createAndLoadLabel("Imprimir", new MaterialDesignIconView(MaterialDesignIcon.PRINTER));
-        createAndLoadLabel("Enviar Resultados", new MaterialDesignIconView(MaterialDesignIcon.EMAIL_OUTLINE));
-        createAndLoadLabel("Modificar Datos", new MaterialDesignIconView(MaterialDesignIcon.PENCIL));
-        createAndLoadLabel("Eliminar Registro", new MaterialDesignIconView(MaterialDesignIcon.DELETE));
-
+        listView.getItems().add(imprimir);
+        listView.getItems().add(enviarResultados);
+        listView.getItems().add(modificarDatos);
+        listView.getItems().add(eliminar);
     }
 
-    protected void createAndLoadLabel(String name, MaterialDesignIconView icon)
+    protected Label createLabel(String name, MaterialDesignIconView icon)
     {
         icon.setGlyphSize(getSizeIconLabel());
         Label label = new Label(name);
@@ -127,7 +123,7 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         label.setGraphicTextGap(getGraphicTextGap());
         label.setPadding(new Insets(getLabelPadding()));
 
-        listView.getItems().add(label);
+        return label;
     }
 
 
@@ -136,6 +132,7 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
     protected void showPopup()
     {
         this.configListView();
+        this.configPopup();
 
         popup.setPopupContent(listView);
         popup.show(opcion, JFXPopup.PopupVPosition.TOP, JFXPopup.PopupHPosition.LEFT, popupInitialPositionX(), popupInitialPositionY());
@@ -150,8 +147,7 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         listView.setPrefHeight(getAlturaListView());
         listView.setVerticalGap(getVerticalGapListView());
         listView.setPrefWidth(getAnchoListView());
-
-
+        listView.setOnMouseClicked(event -> execEliminarRegistro(event));
     }
 
     private void configPopup() {

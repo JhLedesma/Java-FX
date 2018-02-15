@@ -5,6 +5,8 @@ import com.jfoenix.controls.JFXTogglePane;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Main extends Application
 {
 
@@ -18,11 +20,15 @@ public class Main extends Application
         //Nombre del escenario
         primaryStage.setTitle("Test MMPI 2");
 
+        try {
+            new Bootstrap().iniciarObjetos();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         GestorScenas.setStageApp(primaryStage);
 
-        GestorScenas.getFamily().showInicio();
-
-
+        GestorScenas.getFamily().showListaAspirantes();
 
     }
 
