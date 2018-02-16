@@ -9,16 +9,24 @@ import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
+import javafx.animation.RotateTransition;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
+import javafx.util.Duration;
 
 
 public abstract class ItemListView implements FxmlView<ItemListViewModel>
 {
     @InjectViewModel protected ItemListViewModel viewModel;
+
+    @FXML protected AnchorPane anchorPrincipal;
+
+    @FXML protected AnchorPane anchorMenuEditar;
 
     @FXML protected Label nombre;
 
@@ -66,15 +74,31 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
 
 
     @FXML
-    protected void execEliminarRegistro(MouseEvent mouseEvent)
+    protected void execBotonListView(MouseEvent mouseEvent)
     {
         if(listView.getSelectionModel().getSelectedItem() == listView.getItems().get(3))
         {
             popup.hide();
             viewModel.eliminarAspirante();
+        }else if (listView.getSelectionModel().getSelectedItem() == listView.getItems().get(2))
+        {
+            popup.hide();
+            showMenuEditarDatos();
         }
     }
 
+
+    //----------------------MenuEditarDatos------------------------//
+    @FXML
+    protected void showMenuEditarDatos()
+    {
+        TranslateTransition transition = new TranslateTransition(Duration.millis(1000), anchorPrincipal);
+        transition.setToX(-1300);
+        transition.play();
+        TranslateTransition transition2 = new TranslateTransition(Duration.millis(1000), anchorMenuEditar);
+        transition2.setToX(-1300);
+        transition2.play();
+    }
 
 
     //----------------------Popup------------------------//
@@ -87,6 +111,7 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
             this.loadDateListView();
             this.showPopup();
             popupAbierto = true;
+            this.rotarIcono();
             plus.setIcon(FontAwesomeIcon.MINUS);
 
         }else{
@@ -94,10 +119,18 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
             popup.hide();
             popupAbierto = false;
             listView.getItems().clear();
+            this.rotarIcono();
             plus.setIcon(FontAwesomeIcon.PLUS);
-
         }
 
+    }
+
+    protected void rotarIcono()
+    {
+        RotateTransition rotateTransition = new RotateTransition(Duration.millis(180), plus);
+        rotateTransition.setByAngle(180);
+        rotateTransition.setCycleCount(1);
+        rotateTransition.play();
     }
 
 
@@ -147,7 +180,7 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         listView.setPrefHeight(getAlturaListView());
         listView.setVerticalGap(getVerticalGapListView());
         listView.setPrefWidth(getAnchoListView());
-        listView.setOnMouseClicked(event -> execEliminarRegistro(event));
+        listView.setOnMouseClicked(event -> execBotonListView(event));
     }
 
     private void configPopup() {

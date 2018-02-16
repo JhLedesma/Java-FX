@@ -17,7 +17,7 @@ public class Main extends Application
     @Override
     public void start(Stage primaryStage)
     {
-        //Nombre del escenario
+
         primaryStage.setTitle("Test MMPI 2");
 
         try {
