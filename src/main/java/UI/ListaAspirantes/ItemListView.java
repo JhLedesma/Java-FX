@@ -91,6 +91,17 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         especialista.textProperty().bind(viewModel.especialistaProperty());
         diagnostico.textProperty().bind(viewModel.diagnosticoProperty());
         titulacion.textProperty().bind(viewModel.titulacionProperty());
+
+        diagnosticoEdit.textProperty().bind(viewModel.diagnosticoEditProperty());
+        fechaEdit.textProperty().bind(viewModel.fechaEditProperty());
+
+        nombreEdit.textProperty().bindBidirectional(viewModel.nombreEditProperty());
+        apellidoEdit.textProperty().bindBidirectional(viewModel.apellidoEditProperty());
+        edadEdit.textProperty().bindBidirectional(viewModel.edadEditProperty());
+        sexoEdit.textProperty().bindBidirectional(viewModel.sexoEditProperty());
+        estadoCivilEdit.textProperty().bindBidirectional(viewModel.estadoCivilEditProperty());
+        especialistaEdit.textProperty().bindBidirectional(viewModel.especialistaEditProperty());
+        titulacionEdit.textProperty().bindBidirectional(viewModel.titulacionEditProperty());
     }
 
 
@@ -124,6 +135,23 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         transition2.setToX(-1300);
         transition2.play();
     }
+
+    @FXML
+    protected void execBtnGuardar(MouseEvent event)
+    {
+        this.viewModel.validarEditText();
+        TranslateTransition transition = new TranslateTransition(Duration.millis(800), anchorPrincipal);
+        transition.setToX(0);
+        transition.play();
+        TranslateTransition transition2 = new TranslateTransition(Duration.millis(800), anchorMenuEditar);
+        transition2.setToX(0);
+        transition2.play();
+        //Tomar valor de los editext
+        //Si el valor es distinto de null y distinto de lo que ya existe, guardo variable local y en remplazo variable de viewModel actual
+        //si el valor es null o el mismo ,guardo variable local el que ya existe y nada en variable de viewModel actual
+        //reo un nuevo aspirante y seteo las variables locales
+    }
+
 
     @FXML
     protected void execBtnVolver(MouseEvent event)
