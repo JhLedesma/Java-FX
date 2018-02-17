@@ -3,6 +3,7 @@ package UI.ListaAspirantes;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXPopup;
+import com.jfoenix.controls.JFXTextField;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
@@ -52,6 +53,28 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
 
     @FXML protected FontAwesomeIconView plus;
 
+    @FXML private JFXButton btnGuardar;
+
+    @FXML private JFXButton btnVolver;
+
+    @FXML private Label fechaEdit;
+
+    @FXML private Label diagnosticoEdit;
+
+    @FXML private JFXTextField nombreEdit;
+
+    @FXML private JFXTextField edadEdit;
+
+    @FXML private JFXTextField estadoCivilEdit;
+
+    @FXML private JFXTextField especialistaEdit;
+
+    @FXML private JFXTextField titulacionEdit;
+
+    @FXML private JFXTextField apellidoEdit;
+
+    @FXML private JFXTextField sexoEdit;
+
     protected JFXPopup popup = new JFXPopup();
 
     protected boolean popupAbierto = false;
@@ -84,6 +107,8 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         {
             popup.hide();
             showMenuEditarDatos();
+            popupAbierto = false;
+            plus.setIcon(FontAwesomeIcon.PLUS);
         }
     }
 
@@ -97,6 +122,17 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         transition.play();
         TranslateTransition transition2 = new TranslateTransition(Duration.millis(1000), anchorMenuEditar);
         transition2.setToX(-1300);
+        transition2.play();
+    }
+
+    @FXML
+    protected void execBtnVolver(MouseEvent event)
+    {
+        TranslateTransition transition = new TranslateTransition(Duration.millis(800), anchorPrincipal);
+        transition.setToX(0);
+        transition.play();
+        TranslateTransition transition2 = new TranslateTransition(Duration.millis(800), anchorMenuEditar);
+        transition2.setToX(0);
         transition2.play();
     }
 

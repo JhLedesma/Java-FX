@@ -70,7 +70,7 @@
                         <Font name="Arial" size="22.0" />
                      </font>
                   </Label>
-                  <Label id="fecha" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                  <Label id="fecha" fx:id="fechaEdit" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="2" GridPane.rowIndex="5">
                      <font>
                         <Font name="Arial" size="18.0" />
                      </font>
@@ -80,7 +80,7 @@
                         <Font name="Arial" size="22.0" />
                      </font>
                   </Label>
-                  <Label id="diagnostico" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                  <Label id="diagnostico" fx:id="diagnosticoEdit" text="Usuario" textFill="#6f6f6f" GridPane.columnIndex="3" GridPane.rowIndex="5">
                      <font>
                         <Font name="Arial" size="18.0" />
                      </font>
@@ -90,23 +90,23 @@
                         <Font name="Arial" size="22.0" />
                      </font>
                   </Label>
-                  <JFXTextField maxWidth="80.0" prefHeight="25.0" prefWidth="50.0" promptText="Editar" GridPane.rowIndex="1" />
-                  <JFXTextField maxWidth="55.0" prefHeight="25.0" prefWidth="90.0" promptText="Editar" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <JFXTextField maxWidth="118.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <JFXTextField maxWidth="118.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <JFXTextField maxWidth="180.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                  <JFXTextField maxWidth="80.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.rowIndex="5" />
-                  <JFXTextField maxWidth="55.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <JFXTextField fx:id="nombreEdit" maxWidth="80.0" prefHeight="25.0" prefWidth="50.0" promptText="Editar" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="edadEdit" maxWidth="55.0" prefHeight="25.0" prefWidth="90.0" promptText="Editar" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="estadoCivilEdit" maxWidth="118.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="especialistaEdit" maxWidth="118.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="titulacionEdit" maxWidth="180.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="apellidoEdit" maxWidth="80.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.rowIndex="5" />
+                  <JFXTextField fx:id="sexoEdit" maxWidth="55.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                </children>
             </GridPane>
             <Pane layoutX="1079.0" layoutY="35.0">
                <children>
-                  <JFXButton id="btnResultado" graphicTextGap="30.0" layoutX="-1.0" prefHeight="46.0" prefWidth="178.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Guardar">
+                  <JFXButton id="btnResultado" fx:id="btnGuardar" graphicTextGap="30.0" layoutX="-1.0" prefHeight="46.0" prefWidth="178.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Guardar">
                      <font>
                         <Font name="Arial" size="20.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton id="btnOpciones" layoutY="78.0" onMouseClicked="#execPopup" prefHeight="46.0" prefWidth="178.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Volver">
+                  <JFXButton id="btnOpciones" fx:id="btnVolver" layoutY="78.0" onMouseClicked="#execBtnVolver" prefHeight="46.0" prefWidth="178.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Volver">
                      <font>
                         <Font name="Arial" size="20.0" />
                      </font>
