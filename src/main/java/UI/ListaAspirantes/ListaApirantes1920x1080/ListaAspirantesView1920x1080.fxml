@@ -19,32 +19,32 @@
          <children>
             <Pane layoutX="57.0" layoutY="39.0">
                <children>
-                  <JFXButton prefHeight="46.0" prefWidth="115.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
+                  <JFXButton onMouseClicked="#execBtnPantallaAnterior" prefHeight="46.0" prefWidth="115.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
                      <font>
                         <Font name="Arial" size="20.0" />
                      </font>
                   </JFXButton>
-                  <FontAwesomeIconView glyphName="ARROW_LEFT" layoutX="40.0" layoutY="36.0" size="40" />
+                  <FontAwesomeIconView glyphName="ARROW_LEFT" layoutX="40.0" layoutY="36.0" onMouseClicked="#execBtnPantallaAnterior" size="40" />
                </children>
             </Pane>
             <Pane layoutX="57.0" layoutY="391.0">
                <children>
-                  <JFXButton prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
+                  <JFXButton onMouseClicked="#execBtnHome" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
                      <font>
                         <Font name="Arial" size="20.0" />
                      </font>
                   </JFXButton>
-                  <MaterialDesignIconView glyphName="HOME" layoutX="35.0" layoutY="39.0" size="45" />
+                  <MaterialDesignIconView glyphName="HOME" layoutX="35.0" layoutY="39.0" onMouseClicked="#execBtnHome" size="45" />
                </children>
             </Pane>
             <Pane layoutX="57.0" layoutY="723.0">
                <children>
-                  <JFXButton prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
+                  <JFXButton onMouseClicked="#execBtn" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
                      <font>
                         <Font name="Arial" size="20.0" />
                      </font>
                   </JFXButton>
-                  <FontAwesomeIconView glyphName="GEAR" layoutX="40.0" layoutY="38.0" size="42" />
+                  <FontAwesomeIconView glyphName="GEAR" layoutX="40.0" layoutY="38.0" onMouseClicked="#execBtn" size="42" />
                </children>
             </Pane>
          </children>

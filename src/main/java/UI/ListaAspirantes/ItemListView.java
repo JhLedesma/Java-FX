@@ -1,5 +1,6 @@
 package UI.ListaAspirantes;
 
+import Model.GestorScenas;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXPopup;
@@ -140,16 +141,7 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
     protected void execBtnGuardar(MouseEvent event)
     {
         this.viewModel.validarEditText();
-        TranslateTransition transition = new TranslateTransition(Duration.millis(800), anchorPrincipal);
-        transition.setToX(0);
-        transition.play();
-        TranslateTransition transition2 = new TranslateTransition(Duration.millis(800), anchorMenuEditar);
-        transition2.setToX(0);
-        transition2.play();
-        //Tomar valor de los editext
-        //Si el valor es distinto de null y distinto de lo que ya existe, guardo variable local y en remplazo variable de viewModel actual
-        //si el valor es null o el mismo ,guardo variable local el que ya existe y nada en variable de viewModel actual
-        //reo un nuevo aspirante y seteo las variables locales
+        execBtnVolver(event);
     }
 
 
@@ -222,7 +214,6 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
 
         return label;
     }
-
 
 
 

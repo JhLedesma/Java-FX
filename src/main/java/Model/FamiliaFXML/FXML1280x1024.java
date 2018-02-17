@@ -38,9 +38,14 @@ public class FXML1280x1024 extends FamilyFXML {
     }
 
     @Override
-    public void showInputNormal() {
-
+    public void showInputNormal()
+    {
         GestorScenas.show(FluentViewLoader.fxmlView(InputNormalView1280x1024.class).load().getView());
+    }
+
+    @Override
+    public void showConfiguraciones()
+    {
 
     }
 

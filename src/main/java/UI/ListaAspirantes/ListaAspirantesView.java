@@ -3,6 +3,7 @@ package UI.ListaAspirantes;
 import BD.Excepciones.NoExistenObjetosException;
 import BD.Repositorios.RepoAspirantes;
 import Model.Aspirante;
+import Model.GestorScenas;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import de.saxsys.mvvmfx.FxmlView;
@@ -15,6 +16,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.MultipleSelectionModel;
+import javafx.scene.input.MouseEvent;
 
 import java.util.Arrays;
 
@@ -35,18 +37,13 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
         listview.itemsProperty().bind(viewModel.itemsProperty());
 
         this.loadListView();
-        this.listenerTextField();
 
+        this.listenerTextField();
         this.escucharNotificaciones();
     }
 
-    private void escucharNotificaciones() {
-        Model.NotificationCenter.getInstance().subscribe("AspiranteEliminado", (s, objects) -> {
-            viewModel.buscarItems();
-            loadListView();
-        });
-    }
 
+    //--------------------ListView----------------------//
 
     private void loadListView()
     {
@@ -55,6 +52,17 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
         listview.setSelectionModel(new NoSelectionModel<ItemListViewModel>());
     }
 
+    protected abstract ViewListCellFactory<ItemListViewModel> crearCell();
+
+
+    //--------------------Filtrado----------------------//
+
+    private void escucharNotificaciones() {
+        Model.NotificationCenter.getInstance().subscribe("AspiranteEliminado", (s, objects) -> {
+            viewModel.buscarItems();
+            loadListView();
+        });
+    }
 
     private void listenerTextField()
     {
@@ -80,6 +88,22 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
 
     }
 
-    protected abstract ViewListCellFactory<ItemListViewModel> crearCell();
+    //-----------------Barra izquierda-------------------//
+
+    @FXML protected void execBtnPantallaAnterior(MouseEvent mouseEvent)
+    {
+        GestorScenas.getFamily().showMenuEspecialista();
+    }
+
+    @FXML protected void execBtnHome(MouseEvent mouseEvent)
+    {
+        GestorScenas.getFamily().showInicio();
+    }
+
+    @FXML protected void execBtn(MouseEvent mouseEvent)
+    {
+        GestorScenas.getFamily().showConfiguraciones();
+    }
+
 
 }

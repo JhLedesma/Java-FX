@@ -21,4 +21,6 @@ public abstract class FamilyFXML
 
     public abstract void showInputNormal();
 
+    public abstract void showConfiguraciones();
+
 }
