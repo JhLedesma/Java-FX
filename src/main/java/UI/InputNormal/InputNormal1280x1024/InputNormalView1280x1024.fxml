@@ -4634,5 +4634,38 @@
             </AnchorPane>
         </content>
       </ScrollPane>
+      <Label layoutX="732.0" layoutY="135.0" text="1">
+         <font>
+            <Font size="66.0" />
+         </font>
+      </Label>
+      <Label layoutX="440.0" layoutY="492.0" text="Presione 1 si la afirmación es verdadera">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="440.0" layoutY="454.0" text="Presiones 0 si la afirmación es falsa">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="440.0" layoutY="530.0" text="Presiones la barra espaciadora si la afirmación no se contesto">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="595.0" layoutY="240.0" prefHeight="25.0" prefWidth="310.0" text="Me gustan las revistas de mecánica" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="440.0" layoutY="599.0" prefHeight="77.0" prefWidth="196.0" style="-fx-background-color: #123456;" text="VERDADERO" textFill="#fcfcfc" />
+      <JFXButton layoutX="886.0" layoutY="599.0" prefHeight="77.0" prefWidth="196.0" style="-fx-background-color: #123456;" text="NO CONTESTA" textAlignment="CENTER" textFill="WHITE" />
+      <JFXButton layoutX="663.0" layoutY="599.0" prefHeight="77.0" prefWidth="196.0" style="-fx-background-color: #123456;" text="FALSO" textFill="WHITE" />
+      <Label layoutX="440.0" layoutY="401.0" text="Ingreso por teclado:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
