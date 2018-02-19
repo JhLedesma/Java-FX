@@ -14,13 +14,13 @@ import javax.swing.text.html.ImageView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class InicioView1280x1024 implements FxmlView<InicioViewModel>, Initializable extends InicioView {
+public class InicioView1280x1024 implements FxmlView<InicioViewModel> {
 
 
-    @Override
+  /*  @Override
     public void initialize(URL location, ResourceBundle resources) {
         configurarEfectos();
-    }
+    }*/
 
 
 

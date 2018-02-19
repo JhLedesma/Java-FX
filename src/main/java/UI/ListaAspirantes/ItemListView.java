@@ -1,24 +1,34 @@
 package UI.ListaAspirantes;
 
+import Model.GestorScenas;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXPopup;
+import com.jfoenix.controls.JFXTextField;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
+import javafx.animation.RotateTransition;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
+import javafx.util.Duration;
 
 
 public abstract class ItemListView implements FxmlView<ItemListViewModel>
 {
     @InjectViewModel protected ItemListViewModel viewModel;
+
+    @FXML protected AnchorPane anchorPrincipal;
+
+    @FXML protected AnchorPane anchorMenuEditar;
 
     @FXML protected Label nombre;
 
@@ -44,6 +54,28 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
 
     @FXML protected FontAwesomeIconView plus;
 
+    @FXML private JFXButton btnGuardar;
+
+    @FXML private JFXButton btnVolver;
+
+    @FXML private Label fechaEdit;
+
+    @FXML private Label diagnosticoEdit;
+
+    @FXML private JFXTextField nombreEdit;
+
+    @FXML private JFXTextField edadEdit;
+
+    @FXML private JFXTextField estadoCivilEdit;
+
+    @FXML private JFXTextField especialistaEdit;
+
+    @FXML private JFXTextField titulacionEdit;
+
+    @FXML private JFXTextField apellidoEdit;
+
+    @FXML private JFXTextField sexoEdit;
+
     protected JFXPopup popup = new JFXPopup();
 
     protected boolean popupAbierto = false;
@@ -60,21 +92,69 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         especialista.textProperty().bind(viewModel.especialistaProperty());
         diagnostico.textProperty().bind(viewModel.diagnosticoProperty());
         titulacion.textProperty().bind(viewModel.titulacionProperty());
+
+        diagnosticoEdit.textProperty().bind(viewModel.diagnosticoEditProperty());
+        fechaEdit.textProperty().bind(viewModel.fechaEditProperty());
+
+        nombreEdit.textProperty().bindBidirectional(viewModel.nombreEditProperty());
+        apellidoEdit.textProperty().bindBidirectional(viewModel.apellidoEditProperty());
+        edadEdit.textProperty().bindBidirectional(viewModel.edadEditProperty());
+        sexoEdit.textProperty().bindBidirectional(viewModel.sexoEditProperty());
+        estadoCivilEdit.textProperty().bindBidirectional(viewModel.estadoCivilEditProperty());
+        especialistaEdit.textProperty().bindBidirectional(viewModel.especialistaEditProperty());
+        titulacionEdit.textProperty().bindBidirectional(viewModel.titulacionEditProperty());
     }
 
 
 
 
     @FXML
-    protected void execEliminarRegistro(MouseEvent mouseEvent)
+    protected void execBotonListView(MouseEvent mouseEvent)
     {
         if(listView.getSelectionModel().getSelectedItem() == listView.getItems().get(3))
         {
             popup.hide();
             viewModel.eliminarAspirante();
+        }else if (listView.getSelectionModel().getSelectedItem() == listView.getItems().get(2))
+        {
+            popup.hide();
+            showMenuEditarDatos();
+            popupAbierto = false;
+            plus.setIcon(FontAwesomeIcon.PLUS);
         }
     }
 
+
+    //----------------------MenuEditarDatos------------------------//
+    @FXML
+    protected void showMenuEditarDatos()
+    {
+        TranslateTransition transition = new TranslateTransition(Duration.millis(1000), anchorPrincipal);
+        transition.setToX(-1300);
+        transition.play();
+        TranslateTransition transition2 = new TranslateTransition(Duration.millis(1000), anchorMenuEditar);
+        transition2.setToX(-1300);
+        transition2.play();
+    }
+
+    @FXML
+    protected void execBtnGuardar(MouseEvent event)
+    {
+        this.viewModel.validarEditText();
+        execBtnVolver(event);
+    }
+
+
+    @FXML
+    protected void execBtnVolver(MouseEvent event)
+    {
+        TranslateTransition transition = new TranslateTransition(Duration.millis(800), anchorPrincipal);
+        transition.setToX(0);
+        transition.play();
+        TranslateTransition transition2 = new TranslateTransition(Duration.millis(800), anchorMenuEditar);
+        transition2.setToX(0);
+        transition2.play();
+    }
 
 
     //----------------------Popup------------------------//
@@ -87,6 +167,7 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
             this.loadDateListView();
             this.showPopup();
             popupAbierto = true;
+            this.rotarIcono();
             plus.setIcon(FontAwesomeIcon.MINUS);
 
         }else{
@@ -94,10 +175,18 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
             popup.hide();
             popupAbierto = false;
             listView.getItems().clear();
+            this.rotarIcono();
             plus.setIcon(FontAwesomeIcon.PLUS);
-
         }
 
+    }
+
+    protected void rotarIcono()
+    {
+        RotateTransition rotateTransition = new RotateTransition(Duration.millis(180), plus);
+        rotateTransition.setByAngle(180);
+        rotateTransition.setCycleCount(1);
+        rotateTransition.play();
     }
 
 
@@ -128,7 +217,6 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
 
 
 
-
     protected void showPopup()
     {
         this.configListView();
@@ -147,7 +235,7 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         listView.setPrefHeight(getAlturaListView());
         listView.setVerticalGap(getVerticalGapListView());
         listView.setPrefWidth(getAnchoListView());
-        listView.setOnMouseClicked(event -> execEliminarRegistro(event));
+        listView.setOnMouseClicked(event -> execBotonListView(event));
     }
 
     private void configPopup() {
