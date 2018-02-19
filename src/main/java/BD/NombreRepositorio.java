@@ -1,7 +1,8 @@
 package BD;
 
 public enum NombreRepositorio {
-    ASPIRANTE("Aspirante");
+    ASPIRANTE("Aspirante"),
+    RESPUESTA("Respuesta");
 
     private String nombre;
 

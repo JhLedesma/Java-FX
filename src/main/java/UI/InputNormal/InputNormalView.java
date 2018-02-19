@@ -1,5 +1,10 @@
 package UI.InputNormal;
 
+import BD.Excepciones.NoExisteObjetoConEsaQueryException;
+import BD.Repositorios.RepoRespuestas;
+import Model.Aspirante;
+import Model.Respuesta;
+import UI.ListaAspirantes.ItemListViewModel;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.fxml.FXML;
@@ -10,7 +15,11 @@ import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public abstract class InputNormalView implements FxmlView<InputNormalViewModel> {
+public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
+{
+    @InjectViewModel protected InputNormalViewModel viewModel;
+
+    @FXML private ScrollPane scrollP;
 
     RadioButton botonClickeado;
 
@@ -21,17 +30,17 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel> 
     }
 
 
-    @FXML
-    private ScrollPane scrollP;
-
-
     public void onRadioButtonClick(MouseEvent event)
     {
         botonClickeado = (RadioButton)event.getSource();
 
         botonClickeado.getParent().getChildrenUnmodifiable().forEach(x -> setEstado((RadioButton) x));
 
-        crearRespuesta(botonClickeado);
+        int numeroDeRespueta = Integer.parseInt(botonClickeado.getParent().getId());
+
+        String textButton = botonClickeado.getText();
+
+        viewModel.crearRespuesta(numeroDeRespueta, textButton);
     }
 
     private void setEstado(RadioButton button)
@@ -40,27 +49,6 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel> 
         {
             button.setSelected(false);
         }
-    }
-
-    private void crearRespuesta(RadioButton botonClickeado)
-    {
-        final String SI = "Si";
-        final String NO = "No";
-        final String NC = "N/C";
-
-        switch (botonClickeado.getText())
-        {
-            case SI:
-                //
-                break;
-            case NO:
-                //
-                break;
-            default:
-                //
-                break;
-        }
-
     }
 
 }

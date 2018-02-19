@@ -1,16 +1,20 @@
 package Model;
 
-public class Respuesta
-{
-    int numeroRespuesta;
-    int valorResultado;
+import BD.TipoDeRepositorio;
 
-    public Respuesta(int numeroRespuesta, int valorResultado) {
+public class Respuesta implements TipoDeRepositorio {
+    int numeroRespuesta;
+    int valorRespuesta;
+
+    public Respuesta(int numeroRespuesta, int valorRespuesta) {
         this.numeroRespuesta = numeroRespuesta;
-        this.valorResultado = valorResultado;
+        this.valorRespuesta = valorRespuesta;
     }
 
     public int getNumeroRespuesta() { return numeroRespuesta; }
 
-    public int getValorResultado() { return valorResultado; }
+    public int getValorRespuesta() { return valorRespuesta; }
+
+    @Override
+    public String getNombre() { return null; }
 }
