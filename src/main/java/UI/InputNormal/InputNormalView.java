@@ -31,15 +31,36 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel> 
 
         botonClickeado.getParent().getChildrenUnmodifiable().forEach(x -> setEstado((RadioButton) x));
 
+        crearRespuesta(botonClickeado);
     }
 
-    private void setEstado(RadioButton button) {
-
-        if(button != botonClickeado){
-
+    private void setEstado(RadioButton button)
+    {
+        if(button != botonClickeado)
+        {
             button.setSelected(false);
+        }
+    }
 
+    private void crearRespuesta(RadioButton botonClickeado)
+    {
+        final String SI = "Si";
+        final String NO = "No";
+        final String NC = "N/C";
+
+        switch (botonClickeado.getText())
+        {
+            case SI:
+                //
+                break;
+            case NO:
+                //
+                break;
+            default:
+                //
+                break;
         }
 
     }
+
 }
