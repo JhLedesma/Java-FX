@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="UI.Inicio.Inicio1360x765.InicioView1360x765"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="600.0" prefWidth="1205.0" style="-fx-background-color: #E6E6E6;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Inicio.Inicio1280x1024.InicioView1280x1024">
+   <children>
+      <Label layoutX="406.0" layoutY="31.0" text="¿QUIÉN ESTA AHÍ?" textAlignment="CENTER">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="187.0" layoutY="165.0" text="Especialista" AnchorPane.leftAnchor="187.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="846.0" layoutY="166.0" text="Aspirante" AnchorPane.rightAnchor="208.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Text layoutX="141.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puede ingresar respuestas de los tests realizados en papel, analizar e imprimir resultados, crear gráficos, entre otras." textAlignment="JUSTIFY" wrappingWidth="281.33331298828125" AnchorPane.leftAnchor="141.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="141.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esta es la opción para especialistas." textAlignment="JUSTIFY" wrappingWidth="204.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="imagenEspecialista" fitHeight="222.0" fitWidth="168.0" layoutX="180.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../hero-psicologo.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="imagenAspirante" fitHeight="163.0" fitWidth="143.0" layoutX="865.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="211.59738159179688">
+         <image>
+            <Image url="@../Logo-Abogado-Online-01.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Text layoutX="765.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esta es la opción para los aspirantes que deseen hacer el test digitalmente" textAlignment="JUSTIFY" wrappingWidth="278.6666259765625" AnchorPane.rightAnchor="141.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="776.6663818359375" layoutY="505.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Es una moderna alternativa a realizar los test en papel como se hace habitualmente." textAlignment="JUSTIFY" wrappingWidth="277.33331298828125" AnchorPane.rightAnchor="141.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Line endX="275.0" layoutX="515.0" layoutY="347.0" rotate="90.0" startX="-100.0" />
+   </children>
 </AnchorPane>

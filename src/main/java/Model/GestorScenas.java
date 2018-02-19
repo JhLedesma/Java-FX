@@ -1,6 +1,7 @@
 package Model;
 
 import Model.FamiliaFXML.FXML1280x1024;
+import Model.FamiliaFXML.FXML1360x765;
 import Model.FamiliaFXML.FXML1920x1080;
 import Model.FamiliaFXML.FamilyFXML;
 import de.saxsys.mvvmfx.ViewTuple;
@@ -51,7 +52,18 @@ public class GestorScenas
         }
         else
         {
-            familyFXML = new FXML1280x1024(750, 1125, 450, 600, 750, 1125);
+            if (width == 1280.0 && height == 1024.0)
+            {
+                familyFXML = new FXML1280x1024(750, 1125, 450, 600, 750, 1125);
+            }
+
+            else
+                {
+
+                familyFXML = new FXML1360x765(600,1250,450,600,600,1250);
+
+            }
+
         }
     }
 

@@ -12,7 +12,7 @@ public abstract class InicioView {
 
     @FXML private javafx.scene.image.ImageView imagenAspirante;
 
-    private void configurarEfectos() {
+    public void configurarEfectos() {
 
         imagenEspecialista.setOnMouseEntered(evt -> {
 
