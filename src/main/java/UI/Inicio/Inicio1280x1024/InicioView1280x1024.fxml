@@ -38,7 +38,7 @@
       </Text>
       <ImageView fx:id="imagenEspecialista" fitHeight="269.0" fitWidth="168.0" layoutX="145.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@hero-psicologo.png" />
+            <Image url="@../hero-psicologo.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -46,7 +46,7 @@
       </ImageView>
       <ImageView fx:id="imagenAspirante" fitHeight="213.0" fitWidth="258.0" layoutX="835.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="145.0">
          <image>
-            <Image url="@Logo-Abogado-Online-01.png" />
+            <Image url="@../Logo-Abogado-Online-01.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
