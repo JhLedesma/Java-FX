@@ -1,7 +1,7 @@
 package UI.InputNormal;
 
-import BD.Excepciones.NoExisteObjetoConEsaQueryException;
-import BD.Repositorios.RepoRespuestas;
+import BD.BufferRespuestas;
+import BD.Excepciones.NoExisteObjetoConEseNombreException;
 import Model.Respuesta;
 import de.saxsys.mvvmfx.ViewModel;
 
@@ -24,9 +24,9 @@ public class InputNormalViewModel implements ViewModel
     private boolean existeRespuesta(int numeroRespuesta)
     {
         try{
-            RepoRespuestas.getInstance().buscarObjetoPorQuery("Aca buscaria por numero de respuesta" + Integer.toString(numeroRespuesta));
+            BufferRespuestas.getInstance().getRespuesta(numeroRespuesta);
             return true;
-        }catch (NoExisteObjetoConEsaQueryException e){
+        }catch (NoExisteObjetoConEseNombreException e){
             return false;
         }
     }
@@ -49,13 +49,19 @@ public class InputNormalViewModel implements ViewModel
                 break;
         }
 
-        RepoRespuestas.getInstance().agregarObjeto(respuesta);
+        BufferRespuestas.getInstance().agregar(respuesta);
     }
 
 
     private void remplazarRespuesta(int numeroRespuesta, String textButton)
     {
-        RepoRespuestas.getInstance().deteleByQuery("Aca elimino por numero de respuesta" + Integer.toString(numeroRespuesta));
+        BufferRespuestas.getInstance().eliminar(numeroRespuesta);
         instanciarRespuesta(numeroRespuesta, textButton);
+    }
+
+
+    public void guardar()
+    {
+        BufferRespuestas.getInstance().guardarRespuestas();
     }
 }

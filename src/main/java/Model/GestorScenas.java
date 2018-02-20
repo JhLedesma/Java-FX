@@ -4,6 +4,7 @@ import Model.FamiliaFXML.FXML1280x1024;
 import Model.FamiliaFXML.FXML1360x765;
 import Model.FamiliaFXML.FXML1920x1080;
 import Model.FamiliaFXML.FamilyFXML;
+import UI.InputNormal.InputNormalView;
 import de.saxsys.mvvmfx.ViewTuple;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
