@@ -16,6 +16,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.MultipleSelectionModel;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 
 import java.util.Arrays;
@@ -73,12 +74,6 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
 
                     viewModel.buscarItems();
                 }
-                else {
-
-                    viewModel.buscarItems();
-                    viewModel.filtrar();
-                    this.loadListView();
-                }
             });
         }
         catch (NoExistenObjetosException e)
@@ -86,6 +81,25 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
            //No hago nada a proposito, aca quiero que la lista quede vacia
         }
 
+    }
+
+    @FXML
+    protected void filtrarAspirantesPorEnter(javafx.scene.input.KeyEvent keyEvent)
+    {
+        if(keyEvent.getCode() == KeyCode.ENTER) {
+            filtrarAspirante();
+        }
+    }
+
+    @FXML
+    protected void filtrarAspirantesPorClic(MouseEvent mouseEvent)
+    {
+        filtrarAspirante();
+    }
+
+    private void filtrarAspirante() {
+        viewModel.filtrar();
+        this.loadListView();
     }
 
     //-----------------Barra izquierda-------------------//

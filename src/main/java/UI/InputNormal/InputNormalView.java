@@ -41,7 +41,7 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
     {
         scrollP.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollP.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
-        
+
     }
 
 

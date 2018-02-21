@@ -5,6 +5,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -90,13 +91,34 @@
                         <Font name="Arial" size="22.0" />
                      </font>
                   </Label>
-                  <JFXTextField fx:id="nombreEdit" maxWidth="80.0" prefHeight="25.0" prefWidth="50.0" promptText="Editar" GridPane.rowIndex="1" />
-                  <JFXTextField fx:id="edadEdit" maxWidth="55.0" prefHeight="25.0" prefWidth="90.0" promptText="Editar" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <JFXTextField fx:id="estadoCivilEdit" maxWidth="118.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <JFXTextField fx:id="especialistaEdit" maxWidth="118.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <JFXTextField fx:id="titulacionEdit" maxWidth="180.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                  <JFXTextField fx:id="apellidoEdit" maxWidth="80.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.rowIndex="5" />
-                  <JFXTextField fx:id="sexoEdit" maxWidth="55.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <JFXTextField fx:id="nombreEdit" maxWidth="80.0" prefHeight="25.0" prefWidth="50.0" promptText="Editar" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></JFXTextField>
+                  <JFXTextField fx:id="edadEdit" maxWidth="55.0" prefHeight="25.0" prefWidth="90.0" promptText="Editar" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></JFXTextField>
+                  <JFXTextField fx:id="estadoCivilEdit" maxWidth="118.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></JFXTextField>
+                  <JFXTextField fx:id="especialistaEdit" maxWidth="118.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></JFXTextField>
+                  <JFXTextField fx:id="titulacionEdit" maxWidth="180.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></JFXTextField>
+                  <JFXTextField fx:id="apellidoEdit" maxWidth="80.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.rowIndex="5">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></JFXTextField>
+                  <JFXTextField fx:id="sexoEdit" maxWidth="55.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></JFXTextField>
                </children>
             </GridPane>
             <Pane layoutX="1079.0" layoutY="35.0">
@@ -105,11 +127,17 @@
                      <font>
                         <Font name="Arial" size="20.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                   <JFXButton id="btnOpciones" fx:id="btnVolver" layoutY="78.0" onMouseClicked="#execBtnVolver" prefHeight="46.0" prefWidth="178.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Volver">
                      <font>
                         <Font name="Arial" size="20.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                   <FontAwesomeIconView glyphName="CHECK" layoutX="21.0" layoutY="30.0" size="22" wrappingWidth="14.428571701049805" />
                   <FontAwesomeIconView glyphName="TIMES" layoutX="21.0" layoutY="108.0" size="22" wrappingWidth="14.428571701049805" />
@@ -128,11 +156,17 @@
                      <font>
                         <Font name="Arial" size="20.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                   <JFXButton id="btnOpciones" fx:id="opcion" layoutY="78.0" onMouseClicked="#execPopup" prefHeight="46.0" prefWidth="178.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Opciones">
                      <font>
                         <Font name="Arial" size="20.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                   <FontAwesomeIconView fx:id="plus" glyphName="PLUS" layoutX="21.0" layoutY="108.0" size="22" wrappingWidth="14.428571701049805" />
                </children>
