@@ -56,14 +56,17 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
     protected abstract ViewListCellFactory<ItemListViewModel> crearCell();
 
 
-    //--------------------Filtrado----------------------//
+    //--------------------Eliminacion----------------------//
 
     private void escucharNotificaciones() {
         Model.NotificationCenter.getInstance().subscribe("AspiranteEliminado", (s, objects) -> {
             viewModel.buscarItems();
             loadListView();
+            //Poner Toast y Memento
         });
     }
+
+    //--------------------Filtrado----------------------//
 
     private void listenerTextField()
     {

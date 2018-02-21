@@ -114,7 +114,7 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         if(listView.getSelectionModel().getSelectedItem() == listView.getItems().get(3))
         {
             popup.hide();
-            viewModel.eliminarAspirante();
+            eliminarAspirante();
         }else if (listView.getSelectionModel().getSelectedItem() == listView.getItems().get(2))
         {
             popup.hide();
@@ -122,6 +122,15 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
             popupAbierto = false;
             plus.setIcon(FontAwesomeIcon.PLUS);
         }
+    }
+
+    //----------------------MenuEditarDatos------------------------//
+
+    private void eliminarAspirante() {
+        TranslateTransition transition = new TranslateTransition(Duration.millis(300), anchorPrincipal);
+        transition.setToX(1300);
+        transition.play();
+        transition.setOnFinished(event -> viewModel.eliminarAspirante());
     }
 
 
