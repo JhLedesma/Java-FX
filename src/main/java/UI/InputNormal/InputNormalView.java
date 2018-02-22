@@ -13,10 +13,13 @@ import com.jfoenix.controls.JFXDialogLayout;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -33,57 +36,30 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
 
     RadioButton botonClickeado;
 
-    @FXML
-    private StackPane stackPane;
-
+    @FXML StackPane stackPane;
+    @FXML AnchorPane dialog;
 
     public void initialize()
     {
         scrollP.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollP.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
 
-    }
-
-
-    private void mostrarDialog()
-    {
-        JFXDialog dialog = new JFXDialog(stackPane, crearDialogLayout(), JFXDialog.DialogTransition.CENTER);
-        dialog.show();
-    }
-
-    private JFXDialogLayout crearDialogLayout()
-    {
-        JFXDialogLayout content = new JFXDialogLayout();
-        content.setHeading(new Text("A"));
-        content.setBody(new Text("¿Desea que sus respuestas se guarden para la proxima vez continuar con el test?"));
-        content.setActions(crearBotonSi(), crearBotonNo());
-
-        return content;
-    }
-
-    private JFXButton crearBotonSi()
-    {
-        JFXButton button = new JFXButton("Si");
-        button.setOnMouseClicked(event -> {
-            //Guardar
-            Platform.exit();
-            System.exit(0);
+        GestorScenas.getStageApp().setOnCloseRequest(event -> {
+            stackPane.setVisible(true);
+            dialog.setVisible(true);
+            event.consume();
         });
-
-        return button;
     }
 
-    private JFXButton crearBotonNo()
+    @FXML public void execBtnSi(MouseEvent mouseEvent)
     {
-        JFXButton button = new JFXButton("No");
-        button.setOnMouseClicked(event -> {
-            Platform.exit();
-            System.exit(0);
-        });
 
-        return button;
     }
 
+    @FXML public void execBtnNo(MouseEvent mouseEvent)
+    {
+
+    }
 
 
     public void onRadioButtonClick(MouseEvent event)
