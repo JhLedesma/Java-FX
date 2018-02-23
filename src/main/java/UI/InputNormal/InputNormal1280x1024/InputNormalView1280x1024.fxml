@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
@@ -50,7 +51,7 @@
                   </Label>
                   <Pane layoutX="20.0" layoutY="95.0" prefWidth="181.0">
                      <children>
-                        <Pane id="2" layoutX="21.0" prefHeight="20.0" prefWidth="220.0">
+                        <Pane id="1" layoutX="21.0" prefHeight="20.0" prefWidth="220.0">
                            <children>
                               <RadioButton layoutX="9.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="Si" />
                               <RadioButton layoutX="59.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="No" />
@@ -4670,10 +4671,10 @@
          </font>
       </Label>
       <StackPane fx:id="stackPane" opacity="0.5" prefHeight="737.0" prefWidth="1140.0" style="-fx-background-color: #707070;" visible="false" />
-      <AnchorPane fx:id="dialog" layoutX="222.0" layoutY="301.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="148.0" prefWidth="697.0" style="-fx-background-color: #CCCCCC;" visible="false">
+      <AnchorPane id="dialog" fx:id="dialog" layoutX="222.0" layoutY="301.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="148.0" prefWidth="697.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15;" visible="false">
          <children>
             <Text layoutX="62.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Desea que sus respuestas se guarden, para la proxima vez continuar con el test desde su ultima respuesta?&quot;" />
-            <JFXButton fx:id="btnSi" layoutX="256.0" layoutY="107.0" onMouseClicked="#execBtnSi" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #FFFFFF;" text="Si" />
+            <JFXButton fx:id="btnSi" layoutX="256.0" layoutY="107.0" onMouseClicked="#execBtnSi" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: ; -fx-border-color: #000000;" text="Si" />
             <JFXButton fx:id="btnNo" layoutX="377.0" layoutY="107.0" onMouseClicked="#execBtnNo" prefHeight="25.0" prefWidth="59.0" style="-fx-background-color: #FFFFFF;" text="No" />
             <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Advertencia">
                <font>
@@ -4681,6 +4682,9 @@
                </font>
             </Text>
          </children>
+         <effect>
+            <DropShadow />
+         </effect>
       </AnchorPane>
    </children>
 </AnchorPane>

@@ -1,6 +1,7 @@
 package UI;
 
 import Model.GestorScenas;
+import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXTogglePane;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -29,6 +30,7 @@ public class Main extends Application
         GestorScenas.setStageApp(primaryStage);
 
         GestorScenas.getFamily().showInputNormal();
+
     }
 
 }

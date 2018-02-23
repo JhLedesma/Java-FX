@@ -71,7 +71,10 @@ public class BufferRespuestas
 
     public void guardarRespuestas()
     {
-        RepoRespuestas.getInstance().agregarListaDeObjetos(respuestas);
+        if(respuestas != null)
+        {
+            RepoRespuestas.getInstance().agregarListaDeObjetos(respuestas);
+        }
     }
 
     public void recuperarRespuestas()

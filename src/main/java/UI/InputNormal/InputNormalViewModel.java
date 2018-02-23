@@ -26,7 +26,7 @@ public class InputNormalViewModel implements ViewModel
         try{
             BufferRespuestas.getInstance().getRespuesta(numeroRespuesta);
             return true;
-        }catch (NoExisteObjetoConEseNombreException e){
+        }catch (Exception e){
             return false;
         }
     }

@@ -33,11 +33,9 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
     @InjectViewModel protected InputNormalViewModel viewModel;
 
     @FXML private ScrollPane scrollP;
-
-    RadioButton botonClickeado;
-
     @FXML StackPane stackPane;
     @FXML AnchorPane dialog;
+    RadioButton botonClickeado;
 
     public void initialize()
     {
@@ -45,24 +43,37 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
         scrollP.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
 
         GestorScenas.getStageApp().setOnCloseRequest(event -> {
-            stackPane.setVisible(true);
-            dialog.setVisible(true);
+            showDialog();
             event.consume();
         });
     }
 
-    @FXML public void execBtnSi(MouseEvent mouseEvent)
-    {
 
+    //-----------------------Dialog-------------------------//
+
+    protected void showDialog()
+    {
+        stackPane.setVisible(true);
+        dialog.setVisible(true);
     }
 
-    @FXML public void execBtnNo(MouseEvent mouseEvent)
+    @FXML protected void execBtnSi(MouseEvent mouseEvent)
     {
+        guardar();
+        Platform.exit();
+        System.exit(0);
+    }
 
+    @FXML protected void execBtnNo(MouseEvent mouseEvent)
+    {
+        Platform.exit();
+        System.exit(0);
     }
 
 
-    public void onRadioButtonClick(MouseEvent event)
+    //-----------------------RadioButton-------------------------//
+
+    @FXML protected void onRadioButtonClick(MouseEvent event)
     {
         botonClickeado = (RadioButton)event.getSource();
 
