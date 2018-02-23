@@ -59,4 +59,13 @@ public abstract class Repositorio<T extends TipoDeRepositorio> {
     public List<T> createQueryReturnList(Object query) throws ClassNotFoundException {return this.getProveedor().EjecutarQueryReturnList(query);}
 
     public void deteleByQuery (Object query) {this.getProveedor().eliminarConQuery(query);}
+
+    public void eliminarTodos() {
+        List<T> lista = this.buscarListaDeObjetos();
+
+        for (T obj : lista)
+        {
+            this.eliminarObjeto(obj);
+        }
+    }
 }

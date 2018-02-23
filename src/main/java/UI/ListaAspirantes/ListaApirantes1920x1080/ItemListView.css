@@ -1,6 +1,6 @@
 .jfx-list-view .scroll-bar:horizontal .track,
 .jfx-list-view .scroll-bar:vertical .track{
-    -fx-background-color:transparent;
+    /*-fx-background-color:transparent;*/
     -fx-border-color:transparent;
     -fx-background-radius: 0em;
     -fx-border-radius:2em;
@@ -8,14 +8,14 @@
 
 .jfx-list-view .scroll-bar:horizontal .increment-button ,
 .jfx-list-view .scroll-bar:horizontal .decrement-button {
-    -fx-background-color:transparent;
+    /*-fx-background-color:transparent;*/
     -fx-background-radius: 0em;
     -fx-padding:0 0 10 0;
 }
 
 .jfx-list-view .scroll-bar:vertical .increment-button ,
 .jfx-list-view .scroll-bar:vertical .decrement-button {
-    -fx-background-color:transparent;
+    /*-fx-background-color:transparent;*/
     -fx-background-radius: 0em;
     -fx-padding:0 10 0 0;
 }
@@ -40,6 +40,12 @@
 .jfx-list-view{
     -fx-background-insets: 0;
     -jfx-expanded:true;
-    -fx-background-color:transparent;
+    /*-fx-background-color:transparent;*/
     -fx-opacity: 0.0;
+}
+
+.jfx-popup,
+.jfx-popup .jfx-popup-container,
+.jfx-popup .jfx-list-view{
+    -fx-background-color:transparent;
 }

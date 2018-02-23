@@ -3,12 +3,10 @@ package UI.MenuEspecialista;
 import Model.GestorScenas;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.TranslateTransition;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -72,15 +70,6 @@ public abstract class MenuEspecialistaView implements Initializable {
             GestorScenas.getFamily().showInputNormal();
 
         });
-
-        stage.setOnCloseRequest(event -> {
-
-            GestorScenas.getFamily().showInicio();
-            event.consume();
-
-        });
-
-
 
 
     }
