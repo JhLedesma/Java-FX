@@ -3,9 +3,12 @@ package UI.MenuEspecialista;
 import Model.GestorScenas;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.TranslateTransition;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,6 +29,8 @@ public abstract class MenuEspecialistaView implements Initializable {
 
     @FXML private JFXButton alternativa1Button;
 
+    public Stage stage = GestorScenas.getStageApp();
+
 
     public void configurarEfectos() {
 
@@ -33,26 +38,26 @@ public abstract class MenuEspecialistaView implements Initializable {
 
         traslacionAnchorpaneEvaluacion.setNode(anchorpaneEvaluacion);
         traslacionAnchorpaneEvaluacion.setDuration(Duration.millis(1000));
-        traslacionAnchorpaneEvaluacion.setFromX(-460);
-        traslacionAnchorpaneEvaluacion.setToX(0);
+        traslacionAnchorpaneEvaluacion.setFromX(0);
+        traslacionAnchorpaneEvaluacion.setToX(-460);
 
         anchorpaneEvaluacion.setOnMouseEntered(evt -> {
-            traslacionAnchorpaneEvaluacion.setRate(-1);
+            traslacionAnchorpaneEvaluacion.setRate(1);
             traslacionAnchorpaneEvaluacion.play();
         });
 
         anchorpaneEvaluacion.setOnMouseExited(evt -> {
-            traslacionAnchorpaneEvaluacion.setRate(1);
-            traslacionAnchorpaneEvaluacion.play();
-        });
-
-        anchorpaneBotones.setOnMouseEntered(evt -> {
             traslacionAnchorpaneEvaluacion.setRate(-1);
             traslacionAnchorpaneEvaluacion.play();
         });
 
-        anchorpaneBotones.setOnMouseExited(evt -> {
+        anchorpaneBotones.setOnMouseEntered(evt -> {
             traslacionAnchorpaneEvaluacion.setRate(1);
+            traslacionAnchorpaneEvaluacion.play();
+        });
+
+        anchorpaneBotones.setOnMouseExited(evt -> {
+            traslacionAnchorpaneEvaluacion.setRate(-1);
             traslacionAnchorpaneEvaluacion.play();
         });
 
@@ -67,6 +72,16 @@ public abstract class MenuEspecialistaView implements Initializable {
             GestorScenas.getFamily().showInputNormal();
 
         });
+
+        stage.setOnCloseRequest(event -> {
+
+            GestorScenas.getFamily().showInicio();
+            event.consume();
+
+        });
+
+
+
 
     }
 
