@@ -7,15 +7,15 @@ import de.saxsys.mvvmfx.ViewModel;
 
 public class InputNormalViewModel implements ViewModel
 {
-    public void crearRespuesta(int numeroDeRespueta, String textButton)
+    public void crearRespuesta(int numeroRespuesta, String textButton)
     {
-        if(!existeRespuesta(numeroDeRespueta))
+        if(!existeRespuesta(numeroRespuesta))
         {
-            instanciarRespuesta(numeroDeRespueta, textButton);
+            instanciarRespuesta(numeroRespuesta, textButton);
         }
         else
         {
-            remplazarRespuesta(numeroDeRespueta, textButton);
+            remplazarRespuesta(numeroRespuesta, textButton);
         }
     }
 
@@ -23,29 +23,24 @@ public class InputNormalViewModel implements ViewModel
 
     private boolean existeRespuesta(int numeroRespuesta)
     {
-        try{
-            BufferRespuestas.getInstance().getRespuesta(numeroRespuesta);
-            return true;
-        }catch (Exception e){
-            return false;
-        }
+        return BufferRespuestas.getInstance().existeRespuesta(numeroRespuesta);
     }
 
 
-    private void instanciarRespuesta(int numeroDeRespueta, String textButton)
+    private void instanciarRespuesta(int numeroRespuesta, String textButton)
     {
         Respuesta respuesta;
 
         switch (textButton)
         {
             case "Si":
-                respuesta = new Respuesta(numeroDeRespueta, 1);
+                respuesta = new Respuesta(numeroRespuesta, 1);
                 break;
             case "No":
-                respuesta = new Respuesta(numeroDeRespueta, 0);
+                respuesta = new Respuesta(numeroRespuesta, 0);
                 break;
             default:
-                respuesta = new Respuesta(numeroDeRespueta, 0);
+                respuesta = new Respuesta(numeroRespuesta, 0);
                 break;
         }
 

@@ -1,5 +1,7 @@
 package BD.Excepciones;
 
-public class NoExisteObjetoConEsaQueryException extends RuntimeException {
+import java.io.IOException;
+
+public class NoExisteObjetoConEsaQueryException extends IOException {
 
 }

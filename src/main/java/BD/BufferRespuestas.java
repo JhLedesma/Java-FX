@@ -40,34 +40,60 @@ public class BufferRespuestas
 
     public void eliminar(int numeroRespuesta)
     {
-        Respuesta respuesta = respuestas.stream().filter(x->x.getNumeroRespuesta() == numeroRespuesta).collect(Collectors.toList()).get(0);
-        respuestas.remove(respuesta);
+        try
+        {
+            Respuesta respuesta = getRespuesta(numeroRespuesta);
+            respuestas.remove(respuesta);
+        }
+        catch (NoExisteObjetoConEseNombreException e)
+        {
+            //No hago nada, ya que si no existe, da igual si se elimina o no, ademas de que no quiero que se detenga el programa, asi funciona el remove de las listas
+        }
     }
 
     public Respuesta getRespuesta(int numeroRespuesta) throws NoExisteObjetoConEseNombreException
     {
-        Respuesta respuesta = respuestas.stream().filter(x->x.getNumeroRespuesta() == numeroRespuesta).collect(Collectors.toList()).get(0);
-        if(respuesta != null){
+        try
+        {
+            Respuesta respuesta = respuestas.stream().filter(x->x.getNumeroRespuesta() == numeroRespuesta).collect(Collectors.toList()).get(0);
             return respuesta;
-        }else{
+        }
+        catch (Exception e)
+        {
             throw new NoExisteObjetoConEseNombreException();
+        }
+
+    }
+
+    public List<Respuesta> getRespuestas() throws NoExistenObjetosException
+    {
+        if(respuestas != null)
+        {
+            return respuestas;
+        }
+        else
+        {
+            throw new NoExistenObjetosException();
         }
     }
 
-    public List<Respuesta> getRespuestas()
+    public Respuesta getUltimaRespuesta() throws NoExisteObjetoConEseNombreException
     {
-        return respuestas;
+            return getRespuesta(respuestas.size() -1);
     }
 
-    public Respuesta getUltimaRespuesta()
+
+    public int getNumeroDeUltimaRespuesta() throws NoExisteObjetoConEseNombreException
     {
-        return respuestas.get(respuestas.size() -1);
+        return getUltimaRespuesta().getNumeroRespuesta();
     }
 
-    public int getNumeroDeUltimaRespuesta()
+
+    public boolean existeRespuesta(int numeroRespuesta)
     {
-        return respuestas.get(respuestas.size() -1).getNumeroRespuesta();
+      return respuestas.stream().anyMatch(x->x.getNumeroRespuesta() == numeroRespuesta);
     }
+
 
     public void guardarRespuestas()
     {
@@ -79,12 +105,20 @@ public class BufferRespuestas
 
     public void recuperarRespuestas()
     {
-        setRespuestas(RepoRespuestas.getInstance().buscarListaDeObjetos());
-        RepoRespuestas.getInstance().eliminarTodos();
+        try
+        {
+            setRespuestas(RepoRespuestas.getInstance().buscarListaDeObjetos());
+            RepoRespuestas.getInstance().eliminarTodos();
+        }
+        catch (NoExistenObjetosException e)
+        {
+            //No hace nada, ya que si no hay nada en el repo es porque no hay nada que recuperar
+        }
+
     }
 
 
-    public static void setRespuestas(List<Respuesta> respuestas) {
-        BufferRespuestas.respuestas = respuestas;
+    public static void setRespuestas(List<Respuesta> respuestas_) {
+        respuestas = respuestas_;
     }
 }

@@ -1,5 +1,7 @@
 package BD;
 
+import BD.Excepciones.NoExistenObjetosException;
+
 import java.util.List;
 
 public interface Proveedor<T extends TipoDeRepositorio>{
@@ -19,7 +21,7 @@ public interface Proveedor<T extends TipoDeRepositorio>{
 
     T ejecutarQuery(Object query);
 
-    List<T> EjecutarQueryReturnList(Object query) throws ClassNotFoundException;
+    List<T> EjecutarQueryReturnList(Object query) throws NoExistenObjetosException;
 
     void eliminarConQuery(Object query);
 }

@@ -1,5 +1,7 @@
 package BD.Excepciones;
 
-public class NoExisteObjetoConEseNombreException extends RuntimeException {
+import java.io.IOException;
+
+public class NoExisteObjetoConEseNombreException extends IOException {
 
 }
