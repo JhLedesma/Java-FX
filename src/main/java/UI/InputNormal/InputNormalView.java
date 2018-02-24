@@ -2,6 +2,7 @@ package UI.InputNormal;
 
 import BD.BufferRespuestas;
 import BD.Excepciones.NoExisteObjetoConEsaQueryException;
+import BD.Excepciones.NoExisteObjetoConEseNombreException;
 import BD.Repositorios.RepoRespuestas;
 import Model.Aspirante;
 import Model.GestorScenas;
@@ -94,12 +95,21 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
         }
     }
 
+    //-----------------------Guardar y Recuperar-------------------------//
+
     private void recuperar()
     {
-        BufferRespuestas.getInstance().recuperarRespuestas();
-        BufferRespuestas.getInstance().getNumeroDeUltimaRespuesta();
-        //Seteo al label de pregunta, el String de la ultima pregunta, para ello uso getNumeroDeUltimaRespuesta(), que me dice en que pregunta se quedo
-        //Seteo todos los radioButton con sus respuestas marcadas, para ello uso las respuestas del buffer
+        try
+        {
+            BufferRespuestas.getInstance().recuperarRespuestas();
+            BufferRespuestas.getInstance().getNumeroDeUltimaRespuesta();
+            //Seteo al label de pregunta, el String de la ultima pregunta, para ello uso getNumeroDeUltimaRespuesta(), que me dice en que pregunta se quedo
+            //Seteo todos los radioButton con sus respuestas marcadas, para ello uso las respuestas del buffer
+        }
+        catch (NoExisteObjetoConEseNombreException e)
+        {
+            //No hace nada, ya que si no hay nada en el buffer es porque no hay nada que recuperar
+        }
     }
 
     private void guardar()

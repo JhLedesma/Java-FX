@@ -3,7 +3,9 @@ package UI;
 import BD.Excepciones.NoExistenObjetosException;
 import BD.Proveedores.ProveedorMock;
 import BD.Repositorios.RepoAspirantes;
+import BD.Repositorios.RepoRespuestas;
 import Model.Aspirante;
+import Model.Respuesta;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,6 +19,8 @@ public class Bootstrap
 
     public static void iniciarObjetos() throws IOException
     {
+        //------------Aspirantes---------------//
+
         RepoAspirantes.getInstance().setProveedor(new ProveedorMock<Aspirante>());
 
         Aspirante aspirante = new Aspirante("Jesus", "Ledesma", "21", "M", "Soltero", "09/04/1996", "Vieytes", "M", "Ingenieria en Sistemas");
@@ -35,8 +39,12 @@ public class Bootstrap
         aspirantes.add(aspirante5);
 
         RepoAspirantes.getInstance().agregarListaDeObjetos(aspirantes);
-
         chequearAspirantes();
+
+        //------------Respuestas---------------//
+
+        RepoRespuestas.getInstance().setProveedor(new ProveedorMock<Respuesta>());
+        chequearRespuestas();
     }
 
     public static void chequearAspirantes()
@@ -48,6 +56,18 @@ public class Bootstrap
         catch (NoExistenObjetosException excepcion)
         {
             iniciarAspirantes();
+        }
+    }
+
+    public static void chequearRespuestas()
+    {
+        try
+        {
+            RepoRespuestas.getInstance().buscarListaDeObjetos();
+        }
+        catch (NoExistenObjetosException excepcion)
+        {
+            //Nada por ahora
         }
     }
 

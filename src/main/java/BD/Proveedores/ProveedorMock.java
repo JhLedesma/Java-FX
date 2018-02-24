@@ -32,12 +32,12 @@ public class ProveedorMock <T extends TipoDeRepositorio> implements Proveedor<T>
     }
 
     @Override
-    public T darObjeto(String unNombre, String unTipo) {
+    public T darObjeto(String unNombre, String unTipo) throws NoExisteObjetoConEseNombreException {
         return this.getLista().stream().filter(o -> o.getNombre().equals(unNombre)).findFirst().orElseThrow(() -> new NoExisteObjetoConEseNombreException());
     }
 
     @Override
-    public List<T> darLista(String unTipo) {
+    public List<T> darLista(String unTipo) throws NoExistenObjetosException {
         if(this.getLista().isEmpty()) throw new NoExistenObjetosException();
         return this.getLista();
     }
@@ -51,7 +51,10 @@ public class ProveedorMock <T extends TipoDeRepositorio> implements Proveedor<T>
     public void agregar(T unObjeto) {
         ArrayList<T> nuevaLista = new ArrayList<T>();
 
-        nuevaLista.addAll(this.getLista());
+        if(getLista().size() != 0)
+        {
+            nuevaLista.addAll(this.getLista());
+        }
 
         nuevaLista.add(unObjeto);
 
@@ -60,9 +63,13 @@ public class ProveedorMock <T extends TipoDeRepositorio> implements Proveedor<T>
 
     @Override
     public void agregarLista(List<T> listaObjetos) {
+
         ArrayList<T> nuevaLista = new ArrayList<T>();
 
-        nuevaLista.addAll(this.getLista());
+        if(getLista().size() != 0)
+        {
+            nuevaLista.addAll(this.getLista());
+        }
 
         nuevaLista.addAll(listaObjetos);
 
@@ -70,7 +77,7 @@ public class ProveedorMock <T extends TipoDeRepositorio> implements Proveedor<T>
     }
 
     @Override
-    public void modificar(T unObjeto) {
+    public void modificar(T unObjeto) throws NoExisteObjetoConEseNombreException {
         try
         {
             this.lista.set(this.lista.indexOf(unObjeto), unObjeto);

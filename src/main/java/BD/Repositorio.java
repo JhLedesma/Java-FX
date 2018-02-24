@@ -46,7 +46,7 @@ public abstract class Repositorio<T extends TipoDeRepositorio> {
         this.getProveedor().agregarLista(listaObjetos);
     }
 
-    public void modificarObjeto(T unObjeto) {
+    public void modificarObjeto(T unObjeto) throws NoExisteObjetoConEseNombreException {
         this.getProveedor().modificar(unObjeto);
     }
 
@@ -56,11 +56,11 @@ public abstract class Repositorio<T extends TipoDeRepositorio> {
 
     public T buscarObjetoPorQuery(Object query) throws NoExisteObjetoConEsaQueryException {return this.getProveedor().ejecutarQuery(query);}
 
-    public List<T> createQueryReturnList(Object query) throws ClassNotFoundException {return this.getProveedor().EjecutarQueryReturnList(query);}
+    public List<T> createQueryReturnList(Object query) throws NoExistenObjetosException {return this.getProveedor().EjecutarQueryReturnList(query);}
 
     public void deteleByQuery (Object query) {this.getProveedor().eliminarConQuery(query);}
 
-    public void eliminarTodos() {
+    public void eliminarTodos() throws NoExistenObjetosException {
         List<T> lista = this.buscarListaDeObjetos();
 
         for (T obj : lista)
