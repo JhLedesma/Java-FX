@@ -23,4 +23,6 @@ public abstract class FamilyFXML
 
     public abstract void showConfiguraciones();
 
+    public abstract void showIngresoDatosAspirante();
+
 }

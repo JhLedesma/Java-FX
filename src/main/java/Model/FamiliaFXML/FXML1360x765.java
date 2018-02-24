@@ -51,4 +51,9 @@ public class FXML1360x765 extends FamilyFXML {
     public void showConfiguraciones() {
 
     }
+
+    @Override
+    public void showIngresoDatosAspirante() {
+
+    }
 }
