@@ -67,7 +67,7 @@ public class BufferRespuestas
 
     public List<Respuesta> getRespuestas() throws NoExistenObjetosException
     {
-        if(respuestas != null)
+        if(respuestas.size() != 0)
         {
             return respuestas;
         }
@@ -97,7 +97,7 @@ public class BufferRespuestas
 
     public void guardarRespuestas()
     {
-        if(respuestas != null)
+        if(respuestas.size() != 0)
         {
             RepoRespuestas.getInstance().agregarListaDeObjetos(respuestas);
         }

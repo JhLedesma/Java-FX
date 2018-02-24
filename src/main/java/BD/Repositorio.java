@@ -46,7 +46,7 @@ public abstract class Repositorio<T extends TipoDeRepositorio> {
         this.getProveedor().agregarLista(listaObjetos);
     }
 
-    public void modificarObjeto(T unObjeto) {
+    public void modificarObjeto(T unObjeto) throws NoExisteObjetoConEseNombreException {
         this.getProveedor().modificar(unObjeto);
     }
 

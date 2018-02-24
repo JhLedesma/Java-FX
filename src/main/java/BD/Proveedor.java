@@ -1,13 +1,14 @@
 package BD;
 
+import BD.Excepciones.NoExisteObjetoConEseNombreException;
 import BD.Excepciones.NoExistenObjetosException;
 
 import java.util.List;
 
 public interface Proveedor<T extends TipoDeRepositorio>{
-    T darObjeto(String unNombre, String unTipo);
+    T darObjeto(String unNombre, String unTipo) throws NoExisteObjetoConEseNombreException;
 
-    List<T> darLista(String unTipo);
+    List<T> darLista(String unTipo) throws NoExistenObjetosException;
 
     List<String> darListaNombres(String unTipo);
 
@@ -15,7 +16,7 @@ public interface Proveedor<T extends TipoDeRepositorio>{
 
     void agregarLista(List<T> listaObjetos);
 
-    void modificar(T unObjeto);
+    void modificar(T unObjeto) throws NoExisteObjetoConEseNombreException;
 
     void eliminar(T unObjeto);
 

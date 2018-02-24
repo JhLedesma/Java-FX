@@ -70,19 +70,19 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
 
     private void listenerTextField()
     {
-        try
-        {
+//        try
+//        {
             filtroTextField.textProperty().addListener((observable, oldValue, newValue) -> {
                 if(newValue == null || newValue.length() == 0) {
 
                     viewModel.buscarItems();
                 }
             });
-        }
-        catch (NoExistenObjetosException e)
-        {
-           //No hago nada a proposito, aca quiero que la lista quede vacia
-        }
+        //}
+//        catch (NoExistenObjetosException e)
+//        {
+//           //No hago nada a proposito, aca quiero que la lista quede vacia
+//        }
 
     }
 
