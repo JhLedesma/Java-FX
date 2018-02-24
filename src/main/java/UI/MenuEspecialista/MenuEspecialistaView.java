@@ -71,11 +71,6 @@ public abstract class MenuEspecialistaView implements Initializable {
 
         });
 
-        stage.setOnCloseRequest(evt -> {
-
-
-        });
-
 
     }
 

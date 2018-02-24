@@ -1,5 +1,6 @@
 package UI.Login;
 
+import Model.GestorScenas;
 import com.jfoenix.controls.JFXPasswordField;
 import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.fxml.FXML;
@@ -20,6 +21,12 @@ public abstract class LoginView {
     public void ingresar(){
 
         viewModel.comprobarContraseña(campoContraseña.getText());
+
+    }
+
+    public void cancelar(){
+
+        GestorScenas.getFamily().showInicio();
 
     }
 
