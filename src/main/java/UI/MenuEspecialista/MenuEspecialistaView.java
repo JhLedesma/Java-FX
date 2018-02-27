@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.prefs.Preferences;
 
 public abstract class MenuEspecialistaView implements Initializable {
 
@@ -67,7 +68,8 @@ public abstract class MenuEspecialistaView implements Initializable {
 
         alternativa1Button.setOnMouseClicked(evt -> {
 
-            GestorScenas.getFamily().showInputNormal();
+            GestorScenas.getPreferenciasDeUsuario().put("ALTERNATIVA","1");
+            GestorScenas.getFamily().showIngresoDatosAspirante();
 
         });
 

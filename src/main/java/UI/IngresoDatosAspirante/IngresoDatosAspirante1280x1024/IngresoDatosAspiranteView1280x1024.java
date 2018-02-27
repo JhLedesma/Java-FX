@@ -17,6 +17,7 @@ import java.awt.*;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.prefs.Preferences;
 
 public class IngresoDatosAspiranteView1280x1024 implements FxmlView<IngresoDatosAspiranteViewModel>, Initializable {
 
@@ -76,11 +77,24 @@ public class IngresoDatosAspiranteView1280x1024 implements FxmlView<IngresoDatos
 
         botonContinuar.setOnMouseClicked(evt -> {
 
-            System.out.println("Aca debería abrir el input seleccionado");
+            String pantallaElegida = GestorScenas.getPreferenciasDeUsuario().get("ALTERNATIVA","");
+
+            if(pantallaElegida.equals("1")){
+
+                GestorScenas.getFamily().showInputNormal();
+
+            }
+            else {
+
+                System.out.println(pantallaElegida);
+
+            }
 
         });
 
     }
 
-
 }
+
+
+

@@ -11,12 +11,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.awt.*;
+import java.util.prefs.Preferences;
 
 public class GestorScenas
 {
     private static FamilyFXML familyFXML;
 
     private static Stage stageApp;
+
+    private static Preferences preferenciasDeUsuario = Preferences.userNodeForPackage(GestorScenas.class);
 
 
 
@@ -104,5 +107,11 @@ public class GestorScenas
         stageApp.setMinWidth(minWidth);
         stageApp.setHeight(height);
         stageApp.setWidth(width);
+    }
+
+    public static Preferences getPreferenciasDeUsuario(){
+
+        return preferenciasDeUsuario;
+
     }
 }
