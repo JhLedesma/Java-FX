@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="750.0" prefWidth="1125.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.IngresoDatosAspirante.IngresoDatosAspirante1280x1024.IngresoDatosAspiranteView1280x1024">
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="700.0" prefWidth="169.0" style="-fx-background-color: #cccccc;">
+         <children>
+            <Pane layoutX="57.0" layoutY="39.0" />
+            <Pane layoutX="57.0" layoutY="391.0" />
+            <Pane layoutX="57.0" layoutY="723.0" />
+            <JFXButton layoutX="27.0" layoutY="352.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <MaterialDesignIconView glyphName="HOME" layoutX="64.0" layoutY="391.0" size="45" text="" />
+            <JFXButton layoutX="29.0" layoutY="654.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <FontAwesomeIconView glyphName="GEAR" layoutX="68.0" layoutY="692.0" size="42" />
+            <JFXButton layoutX="27.0" layoutY="18.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <FontAwesomeIconView glyphName="ARROW_LEFT" layoutX="67.0" layoutY="54.0" size="40" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="235.0" layoutY="113.0" prefHeight="532.0" prefWidth="377.0" style="-fx-background-color: #9ea2a8;">
+         <effect>
+            <DropShadow height="29.9" radius="14.45" width="29.9" />
+         </effect>
+         <children>
+            <Pane layoutX="2.0" layoutY="26.0" prefHeight="460.0" prefWidth="361.0">
+               <children>
+                  <Label layoutX="10.0" layoutY="42.0" text="Nombre :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="102.0" text="Apellido :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="162.0" text="Edad :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="222.0" text="Sexo :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="282.0" text="Estado civil :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="402.0" text="Titulación máxima :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="342.0" text="Especialista :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField layoutX="121.0" layoutY="45.0" prefHeight="25.0" prefWidth="212.0" />
+                  <JFXTextField layoutX="121.0" layoutY="105.0" prefHeight="25.0" prefWidth="212.0" />
+                  <JFXTextField layoutX="121.0" layoutY="165.0" prefHeight="25.0" prefWidth="212.0" />
+                  <JFXTextField layoutX="145.0" layoutY="345.0" prefHeight="25.0" prefWidth="188.0" />
+                  <JFXTextField layoutX="205.0" layoutY="405.0" prefHeight="25.0" prefWidth="128.0" />
+                  <JFXComboBox fx:id="comboBoxSexo" layoutX="121.0" layoutY="218.0" prefHeight="25.0" prefWidth="212.0" />
+                  <JFXComboBox fx:id="comboBoxEstadoCivil" layoutX="145.0" layoutY="285.0" prefHeight="25.0" prefWidth="188.0" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <Label layoutX="588.0" layoutY="25.0" text="Nuevo perfil">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="712.0" layoutY="113.0" prefHeight="444.0" prefWidth="349.0" style="-fx-background-color: #9ea2a8;">
+         <effect>
+            <DropShadow height="25.3" radius="13.3" width="29.9" />
+         </effect>
+         <children>
+            <JFXTextArea layoutX="50.0" layoutY="292.0" prefHeight="107.0" prefWidth="242.0" promptText="Observaciones generales..." style="-fx-background-color: #d4d6d8;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </JFXTextArea>
+            <Circle fx:id="circleImageView" accessibleRole="IMAGE_VIEW" fill="#d4d6d8" layoutX="175.0" layoutY="141.0" onMouseClicked="#cambiarImagen" radius="100.0" stroke="BLACK" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Circle>
+         </children>
+      </AnchorPane>
+      <JFXButton buttonType="RAISED" layoutX="766.0" layoutY="587.0" prefHeight="58.0" prefWidth="242.0" style="-fx-background-color: #9ea2a8;" text="Continuar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>
