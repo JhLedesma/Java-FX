@@ -2,6 +2,7 @@ package UI.InputNormal;
 
 import BD.BufferRespuestas;
 import BD.Excepciones.NoExisteObjetoConEseNombreException;
+import Model.GestorScenas;
 import Model.Respuesta;
 import de.saxsys.mvvmfx.ViewModel;
 
@@ -57,6 +58,13 @@ public class InputNormalViewModel implements ViewModel
 
     public void guardar()
     {
+        GestorScenas.getPreferenciasDeUsuario().put("GUARDADO","1");
         BufferRespuestas.getInstance().guardarRespuestas();
     }
+
+    public void noGuardar()
+    {
+        GestorScenas.getPreferenciasDeUsuario().put("GUARDADO","0");
+    }
+
 }

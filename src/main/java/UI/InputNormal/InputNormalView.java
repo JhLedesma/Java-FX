@@ -88,6 +88,7 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
 
     @FXML protected void execBtnNo(MouseEvent mouseEvent)
     {
+        noGuardar();
         Platform.exit();
         System.exit(0);
     }
@@ -120,6 +121,9 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
 
     private void recuperar() throws NoExisteObjetoConEseNombreException {
 
+            if(GestorScenas.getPreferenciasDeUsuario().get("GUARDADO","1").equals("1"))
+            {
+
             BufferRespuestas.getInstance().recuperarRespuestas();
             int numeroUltimaPregunta = BufferRespuestas.getInstance().getNumeroDeUltimaRespuesta();
             String textUltimaPregunta = RepoPreguntas.getInstance().buscarObjeto(numeroUltimaPregunta).getTextPregunta();
@@ -129,6 +133,9 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
 
             restaurarRadioButtons();
             //Seteo todos los radioButton con sus respuestas marcadas, para ello uso las respuestas del buffer
+
+            }
+
     }
 
     private void recuperarPregunta(int numeroUltimaPregunta, String textUltimaPregunta) {
@@ -190,6 +197,11 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
     private void guardar()
     {
         viewModel.guardar();
+    }
+
+    private void noGuardar()
+    {
+        viewModel.noGuardar();
     }
 
 }
