@@ -64,6 +64,8 @@ public class IngresoDatosAspiranteView1280x1024 implements FxmlView<IngresoDatos
 
     }
 
+
+
     public void configurarEfectos() {
 
         comboBoxEstadoCivil.getItems().add("Soltero/a");
@@ -95,6 +97,3 @@ public class IngresoDatosAspiranteView1280x1024 implements FxmlView<IngresoDatos
     }
 
 }
-
-
-
