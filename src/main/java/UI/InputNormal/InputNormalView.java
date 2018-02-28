@@ -57,8 +57,7 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
 
     RadioButton botonClickeado;
 
-    public void initialize()
-    {
+    public void initialize() throws NoExisteObjetoConEseNombreException {
         scrollP.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollP.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
 
@@ -67,28 +66,9 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
             event.consume();
         });
 
-        recuperar();
-
-
-
-//        for(Node item : anchorPaneDelScroll.getChildren())
-//        {
-//            if(item instanceof Pane)
-//            {
-//                for(Node pane : ((Pane) item).getChildren())
-//                {
-//                    if(pane instanceof Pane)
-//                    {
-//                        System.out.println(pane.getId());
-//                    }
-//                }
-//            }
-//        }
-
+            recuperar();
 
     }
-
-
 
 
     //-----------------------Dialog-------------------------//
@@ -138,10 +118,8 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
 
     //-----------------------Guardar y Recuperar-------------------------//
 
-    private void recuperar()
-    {
-        try
-        {
+    private void recuperar() throws NoExisteObjetoConEseNombreException {
+
             BufferRespuestas.getInstance().recuperarRespuestas();
             int numeroUltimaPregunta = BufferRespuestas.getInstance().getNumeroDeUltimaRespuesta();
             String textUltimaPregunta = RepoPreguntas.getInstance().buscarObjeto(numeroUltimaPregunta).getTextPregunta();
@@ -151,11 +129,6 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
 
             restaurarRadioButtons();
             //Seteo todos los radioButton con sus respuestas marcadas, para ello uso las respuestas del buffer
-        }
-        catch (NoExisteObjetoConEseNombreException e)
-        {
-            //No hace nada, ya que si no hay nada en el buffer es porque no hay nada que recuperar
-        }
     }
 
     private void recuperarPregunta(int numeroUltimaPregunta, String textUltimaPregunta) {
@@ -165,8 +138,6 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
 
     private void restaurarRadioButtons()
     {
-        
-
         try
         {
             for(Node item : anchorPaneDelScroll.getChildren())
@@ -179,17 +150,13 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
                         {
                             Respuesta respuesta = BufferRespuestas.getInstance().getRespuesta(Integer.parseInt(pane.getId()));
 
-                            ObservableList<RadioButton> radioButtons = null;
-
                             for(Node radio : ((Pane) pane).getChildren())
                             {
                                 if(radio instanceof RadioButton)
                                 {
-                                    radioButtons.add((RadioButton) radio);
+                                    recuperarRadioButton((RadioButton) radio, respuesta);
                                 }
                             }
-
-                            recuperarRadioButton(radioButtons, respuesta);
                         }
                     }
                 }
@@ -201,12 +168,24 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
         }
     }
 
-    private void recuperarRadioButton(ObservableList<RadioButton> radioButtons, Respuesta respuesta)
+    private void recuperarRadioButton(RadioButton radioButton, Respuesta respuesta)
     {
-        RadioButton radioButton = radioButtons.stream().filter(x->x.getText() == respuesta.getTextButton()).findFirst().get();
-        radioButton.setSelected(true);
-        setEstado(radioButton);
+        if(radioButton.getText().equals(respuesta.getTextButton()))
+        {
+            radioButton.setSelected(true);
+        }
+        else
+        {
+            radioButton.setSelected(false);
+        }
     }
+
+//    private void recuperarRadioButton(ObservableList<RadioButton> radioButtons, Respuesta respuesta)
+//    {
+//        RadioButton radioButton = radioButtons.stream().filter(x->x.getText().equals(respuesta.getTextButton())).findFirst().get();
+//        radioButton.setSelected(true);
+//        setEstado(radioButton);
+//    }
 
     private void guardar()
     {

@@ -47,6 +47,7 @@ public class Bootstrap
 
         RepoRespuestas.getInstance().setProveedor(new ProveedorMock<Respuesta>());
         RepoRespuestas.getInstance().agregarObjeto(new Respuesta(1, 1, "Si"));
+        RepoRespuestas.getInstance().agregarObjeto(new Respuesta(2, 1, "Si"));
 
         chequearRespuestas();
 
@@ -54,6 +55,7 @@ public class Bootstrap
 
         RepoPreguntas.getInstance().setProveedor(new ProveedorMock<Pregunta>());
         RepoPreguntas.getInstance().agregarObjeto(new Pregunta(1, "jajaSaludos"));
+        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(2, "Saludos"));
 
 
     }
@@ -70,15 +72,14 @@ public class Bootstrap
         }
     }
 
-    public static void chequearRespuestas()
-    {
+    public static void chequearRespuestas() throws NoExistenObjetosException {
         try
         {
             RepoRespuestas.getInstance().buscarListaDeObjetos();
         }
         catch (NoExistenObjetosException excepcion)
         {
-            //Nada por ahora
+            throw new NoExistenObjetosException();
         }
     }
 

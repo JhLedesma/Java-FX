@@ -55,7 +55,7 @@ public class BufferRespuestas
     {
         try
         {
-            Respuesta respuesta = respuestas.stream().filter(x->x.getNumeroRespuesta() == numeroRespuesta).collect(Collectors.toList()).get(0);
+            Respuesta respuesta = respuestas.stream().filter(x->x.getNumeroRespuesta() == numeroRespuesta).findFirst().get();
             return respuesta;
         }
         catch (Exception e)
@@ -79,7 +79,7 @@ public class BufferRespuestas
 
     public Respuesta getUltimaRespuesta() throws NoExisteObjetoConEseNombreException
     {
-            return getRespuesta(respuestas.size() -1);
+            return getRespuesta(respuestas.size());
     }
 
 
@@ -108,7 +108,7 @@ public class BufferRespuestas
         try
         {
             setRespuestas(RepoRespuestas.getInstance().buscarListaDeObjetos());
-            RepoRespuestas.getInstance().eliminarTodos();
+            //RepoRespuestas.getInstance().eliminarTodos();
         }
         catch (NoExistenObjetosException e)
         {
