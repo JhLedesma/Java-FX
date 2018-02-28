@@ -6,23 +6,23 @@ import BD.Excepciones.NoExistenObjetosException;
 import java.util.List;
 
 public interface Proveedor<T extends TipoDeRepositorio>{
-    T darObjeto(String unNombre, String unTipo) throws NoExisteObjetoConEseNombreException;
+    public T darObjeto(String unNombre, String unTipo) throws NoExisteObjetoConEseNombreException;
 
-    List<T> darLista(String unTipo) throws NoExistenObjetosException;
+    public List<T> darLista(String unTipo) throws NoExistenObjetosException;
 
-    List<String> darListaNombres(String unTipo);
+    public List<String> darListaNombres(String unTipo);
 
-    void agregar(T unObjeto);
+    public void agregar(T unObjeto);
 
-    void agregarLista(List<T> listaObjetos);
+    public void agregarLista(List<T> listaObjetos);
 
-    void modificar(T unObjeto) throws NoExisteObjetoConEseNombreException;
+    public void modificar(T unObjeto) throws NoExisteObjetoConEseNombreException;
 
-    void eliminar(T unObjeto);
+    public void eliminar(T unObjeto);
 
-    T ejecutarQuery(Object query);
+    public T ejecutarQuery(Object query);
 
-    List<T> EjecutarQueryReturnList(Object query) throws NoExistenObjetosException;
+    public List<T> EjecutarQueryReturnList(Object query) throws NoExistenObjetosException;
 
-    void eliminarConQuery(Object query);
+    public void eliminarConQuery(Object query);
 }

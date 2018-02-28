@@ -3,8 +3,10 @@ package UI;
 import BD.Excepciones.NoExistenObjetosException;
 import BD.Proveedores.ProveedorMock;
 import BD.Repositorios.RepoAspirantes;
+import BD.Repositorios.RepoPreguntas;
 import BD.Repositorios.RepoRespuestas;
 import Model.Aspirante;
+import Model.Pregunta;
 import Model.Respuesta;
 
 import java.io.IOException;
@@ -44,7 +46,16 @@ public class Bootstrap
         //------------Respuestas---------------//
 
         RepoRespuestas.getInstance().setProveedor(new ProveedorMock<Respuesta>());
+        RepoRespuestas.getInstance().agregarObjeto(new Respuesta(1, 1, "Si"));
+
         chequearRespuestas();
+
+        //////
+
+        RepoPreguntas.getInstance().setProveedor(new ProveedorMock<Pregunta>());
+        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(1, "jajaSaludos"));
+
+
     }
 
     public static void chequearAspirantes()

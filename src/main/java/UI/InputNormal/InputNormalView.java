@@ -3,9 +3,11 @@ package UI.InputNormal;
 import BD.BufferRespuestas;
 import BD.Excepciones.NoExisteObjetoConEsaQueryException;
 import BD.Excepciones.NoExisteObjetoConEseNombreException;
+import BD.Repositorios.RepoPreguntas;
 import BD.Repositorios.RepoRespuestas;
 import Model.Aspirante;
 import Model.GestorScenas;
+import Model.Pregunta;
 import Model.Respuesta;
 import UI.ListaAspirantes.ItemListViewModel;
 import com.jfoenix.controls.JFXButton;
@@ -14,28 +16,45 @@ import com.jfoenix.controls.JFXDialogLayout;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.application.Platform;
+import javafx.beans.value.ObservableStringValue;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.PickResult;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
 {
     @InjectViewModel protected InputNormalViewModel viewModel;
 
     @FXML private ScrollPane scrollP;
+    @FXML private AnchorPane anchorPaneDelScroll;
     @FXML StackPane stackPane;
     @FXML AnchorPane dialog;
+    @FXML private Label lblNumeroPregunta;
+    @FXML private Label lblPregunta;
+    @FXML private JFXButton btnVerdadero;
+    @FXML private JFXButton btnFalso;
+    @FXML private JFXButton btnNoContesta;
+    @FXML private JFXButton btnPreguntaAnterior;
+    @FXML private JFXButton btnPreguntaSiguiente;
+
     RadioButton botonClickeado;
 
     public void initialize()
@@ -47,7 +66,29 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
             showDialog();
             event.consume();
         });
+
+        recuperar();
+
+
+
+//        for(Node item : anchorPaneDelScroll.getChildren())
+//        {
+//            if(item instanceof Pane)
+//            {
+//                for(Node pane : ((Pane) item).getChildren())
+//                {
+//                    if(pane instanceof Pane)
+//                    {
+//                        System.out.println(pane.getId());
+//                    }
+//                }
+//            }
+//        }
+
+
     }
+
+
 
 
     //-----------------------Dialog-------------------------//
@@ -102,14 +143,69 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
         try
         {
             BufferRespuestas.getInstance().recuperarRespuestas();
-            BufferRespuestas.getInstance().getNumeroDeUltimaRespuesta();
+            int numeroUltimaPregunta = BufferRespuestas.getInstance().getNumeroDeUltimaRespuesta();
+            String textUltimaPregunta = RepoPreguntas.getInstance().buscarObjeto(numeroUltimaPregunta).getTextPregunta();
+
+            recuperarPregunta(numeroUltimaPregunta, textUltimaPregunta);
             //Seteo al label de pregunta, el String de la ultima pregunta, para ello uso getNumeroDeUltimaRespuesta(), que me dice en que pregunta se quedo
+
+            restaurarRadioButtons();
             //Seteo todos los radioButton con sus respuestas marcadas, para ello uso las respuestas del buffer
         }
         catch (NoExisteObjetoConEseNombreException e)
         {
             //No hace nada, ya que si no hay nada en el buffer es porque no hay nada que recuperar
         }
+    }
+
+    private void recuperarPregunta(int numeroUltimaPregunta, String textUltimaPregunta) {
+        lblNumeroPregunta.setText(Integer.toString(numeroUltimaPregunta));
+        lblPregunta.setText(textUltimaPregunta);
+    }
+
+    private void restaurarRadioButtons()
+    {
+        
+
+        try
+        {
+            for(Node item : anchorPaneDelScroll.getChildren())
+            {
+                if(item instanceof Pane)
+                {
+                    for(Node pane : ((Pane) item).getChildren())
+                    {
+                        if(pane instanceof Pane)
+                        {
+                            Respuesta respuesta = BufferRespuestas.getInstance().getRespuesta(Integer.parseInt(pane.getId()));
+
+                            ObservableList<RadioButton> radioButtons = null;
+
+                            for(Node radio : ((Pane) pane).getChildren())
+                            {
+                                if(radio instanceof RadioButton)
+                                {
+                                    radioButtons.add((RadioButton) radio);
+                                }
+                            }
+
+                            recuperarRadioButton(radioButtons, respuesta);
+                        }
+                    }
+                }
+            }
+        }
+        catch (NoExisteObjetoConEseNombreException e)
+        {
+
+        }
+    }
+
+    private void recuperarRadioButton(ObservableList<RadioButton> radioButtons, Respuesta respuesta)
+    {
+        RadioButton radioButton = radioButtons.stream().filter(x->x.getText() == respuesta.getTextButton()).findFirst().get();
+        radioButton.setSelected(true);
+        setEstado(radioButton);
     }
 
     private void guardar()

@@ -34,13 +34,13 @@ public class InputNormalViewModel implements ViewModel
         switch (textButton)
         {
             case "Si":
-                respuesta = new Respuesta(numeroRespuesta, 1);
+                respuesta = new Respuesta(numeroRespuesta, 1, "Si");
                 break;
             case "No":
-                respuesta = new Respuesta(numeroRespuesta, 0);
+                respuesta = new Respuesta(numeroRespuesta, 0, "No");
                 break;
             default:
-                respuesta = new Respuesta(numeroRespuesta, 0);
+                respuesta = new Respuesta(numeroRespuesta, 0, "N/C");
                 break;
         }
 
