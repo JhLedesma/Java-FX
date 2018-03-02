@@ -4,9 +4,14 @@ import Model.GestorScenas;
 import UI.IngresoDatosAspirante.IngresoDatosAspiranteViewModel;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.validation.RequiredFieldValidator;
 import de.saxsys.mvvmfx.FxmlView;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.ImagePattern;
@@ -16,6 +21,8 @@ import javafx.stage.FileChooser;
 import java.awt.*;
 import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 
@@ -31,6 +38,10 @@ public class IngresoDatosAspiranteView1280x1024 implements FxmlView<IngresoDatos
 
     final FileChooser fileChooser = new FileChooser();
 
+    final RequiredFieldValidator validator = new RequiredFieldValidator();
+
+    private List<Integer> listaDeCampos = new ArrayList<>();
+
     @FXML
     Circle circleImageView;
 
@@ -42,6 +53,21 @@ public class IngresoDatosAspiranteView1280x1024 implements FxmlView<IngresoDatos
 
     @FXML
     JFXButton botonContinuar;
+
+    @FXML
+    JFXTextField textFieldNombre;
+
+    @FXML
+    JFXTextField textFieldApellido;
+
+    @FXML
+    JFXTextField textFieldEdad;
+
+    @FXML
+    JFXTextField textFieldEspecialista;
+
+    @FXML
+    JFXTextField textFieldTitulacion;
 
 
     public void cambiarImagen() {
@@ -64,9 +90,7 @@ public class IngresoDatosAspiranteView1280x1024 implements FxmlView<IngresoDatos
 
     }
 
-
-
-    public void configurarEfectos() {
+    private void poblarComboBoxes() {
 
         comboBoxEstadoCivil.getItems().add("Soltero/a");
         comboBoxEstadoCivil.getItems().add("Casado/a");
@@ -77,18 +101,84 @@ public class IngresoDatosAspiranteView1280x1024 implements FxmlView<IngresoDatos
         comboBoxSexo.getItems().add("Femenino");
         comboBoxSexo.getItems().add("Otro");
 
+    }
+
+    private void chequearTextoNulo(String texto){
+
+        if(texto.equals("")){
+
+            listaDeCampos.add(0);
+
+        }
+
+    }
+
+    private void chequearComboBoxNulo(JFXComboBox comboBox){
+
+        if(comboBox.getSelectionModel().isEmpty()){
+
+            listaDeCampos.add(0);
+
+        }
+
+    }
+
+    private void generarAlerta(){
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
+        alert.setTitle("Campos incompletos");
+        alert.setHeaderText("Error en el ingreso de datos");
+        alert.setContentText("Por favor complete todos los campos (foto no obligatoria)");
+
+        alert.showAndWait();
+
+        listaDeCampos = new ArrayList<>();
+
+    }
+
+    private void validarCampos(){
+
+        chequearTextoNulo(textFieldNombre.getText());
+        chequearTextoNulo(textFieldApellido.getText());
+        chequearTextoNulo(textFieldEdad.getText());
+        chequearTextoNulo(textFieldEspecialista.getText());
+        chequearTextoNulo(textFieldTitulacion.getText());
+
+        chequearComboBoxNulo(comboBoxEstadoCivil);
+        chequearComboBoxNulo(comboBoxSexo);
+
+    }
+
+    public void configurarEfectos() {
+
+        poblarComboBoxes();
+
         botonContinuar.setOnMouseClicked(evt -> {
 
-            String pantallaElegida = GestorScenas.getPreferenciasDeUsuario().get("ALTERNATIVA","");
+            validarCampos();
 
-            if(pantallaElegida.equals("1")){
+            if(listaDeCampos.contains(0)){
 
-                GestorScenas.getFamily().showInputNormal();
+                generarAlerta();
 
             }
-            else {
 
-                System.out.println(pantallaElegida);
+            else{
+
+                String pantallaElegida = GestorScenas.getPreferenciasDeUsuario().get("ALTERNATIVA","");
+
+                if(pantallaElegida.equals("1")){
+
+                    GestorScenas.getFamily().showInputNormal();
+
+                }
+
+                else {
+
+                    System.out.println(pantallaElegida);
+
+                }
 
             }
 

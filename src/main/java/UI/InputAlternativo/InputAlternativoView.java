@@ -15,11 +15,11 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
     }
 
     //Hacer un parser para las respuestas
-    //cuando presiona enter, valida que esten las 10 respuestas, la misma funcionalidad esta en el boton pregunta siguiente
-    //Cuando se hace clic en en algunos de los item del ScrolPane, que se cargue la pantalla que le corresponde, para eso hay que recuperar las respuestas del buffer y tranajar con el repo de preguntas
+    //Cuando presiona enter, valida que esten las 10 respuestas, la misma funcionalidad esta en el boton pregunta siguiente
+    //Cuando se hace clic en en algunos de los item del ScrolPane, que se cargue la pantalla que le corresponde
 
-
-    /*Cada item del ScrolPane tiene un id, que representa una posicion en la listaPantallainputAlternativo, cuando se toque en uno de estos items, se carga todo lo necesario para esa pantalla*/
-    //Un objeto PantallainputAlternativo, debe contener String que represente lo que se mostrara en el label, una lista de int para buscar en el buffer respuesta por numero de respuesta
+    //Cada item (Pane) del ScrolPane tiene un ID, con ese ID se cargan las respuestas (String) correspondientes a si pantalla
+    //No se van creando las respuestas, se van guardando los String en la lista de string, las respuestas del 1-10 representan un la posicion 1 de la lista de String
+    //Al momento de crear las respuestas se pone un contador para generar el numero de respuestas
 
 }

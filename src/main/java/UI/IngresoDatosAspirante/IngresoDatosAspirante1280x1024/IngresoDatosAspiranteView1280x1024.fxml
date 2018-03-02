@@ -83,11 +83,11 @@
                         <Font size="21.0" />
                      </font>
                   </Label>
-                  <JFXTextField layoutX="121.0" layoutY="45.0" prefHeight="25.0" prefWidth="212.0" />
-                  <JFXTextField layoutX="121.0" layoutY="105.0" prefHeight="25.0" prefWidth="212.0" />
-                  <JFXTextField layoutX="121.0" layoutY="165.0" prefHeight="25.0" prefWidth="212.0" />
-                  <JFXTextField layoutX="145.0" layoutY="345.0" prefHeight="25.0" prefWidth="188.0" />
-                  <JFXTextField layoutX="205.0" layoutY="405.0" prefHeight="25.0" prefWidth="128.0" />
+                  <JFXTextField fx:id="textFieldNombre" layoutX="121.0" layoutY="45.0" prefHeight="25.0" prefWidth="212.0" />
+                  <JFXTextField fx:id="textFieldApellido" layoutX="121.0" layoutY="105.0" prefHeight="25.0" prefWidth="212.0" />
+                  <JFXTextField fx:id="textFieldEdad" layoutX="121.0" layoutY="165.0" prefHeight="25.0" prefWidth="212.0" />
+                  <JFXTextField fx:id="textFieldEspecialista" layoutX="145.0" layoutY="345.0" prefHeight="25.0" prefWidth="188.0" />
+                  <JFXTextField fx:id="textFieldTitulacion" layoutX="205.0" layoutY="405.0" prefHeight="25.0" prefWidth="128.0" />
                   <JFXComboBox fx:id="comboBoxSexo" layoutX="121.0" layoutY="218.0" prefHeight="25.0" prefWidth="212.0" />
                   <JFXComboBox fx:id="comboBoxEstadoCivil" layoutX="145.0" layoutY="285.0" prefHeight="25.0" prefWidth="188.0" />
                </children>
