@@ -50,7 +50,7 @@ public class GestorScenas
         double width = screenSeize.getWidth();
         double height = screenSeize.getHeight();
 
-        if (width == 1920.0 && height == 1080.0)
+        if (width >= 1920.0 && height >= 1080.0)
         {
             familyFXML = new FXML1920x1080(850, 1545, 450, 600, 840, 1545);
         }

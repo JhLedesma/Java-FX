@@ -51,7 +51,7 @@ public class Bootstrap
 
         chequearRespuestas();
 
-        //////
+        //-------------Preguntas---------------//
 
         RepoPreguntas.getInstance().setProveedor(new ProveedorMock<Pregunta>());
         RepoPreguntas.getInstance().agregarObjeto(new Pregunta(1, "jajaSaludos"));
