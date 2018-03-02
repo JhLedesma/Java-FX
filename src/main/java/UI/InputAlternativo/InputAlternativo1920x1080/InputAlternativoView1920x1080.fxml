@@ -178,7 +178,7 @@
             <Font name="Arial" size="17.0" />
          </font>
       </JFXButton>
-      <CustomTextField alignment="CENTER" layoutX="937.0" layoutY="359.0" prefHeight="41.0" prefWidth="288.0" promptText="Ingrese aqui las respuestas (Ej: 102112)">
+      <CustomTextField fx:id="textFieldRespuestas" alignment="CENTER" layoutX="937.0" layoutY="359.0" prefHeight="41.0" prefWidth="288.0" promptText="Ingrese aqui las respuestas (Ej: 102112)">
          <font>
             <Font size="15.0" />
          </font>
