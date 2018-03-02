@@ -38,8 +38,6 @@ public class IngresoDatosAspiranteView1280x1024 implements FxmlView<IngresoDatos
 
     final FileChooser fileChooser = new FileChooser();
 
-    final RequiredFieldValidator validator = new RequiredFieldValidator();
-
     private List<Integer> listaDeCampos = new ArrayList<>();
 
     @FXML
@@ -150,9 +148,25 @@ public class IngresoDatosAspiranteView1280x1024 implements FxmlView<IngresoDatos
 
     }
 
+    private void configurarCamposNumericos(){
+
+        textFieldEdad.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    textFieldEdad.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+
+    }
+
     public void configurarEfectos() {
 
         poblarComboBoxes();
+
+        configurarCamposNumericos();
 
         botonContinuar.setOnMouseClicked(evt -> {
 
@@ -168,7 +182,7 @@ public class IngresoDatosAspiranteView1280x1024 implements FxmlView<IngresoDatos
 
                 String pantallaElegida = GestorScenas.getPreferenciasDeUsuario().get("ALTERNATIVA","");
 
-                if(pantallaElegida.equals("1")){
+                if(pantallaElegida.equals("1")){ //Deberia cambiar el 1 por el nombre de la pantalla que todavia no tenemos
 
                     GestorScenas.getFamily().showInputNormal();
 
