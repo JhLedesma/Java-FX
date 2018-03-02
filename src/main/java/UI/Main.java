@@ -27,7 +27,7 @@ public class Main extends Application
 
         GestorScenas.setStageApp(primaryStage);
 
-        GestorScenas.getFamily().showInicio();
+        GestorScenas.getFamily().showMenuEspecialista();
 
     }
 
