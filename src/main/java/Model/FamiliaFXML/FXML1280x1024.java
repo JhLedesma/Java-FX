@@ -55,5 +55,10 @@ public class FXML1280x1024 extends FamilyFXML {
         GestorScenas.show(FluentViewLoader.fxmlView(IngresoDatosAspiranteView1280x1024.class).load().getView());
     }
 
+    @Override
+    public void showInputAlternativo() {
+
+    }
+
 
 }

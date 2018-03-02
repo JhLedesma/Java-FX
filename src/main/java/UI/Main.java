@@ -20,7 +20,6 @@ public class Main extends Application
 
         try {
             new Bootstrap().iniciarObjetos();
-            System.out.println(GestorScenas.getPreferenciasDeUsuario().get("GUARDADO",""));
         } catch (IOException e) {
             e.printStackTrace();
         }

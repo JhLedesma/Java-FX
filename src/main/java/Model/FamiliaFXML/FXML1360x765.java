@@ -56,4 +56,9 @@ public class FXML1360x765 extends FamilyFXML {
     public void showIngresoDatosAspirante() {
 
     }
+
+    @Override
+    public void showInputAlternativo() {
+
+    }
 }
