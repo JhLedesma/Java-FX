@@ -113,13 +113,23 @@ public class IngresoDatosAspiranteView1280x1024 implements FxmlView<IngresoDatos
 
     }
 
+    private void chequearComboBoxNulo(JFXComboBox comboBox){
+
+        if(comboBox.getSelectionModel().isEmpty()){
+
+            listaDeCampos.add(0);
+
+        }
+
+    }
+
     private void generarAlerta(){
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
         alert.setTitle("Campos incompletos");
         alert.setHeaderText("Error en el ingreso de datos");
-        alert.setContentText("Por favor complete todos los campos");
+        alert.setContentText("Por favor complete todos los campos (foto no obligatoria)");
 
         alert.showAndWait();
 
@@ -134,6 +144,9 @@ public class IngresoDatosAspiranteView1280x1024 implements FxmlView<IngresoDatos
         chequearTextoNulo(textFieldEdad.getText());
         chequearTextoNulo(textFieldEspecialista.getText());
         chequearTextoNulo(textFieldTitulacion.getText());
+
+        chequearComboBoxNulo(comboBoxEstadoCivil);
+        chequearComboBoxNulo(comboBoxSexo);
 
     }
 
