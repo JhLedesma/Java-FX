@@ -22,7 +22,7 @@ public class InputNormalViewModel implements ViewModel
 
 
 
-    private boolean existeRespuesta(int numeroRespuesta)
+    public boolean existeRespuesta(int numeroRespuesta)
     {
         return BufferRespuestas.getInstance().existeRespuesta(numeroRespuesta);
     }

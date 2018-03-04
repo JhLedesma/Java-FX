@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="750.0" prefWidth="1125.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.InputNormal.InputNormal1280x1024.InputNormalView1280x1024">
+<AnchorPane onKeyPressed="#execKeyPressed" prefHeight="750.0" prefWidth="1125.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.InputNormal.InputNormal1280x1024.InputNormalView1280x1024">
    <children>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="727.0" prefWidth="169.0" style="-fx-background-color: #cccccc;">
          <children>
@@ -52,14 +52,14 @@
                   </Label>
                   <Pane layoutX="20.0" layoutY="95.0" prefWidth="181.0">
                      <children>
-                        <Pane id="1" fx:id="a" layoutX="21.0" prefHeight="20.0" prefWidth="220.0">
+                        <Pane id="1" fx:id="pane1" layoutX="21.0" prefHeight="20.0" prefWidth="220.0">
                            <children>
                               <RadioButton layoutX="9.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="Si" />
                               <RadioButton layoutX="59.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="No" />
                               <RadioButton layoutX="109.0" layoutY="1.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="N/C" />
                            </children>
                         </Pane>
-                        <Pane id="2" layoutX="21.0" layoutY="26.0" prefHeight="20.0" prefWidth="220.0">
+                        <Pane id="2" fx:id="pane2" layoutX="21.0" layoutY="26.0" prefHeight="20.0" prefWidth="220.0">
                            <children>
                               <RadioButton layoutX="9.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="Si" />
                               <RadioButton layoutX="59.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="No" />
@@ -68,14 +68,14 @@
                         </Pane>
                         <Label layoutY="2.0" text="1." />
                         <Label layoutY="26.0" text="2." />
-                        <Pane id="4" layoutX="21.0" layoutY="78.0" prefHeight="20.0" prefWidth="220.0">
+                        <Pane id="4" fx:id="pane4" layoutX="21.0" layoutY="78.0" prefHeight="20.0" prefWidth="220.0">
                            <children>
                               <RadioButton layoutX="9.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="Si" />
                               <RadioButton layoutX="59.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="No" />
                               <RadioButton layoutX="109.0" layoutY="1.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="N/C" />
                            </children>
                         </Pane>
-                        <Pane id="3" layoutX="21.0" layoutY="52.0" prefHeight="20.0" prefWidth="220.0">
+                        <Pane id="3" fx:id="pane3" layoutX="21.0" layoutY="52.0" prefHeight="20.0" prefWidth="220.0">
                            <children>
                               <RadioButton layoutX="9.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="Si" />
                               <RadioButton layoutX="59.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="No" />
@@ -84,7 +84,7 @@
                         </Pane>
                         <Label layoutY="78.0" text="4." />
                         <Label layoutY="52.0" text="3." />
-                        <Pane id="5" layoutX="21.0" layoutY="104.0" prefHeight="20.0" prefWidth="220.0">
+                        <Pane id="5" fx:id="pane5" layoutX="21.0" layoutY="104.0" prefHeight="20.0" prefWidth="220.0">
                            <children>
                               <RadioButton layoutX="9.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="Si" />
                               <RadioButton layoutX="59.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="No" />
@@ -92,7 +92,7 @@
                            </children>
                         </Pane>
                         <Label layoutY="104.0" text="5." />
-                        <Pane id="2" layoutX="21.0" layoutY="130.0" prefHeight="20.0" prefWidth="220.0">
+                        <Pane id="6" layoutX="21.0" layoutY="130.0" prefHeight="20.0" prefWidth="220.0">
                            <children>
                               <RadioButton layoutX="9.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="Si" />
                               <RadioButton layoutX="59.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="No" />
@@ -100,7 +100,7 @@
                            </children>
                         </Pane>
                         <Label layoutY="130.0" text="6." />
-                        <Pane id="2" layoutX="21.0" layoutY="156.0" prefHeight="20.0" prefWidth="220.0">
+                        <Pane id="7" layoutX="21.0" layoutY="156.0" prefHeight="20.0" prefWidth="220.0">
                            <children>
                               <RadioButton layoutX="9.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="Si" />
                               <RadioButton layoutX="59.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="No" />
@@ -4658,7 +4658,7 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="lblPregunta" layoutX="596.0" layoutY="210.0" prefHeight="25.0" prefWidth="310.0" text="Me gustan las revistas de mecánica" textAlignment="CENTER">
+      <Label fx:id="lblPregunta" alignment="CENTER" contentDisplay="CENTER" layoutX="596.0" layoutY="210.0" prefHeight="25.0" prefWidth="310.0" text="Me gustan las revistas de mecánica" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>
@@ -4668,17 +4668,17 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnVerdadero" layoutX="679.0" layoutY="511.0" prefHeight="64.0" prefWidth="142.0" ripplerFill="#ffffff" style="-fx-background-color: #BDBDBD; -fx-background-radius: 50; -fx-region-border: #ffffff;" text="Verdadero">
+      <JFXButton fx:id="btnVerdadero" layoutX="679.0" layoutY="511.0" onMouseClicked="#execBtnVerdadero" prefHeight="64.0" prefWidth="142.0" ripplerFill="#ffffff" style="-fx-background-color: #BDBDBD; -fx-background-radius: 50; -fx-region-border: #ffffff;" text="Verdadero">
          <font>
             <Font name="Arial" size="17.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnFalso" layoutX="475.0" layoutY="511.0" prefHeight="64.0" prefWidth="142.0" ripplerFill="#ffffff" style="-fx-background-color: #BDBDBD; -fx-background-radius: 50; -fx-region-border: #ffffff;" text="Falso">
+      <JFXButton fx:id="btnFalso" layoutX="475.0" layoutY="511.0" onMouseClicked="#execBtnFalso" prefHeight="64.0" prefWidth="142.0" ripplerFill="#ffffff" style="-fx-background-color: #BDBDBD; -fx-background-radius: 50; -fx-region-border: #ffffff;" text="Falso">
          <font>
             <Font name="Arial" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnNoContesta" layoutX="885.0" layoutY="511.0" prefHeight="64.0" prefWidth="142.0" ripplerFill="#ffffff" style="-fx-background-color: #BDBDBD; -fx-background-radius: 50; -fx-region-border: #ffffff;" text="No Contesta">
+      <JFXButton fx:id="btnNoContesta" layoutX="885.0" layoutY="511.0" onMouseClicked="#execBtnNoContesta" prefHeight="64.0" prefWidth="142.0" ripplerFill="#ffffff" style="-fx-background-color: #BDBDBD; -fx-background-radius: 50; -fx-region-border: #ffffff;" text="No Contesta">
          <font>
             <Font name="Arial" size="18.0" />
          </font>
@@ -4699,12 +4699,12 @@
             <DropShadow />
          </effect>
       </AnchorPane>
-      <JFXButton fx:id="btnPreguntaAnterior" layoutX="446.0" layoutY="652.0" prefHeight="25.0" prefWidth="169.0" ripplerFill="#ffffff" style="-fx-background-color: #BDBDBD; -fx-background-radius: 50; -fx-region-border: #ffffff;" text="Pregunta Anterior">
+      <JFXButton fx:id="btnPreguntaAnterior" layoutX="446.0" layoutY="652.0" onMouseClicked="#execBtnPreguntaAnterior" prefHeight="25.0" prefWidth="169.0" ripplerFill="#ffffff" style="-fx-background-color: #BDBDBD; -fx-background-radius: 50; -fx-region-border: #ffffff;" text="Pregunta Anterior">
          <font>
             <Font name="Arial" size="17.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnPreguntaSiguiente" layoutX="906.0" layoutY="652.0" prefHeight="25.0" prefWidth="169.0" ripplerFill="#ffffff" style="-fx-background-color: #BDBDBD; -fx-background-radius: 50; -fx-region-border: #ffffff;" text="Pregunta Siguiente">
+      <JFXButton fx:id="btnPreguntaSiguiente" layoutX="906.0" layoutY="652.0" onMouseClicked="#execBtnsiguientePregunta" prefHeight="25.0" prefWidth="169.0" ripplerFill="#ffffff" style="-fx-background-color: #BDBDBD; -fx-background-radius: 50; -fx-region-border: #ffffff;" text="Pregunta Siguiente">
          <font>
             <Font name="Arial" size="17.0" />
          </font>

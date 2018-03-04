@@ -54,10 +54,7 @@ public class Bootstrap
         //-------------Preguntas---------------//
 
         RepoPreguntas.getInstance().setProveedor(new ProveedorMock<Pregunta>());
-        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(1, "jajaSaludos"));
-        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(2, "Saludos"));
-
-
+        iniciarPreguntas();
     }
 
     public static void chequearAspirantes()
@@ -90,6 +87,19 @@ public class Bootstrap
                         new Aspirante("Ejemplo", "Ejemplo", "21", "M", "Soltero", "09/04/1996", "EspecialistaEjemplo", "M", "Ingenieria en Sistemas")
                 )
         );
+    }
+
+    public static void iniciarPreguntas()
+    {
+        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(1, "Me gustan las revistas de mecánica"));
+        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(2, "Saludos"));
+        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(3, "Saludos"));
+        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(4, "Saludos"));
+        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(5, "Saludos"));
+        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(6, "Saludos"));
+        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(7, "Saludos"));
+        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(8, "Saludos"));
+
     }
 
     public static void iniciarRepositoriosDePrueba()
