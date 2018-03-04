@@ -3,6 +3,7 @@ package Model.FamiliaFXML;
 import Model.GestorScenas;
 import UI.IngresoDatosAspirante.IngresoDatosAspirante1280x1024.IngresoDatosAspiranteView1280x1024;
 import UI.Inicio.Inicio1280x1024.InicioView1280x1024;
+import UI.InputAlternativo.InputAlternativo1920x1080.InputAlternativoView1920x1080;
 import UI.InputNormal.InputNormal1280x1024.InputNormalView1280x1024;
 import UI.Login.Login1280x1024.LoginView1280x1024;
 import UI.MenuEspecialista.MenuEspecialista1280x1024.MenuEspecialistaView1280x1024;

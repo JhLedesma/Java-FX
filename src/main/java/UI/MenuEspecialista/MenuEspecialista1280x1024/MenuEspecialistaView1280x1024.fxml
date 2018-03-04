@@ -77,6 +77,11 @@
                   <Font size="14.0" />
                </font>
             </Text>
+            <Text layoutX="537.0" layoutY="187.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Continuar el último test guardado" textAlignment="JUSTIFY" wrappingWidth="355.99993896484375">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
          </children></AnchorPane>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="727.0" prefWidth="169.0" style="-fx-background-color: #cccccc;">
          <children>

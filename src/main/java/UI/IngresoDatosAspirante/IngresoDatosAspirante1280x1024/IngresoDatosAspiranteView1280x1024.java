@@ -157,6 +157,7 @@ public class IngresoDatosAspiranteView1280x1024 implements FxmlView<IngresoDatos
                 if (!newValue.matches("\\d*")) {
                     textFieldEdad.setText(newValue.replaceAll("[^\\d]", ""));
                 }
+
             }
         });
 
