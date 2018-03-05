@@ -6,6 +6,8 @@ import BD.Repositorios.RepoPreguntas;
 import Model.GestorScenas;
 import Model.Respuesta;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXProgressBar;
+import com.sun.org.apache.xpath.internal.operations.Number;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.application.Platform;
@@ -24,6 +26,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
+import javax.swing.text.html.parser.Parser;
+
 public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
 {
     @InjectViewModel protected InputNormalViewModel viewModel;
@@ -35,6 +39,8 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
     @FXML private Label lblNumeroPregunta;
     @FXML private Label lblPregunta;
     @FXML private JFXButton btnPreguntaAnterior;
+    @FXML private JFXProgressBar progressBar;
+    @FXML private Label labelProgressBar;
 
     RadioButton botonClickeado;
     ObservableList<Pane> panes = FXCollections.observableArrayList();
@@ -45,6 +51,7 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
     {
         scrollP.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollP.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        progressBar.progressProperty().setValue(0);
 
         cambiarConfiguracionDeCerrado();
 
@@ -149,6 +156,8 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
         siguientePregunta();
 
         mostrarBtnPreguntaAnteriorSiNoEsPrimerPregunta();
+
+        aumentarProgressBar();
     }
 
 
@@ -237,6 +246,22 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
 
         alert.showAndWait();
     }
+
+    protected void aumentarProgressBar()
+    {
+        Double nuevoPorcentaje = progressBar.progressProperty().get() + 0.0017;
+        if(nuevoPorcentaje < 567.0)
+        {
+            progressBar.progressProperty().setValue(nuevoPorcentaje);
+            labelProgressBar.setText(nuevoPorcentaje.toString().substring(0, 4)+"%");
+        }
+        else
+        {
+            progressBar.progressProperty().setValue(100);
+            labelProgressBar.setText("100%");
+        }
+    }
+
 
 
     //-----------------------Dialog-------------------------//
