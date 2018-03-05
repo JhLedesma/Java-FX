@@ -285,10 +285,10 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
             {
 
             BufferRespuestas.getInstance().recuperarRespuestas();
-            int numeroUltimaPregunta = BufferRespuestas.getInstance().getNumeroDeUltimaRespuesta();
-            String textUltimaPregunta = RepoPreguntas.getInstance().buscarObjeto(numeroUltimaPregunta).getTextPregunta();
+            int numeroSiguienteUltimaPregunta = BufferRespuestas.getInstance().getNumeroDeUltimaRespuesta() + 1;
+            String textSiguienteUltimaPregunta = RepoPreguntas.getInstance().buscarObjeto(numeroSiguienteUltimaPregunta + 1).getTextPregunta();
 
-            recuperarPregunta(numeroUltimaPregunta, textUltimaPregunta);
+            recuperarPregunta(numeroSiguienteUltimaPregunta, textSiguienteUltimaPregunta);
             //Seteo al label de pregunta, el String de la ultima pregunta, para ello uso getNumeroDeUltimaRespuesta(), que me dice en que pregunta se quedo
 
             restaurarRadioButtons();
@@ -298,9 +298,9 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
 
     }
 
-    private void recuperarPregunta(int numeroUltimaPregunta, String textUltimaPregunta) {
-        lblNumeroPregunta.setText(Integer.toString(numeroUltimaPregunta));
-        lblPregunta.setText(textUltimaPregunta);
+    private void recuperarPregunta(int numeroSiguienteUltimaPregunta, String textSiguienteUltimaPregunta) {
+        lblNumeroPregunta.setText(Integer.toString(numeroSiguienteUltimaPregunta));
+        lblPregunta.setText(textSiguienteUltimaPregunta);
     }
 
     private void restaurarRadioButtons()
