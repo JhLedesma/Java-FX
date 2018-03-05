@@ -165,16 +165,6 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
         }
     }
 
-    protected void alertarSiNoExistePregunta()
-    {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Alerta");
-        alert.setHeaderText("No puede avanzar a la siguiente pregunta");
-        alert.setContentText("Para avanzar a la siguiente pregunta, primero debe contestar la pregunta actual (Pregunta Numero: " + lblNumeroPregunta.getText() + ")");
-
-        alert.showAndWait();
-    }
-
     @FXML
     protected void execBtnPreguntaAnterior(MouseEvent event)
     {
@@ -236,6 +226,16 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
         {
             btnPreguntaAnterior.setVisible(true);
         }
+    }
+
+    protected void alertarSiNoExistePregunta()
+    {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Alerta");
+        alert.setHeaderText("No puede avanzar a la siguiente pregunta");
+        alert.setContentText("Para avanzar a la siguiente pregunta, primero debe contestar la pregunta actual (Pregunta Numero: " + lblNumeroPregunta.getText() + ")");
+
+        alert.showAndWait();
     }
 
 
