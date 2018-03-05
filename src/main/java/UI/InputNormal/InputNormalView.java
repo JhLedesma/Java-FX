@@ -13,6 +13,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollPane;
@@ -160,8 +161,18 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
         }
         else
         {
-            //Mostrar mensaje de que debe elegir una respuesta primero
+            alertarSiNoExistePregunta();
         }
+    }
+
+    protected void alertarSiNoExistePregunta()
+    {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Alerta");
+        alert.setHeaderText("No puede avanzar a la siguiente pregunta");
+        alert.setContentText("Para avanzar a la siguiente pregunta, primero debe contestar la pregunta actual (Pregunta Numero: " + lblNumeroPregunta.getText() + ")");
+
+        alert.showAndWait();
     }
 
     @FXML
