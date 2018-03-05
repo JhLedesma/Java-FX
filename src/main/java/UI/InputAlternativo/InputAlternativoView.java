@@ -117,7 +117,7 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
             viewModel.getListaDeRespuestas().add(textFieldRespuestas.getText());
             textFieldRespuestas.setText("");
             viewModel.setStringDePregunta("Preguntas del " + viewModel.getListaNumeroPreguntas().get(viewModel.getNumeroPreguntasActuales()));
-            
+
         }
 
     }
