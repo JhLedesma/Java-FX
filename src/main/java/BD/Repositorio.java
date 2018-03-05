@@ -4,6 +4,7 @@ import BD.Excepciones.NoExisteObjetoConEsaQueryException;
 import BD.Excepciones.NoExisteObjetoConEseNombreException;
 import BD.Excepciones.NoExistenObjetosException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Repositorio<T extends TipoDeRepositorio> {
@@ -60,12 +61,8 @@ public abstract class Repositorio<T extends TipoDeRepositorio> {
 
     public void deteleByQuery (Object query) {this.getProveedor().eliminarConQuery(query);}
 
-    public void eliminarTodos() throws NoExistenObjetosException {
-        List<T> lista = this.buscarListaDeObjetos();
-
-        for (T obj : lista)
-        {
-            this.eliminarObjeto(obj);
-        }
+    public void eliminarTodos() throws NoExistenObjetosException
+    {
+        getProveedor().setLista(new ArrayList<T>());
     }
 }

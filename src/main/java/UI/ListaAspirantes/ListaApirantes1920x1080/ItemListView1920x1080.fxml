@@ -5,6 +5,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -33,6 +34,7 @@
                   <RowConstraints maxHeight="24.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="44.0" minHeight="9.0" prefHeight="15.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
@@ -75,6 +77,9 @@
                      <font>
                         <Font name="Arial" size="18.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label text="Diagnostico" GridPane.columnIndex="3" GridPane.rowIndex="4">
                      <font>
@@ -85,40 +90,99 @@
                      <font>
                         <Font name="Arial" size="18.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label text="Titulacion Maxima" GridPane.columnIndex="4">
                      <font>
                         <Font name="Arial" size="22.0" />
                      </font>
                   </Label>
-                  <JFXTextField fx:id="nombreEdit" maxWidth="80.0" prefHeight="25.0" prefWidth="50.0" promptText="Editar" GridPane.rowIndex="1">
+                  <JFXTextField fx:id="nombreEdit" maxWidth="80.0" prefHeight="27.0" prefWidth="80.0" promptText="Editar" GridPane.rowIndex="1">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
-                     </cursor></JFXTextField>
-                  <JFXTextField fx:id="edadEdit" maxWidth="55.0" prefHeight="25.0" prefWidth="90.0" promptText="Editar" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     </cursor>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding></JFXTextField>
+                  <JFXTextField fx:id="edadEdit" maxWidth="60.0" prefHeight="27.0" prefWidth="60.0" promptText="Editar" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
-                     </cursor></JFXTextField>
+                     </cursor>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding></JFXTextField>
                   <JFXTextField fx:id="estadoCivilEdit" maxWidth="118.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
-                     </cursor></JFXTextField>
+                     </cursor>
+                     <GridPane.margin>
+                        <Insets top="4.0" />
+                     </GridPane.margin></JFXTextField>
                   <JFXTextField fx:id="especialistaEdit" maxWidth="118.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
-                     </cursor></JFXTextField>
+                     </cursor>
+                     <GridPane.margin>
+                        <Insets top="4.0" />
+                     </GridPane.margin></JFXTextField>
                   <JFXTextField fx:id="titulacionEdit" maxWidth="180.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="4" GridPane.rowIndex="1">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
-                     </cursor></JFXTextField>
-                  <JFXTextField fx:id="apellidoEdit" maxWidth="80.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.rowIndex="5">
+                     </cursor>
+                     <GridPane.margin>
+                        <Insets top="4.0" />
+                     </GridPane.margin></JFXTextField>
+                  <JFXTextField fx:id="apellidoEdit" maxWidth="80.0" prefHeight="25.0" prefWidth="80.0" promptText="Editar" GridPane.rowIndex="5">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
-                     </cursor></JFXTextField>
-                  <JFXTextField fx:id="sexoEdit" maxWidth="55.0" prefHeight="25.0" prefWidth="79.0" promptText="Editar" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     </cursor>
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin></JFXTextField>
+                  <JFXTextField fx:id="sexoEdit" maxWidth="60.0" prefHeight="25.0" prefWidth="60.0" promptText="Editar" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
-                     </cursor></JFXTextField>
+                     </cursor>
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin></JFXTextField>
+                  <FontAwesomeIconView glyphName="PENCIL" smooth="false" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="80.0" top="10.0" />
+                     </GridPane.margin>
+                  </FontAwesomeIconView>
+                  <FontAwesomeIconView glyphName="PENCIL" smooth="false" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="80.0" top="20.0" />
+                     </GridPane.margin>
+                  </FontAwesomeIconView>
+                  <FontAwesomeIconView glyphName="PENCIL" smooth="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="60.0" top="20.0" />
+                     </GridPane.margin>
+                  </FontAwesomeIconView>
+                  <FontAwesomeIconView glyphName="PENCIL" smooth="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="60.0" top="10.0" />
+                     </GridPane.margin>
+                  </FontAwesomeIconView>
+                  <FontAwesomeIconView glyphName="PENCIL" smooth="false" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="120.0" top="15.0" />
+                     </GridPane.margin>
+                  </FontAwesomeIconView>
+                  <FontAwesomeIconView glyphName="PENCIL" smooth="false" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="118.0" top="15.0" />
+                     </GridPane.margin>
+                  </FontAwesomeIconView>
+                  <FontAwesomeIconView glyphName="PENCIL" smooth="false" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="180.0" top="15.0" />
+                     </GridPane.margin>
+                  </FontAwesomeIconView>
                </children>
             </GridPane>
             <Pane layoutX="1079.0" layoutY="35.0">

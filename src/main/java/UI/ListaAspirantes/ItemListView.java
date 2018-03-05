@@ -163,6 +163,7 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         TranslateTransition transition2 = new TranslateTransition(Duration.millis(800), anchorMenuEditar);
         transition2.setToX(0);
         transition2.play();
+        viewModel.restaurarModificacion();
     }
 
 

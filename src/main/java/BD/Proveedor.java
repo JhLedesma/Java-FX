@@ -6,6 +6,9 @@ import BD.Excepciones.NoExistenObjetosException;
 import java.util.List;
 
 public interface Proveedor<T extends TipoDeRepositorio>{
+
+    public void setLista(List<T> lista);
+
     public T darObjeto(String unNombre, String unTipo) throws NoExisteObjetoConEseNombreException;
 
     public List<T> darLista(String unTipo) throws NoExistenObjetosException;

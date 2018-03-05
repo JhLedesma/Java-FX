@@ -49,8 +49,15 @@ public class ItemListViewModel implements ViewModel {
         this.diagnostico.set(aspirante.getDiagnostico());
         this.titulacion.set(aspirante.getTitulacion());
 
-        this.diagnosticoEdit.set(diagnostico.get());
+        this.nombreEdit.set(nombre.get());
+        this.apellidoEdit.set(apellido.get());
+        this.edadEdit.set(edad.get());
+        this.sexoEdit.set(sexo.get());
+        this.estadoCivilEdit.set(estadoCivil.get());
         this.fechaEdit.set(fecha.get());
+        this.especialistaEdit.set(especialista.get());
+        this.diagnosticoEdit.set(diagnostico.get());
+        this.titulacionEdit.set(titulacion.get());
     }
 
 //-------------BotonEliminar--------------------//
@@ -136,6 +143,19 @@ public class ItemListViewModel implements ViewModel {
     {
         RepoAspirantes.getInstance().eliminarObjeto(aspirante);
         RepoAspirantes.getInstance().agregarObjeto(new Aspirante(nombre, apellido, edad, sexo, estadoCivil, fecha, especialista, diagnostico, titulacion));
+    }
+
+    public void restaurarModificacion()
+    {
+        this.nombreEdit.set(nombre.get());
+        this.apellidoEdit.set(apellido.get());
+        this.edadEdit.set(edad.get());
+        this.sexoEdit.set(sexo.get());
+        this.estadoCivilEdit.set(estadoCivil.get());
+        this.fechaEdit.set(fecha.get());
+        this.especialistaEdit.set(especialista.get());
+        this.diagnosticoEdit.set(diagnostico.get());
+        this.titulacionEdit.set(titulacion.get());
     }
 
 //--------------------------------------------Getters------------------------------------------------//

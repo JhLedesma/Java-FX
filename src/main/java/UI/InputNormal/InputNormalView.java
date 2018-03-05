@@ -1,43 +1,32 @@
 package UI.InputNormal;
 
 import BD.BufferRespuestas;
-import BD.Excepciones.NoExisteObjetoConEsaQueryException;
 import BD.Excepciones.NoExisteObjetoConEseNombreException;
 import BD.Repositorios.RepoPreguntas;
-import BD.Repositorios.RepoRespuestas;
-import Model.Aspirante;
 import Model.GestorScenas;
-import Model.Pregunta;
 import Model.Respuesta;
-import UI.ListaAspirantes.ItemListViewModel;
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDialog;
-import com.jfoenix.controls.JFXDialogLayout;
+import com.jfoenix.controls.JFXProgressBar;
+import com.sun.org.apache.xpath.internal.operations.Number;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.application.Platform;
-import javafx.beans.value.ObservableStringValue;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.input.PickResult;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
-import java.net.URL;
-import java.util.*;
-import java.util.stream.Collectors;
+import javax.swing.text.html.parser.Parser;
 
 public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
 {
@@ -49,29 +38,240 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
     @FXML AnchorPane dialog;
     @FXML private Label lblNumeroPregunta;
     @FXML private Label lblPregunta;
-    @FXML private JFXButton btnVerdadero;
-    @FXML private JFXButton btnFalso;
-    @FXML private JFXButton btnNoContesta;
     @FXML private JFXButton btnPreguntaAnterior;
-    @FXML private JFXButton btnPreguntaSiguiente;
+    @FXML private JFXProgressBar progressBar;
+    @FXML private Label labelProgressBar;
 
     RadioButton botonClickeado;
+    ObservableList<Pane> panes = FXCollections.observableArrayList();
+    int numeroLblPreguntaActual;
 
-    public void initialize() throws NoExisteObjetoConEseNombreException {
+
+    public void initialize() throws NoExisteObjetoConEseNombreException
+    {
         scrollP.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollP.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        progressBar.progressProperty().setValue(0);
 
+        cambiarConfiguracionDeCerrado();
+
+        recuperar();
+
+        generarListPane();
+
+        ocultarBtnPreguntaAnteriorSiEsPrimerPregunta();
+    }
+
+
+    protected void generarListPane()
+    {
+        for(Node item : anchorPaneDelScroll.getChildren())
+        {
+            if(item instanceof Pane)
+            {
+                for(Node pane : ((Pane) item).getChildren())
+                {
+                    if(pane instanceof Pane)
+                    {
+                        panes.add((Pane) pane);
+                    }
+                }
+            }
+        }
+    }
+
+    protected void crearRespuesta(RadioButton radioButton)
+    {
+        if(radioButton.isSelected())
+        {
+            int numeroDeRespueta = Integer.parseInt(radioButton.getParent().getId());
+
+            String textButton = radioButton.getText();
+
+            viewModel.crearRespuesta(numeroDeRespueta, textButton);
+        }
+    }
+
+
+    //-----------------------Botones-------------------------//
+
+    @FXML
+    protected void execKeyPressed(KeyEvent keyEvent)
+    {
+        if(keyEvent.getCode() == KeyCode.DIGIT1)
+        {
+            activarRaddioButton("Si");
+        }
+        else if (keyEvent.getCode() == KeyCode.NUMPAD1)
+        {
+            activarRaddioButton("Si");
+        }
+        else if (keyEvent.getCode() == KeyCode.DIGIT0)
+        {
+            activarRaddioButton("No");
+        }
+        else if (keyEvent.getCode() == KeyCode.NUMPAD0)
+        {
+            activarRaddioButton("No");
+        }
+        else if (keyEvent.getCode() == KeyCode.BACK_SPACE)
+        {
+            activarRaddioButton("N/C");
+        }
+    }
+
+    @FXML
+    protected void execBtnVerdadero(MouseEvent event)
+    {
+        activarRaddioButton("Si");
+    }
+
+    @FXML
+    protected void execBtnFalso(MouseEvent event)
+    {
+        activarRaddioButton("No");
+    }
+
+    @FXML
+    protected void execBtnNoContesta(MouseEvent event)
+    {
+        activarRaddioButton("N/C");
+    }
+
+
+
+    private void activarRaddioButton(String textDeRaddioBtton)
+    {
+        Pane pane = panes.filtered(x -> x.getId().equals(lblNumeroPregunta.getText())).get(0);
+
+        for(Node radio : pane.getChildren())
+        {
+            if(radio instanceof RadioButton)
+            {
+                setEstadoRadioButton((RadioButton) radio, textDeRaddioBtton);
+                crearRespuesta((RadioButton) radio);
+            }
+        }
+
+        siguientePregunta();
+
+        mostrarBtnPreguntaAnteriorSiNoEsPrimerPregunta();
+
+        aumentarProgressBar();
+    }
+
+
+    @FXML
+    protected void execBtnsiguientePregunta(MouseEvent event)
+    {
+        if(viewModel.existeRespuesta(Integer.parseInt(lblNumeroPregunta.getText())))
+        {
+            siguientePregunta();
+        }
+        else
+        {
+            alertarSiNoExistePregunta();
+        }
+    }
+
+    @FXML
+    protected void execBtnPreguntaAnterior(MouseEvent event)
+    {
+        preguntaAnterior();
+        ocultarBtnPreguntaAnteriorSiEsPrimerPregunta();
+    }
+
+    protected void siguientePregunta()
+    {
+        try
+        {
+            int numeroSiguientePregunta = Integer.parseInt(lblNumeroPregunta.getText()) + 1;
+
+            if(numeroSiguientePregunta < 568)
+            {
+                lblNumeroPregunta.setText(Integer.toString(numeroSiguientePregunta));
+                lblPregunta.setText(RepoPreguntas.getInstance().buscarObjeto(numeroSiguientePregunta).getTextPregunta());
+                numeroLblPreguntaActual = numeroSiguientePregunta;
+            }
+        }
+        catch (NoExisteObjetoConEseNombreException e)
+        {
+            //No hace nada, ya que en el if hago la comprobacion
+        }
+
+    }
+
+    protected void preguntaAnterior()
+    {
+        try
+        {
+            int numeroPreguntaAnterior = Integer.parseInt(lblNumeroPregunta.getText()) - 1;
+
+            if(numeroPreguntaAnterior > 0)
+            {
+                lblNumeroPregunta.setText(Integer.toString(numeroPreguntaAnterior));
+                lblPregunta.setText(RepoPreguntas.getInstance().buscarObjeto(numeroPreguntaAnterior).getTextPregunta());
+                numeroLblPreguntaActual = numeroPreguntaAnterior;
+            }
+        }
+        catch (NoExisteObjetoConEseNombreException e)
+        {
+            //No hace nada, ya que en el if hago la comprobacion
+        }
+
+    }
+
+    protected void ocultarBtnPreguntaAnteriorSiEsPrimerPregunta()
+    {
+        if(lblNumeroPregunta.getText().equals("1"))
+        {
+            btnPreguntaAnterior.setVisible(false);
+        }
+    }
+
+    protected void mostrarBtnPreguntaAnteriorSiNoEsPrimerPregunta()
+    {
+        if(!btnPreguntaAnterior.isVisible())
+        {
+            btnPreguntaAnterior.setVisible(true);
+        }
+    }
+
+    protected void alertarSiNoExistePregunta()
+    {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Alerta");
+        alert.setHeaderText("No puede avanzar a la siguiente pregunta");
+        alert.setContentText("Para avanzar a la siguiente pregunta, primero debe contestar la pregunta actual (Pregunta Numero: " + lblNumeroPregunta.getText() + ")");
+
+        alert.showAndWait();
+    }
+
+    protected void aumentarProgressBar()
+    {
+        Double nuevoPorcentaje = progressBar.progressProperty().get() + 0.0017;
+        if(nuevoPorcentaje < 567.0)
+        {
+            progressBar.progressProperty().setValue(nuevoPorcentaje);
+            labelProgressBar.setText(nuevoPorcentaje.toString().substring(0, 4)+"%");
+        }
+        else
+        {
+            progressBar.progressProperty().setValue(100);
+            labelProgressBar.setText("100%");
+        }
+    }
+
+
+
+    //-----------------------Dialog-------------------------//
+
+    protected void cambiarConfiguracionDeCerrado() {
         GestorScenas.getStageApp().setOnCloseRequest(event -> {
             showDialog();
             event.consume();
         });
-
-            recuperar();
-
     }
-
-
-    //-----------------------Dialog-------------------------//
 
     protected void showDialog()
     {
@@ -100,16 +300,12 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
     {
         botonClickeado = (RadioButton)event.getSource();
 
-        botonClickeado.getParent().getChildrenUnmodifiable().forEach(x -> setEstado((RadioButton) x));
+        botonClickeado.getParent().getChildrenUnmodifiable().forEach(x -> setEstadoRadioButton((RadioButton) x));
 
-        int numeroDeRespueta = Integer.parseInt(botonClickeado.getParent().getId());
-
-        String textButton = botonClickeado.getText();
-
-        viewModel.crearRespuesta(numeroDeRespueta, textButton);
+        crearRespuesta(botonClickeado);
     }
 
-    private void setEstado(RadioButton button)
+    private void setEstadoRadioButton(RadioButton button)
     {
         if(button != botonClickeado)
         {
@@ -125,10 +321,10 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
             {
 
             BufferRespuestas.getInstance().recuperarRespuestas();
-            int numeroUltimaPregunta = BufferRespuestas.getInstance().getNumeroDeUltimaRespuesta();
-            String textUltimaPregunta = RepoPreguntas.getInstance().buscarObjeto(numeroUltimaPregunta).getTextPregunta();
+            int numeroSiguienteUltimaPregunta = BufferRespuestas.getInstance().getNumeroDeUltimaRespuesta() + 1;
+            String textSiguienteUltimaPregunta = RepoPreguntas.getInstance().buscarObjeto(numeroSiguienteUltimaPregunta + 1).getTextPregunta();
 
-            recuperarPregunta(numeroUltimaPregunta, textUltimaPregunta);
+            recuperarPregunta(numeroSiguienteUltimaPregunta, textSiguienteUltimaPregunta);
             //Seteo al label de pregunta, el String de la ultima pregunta, para ello uso getNumeroDeUltimaRespuesta(), que me dice en que pregunta se quedo
 
             restaurarRadioButtons();
@@ -138,9 +334,9 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
 
     }
 
-    private void recuperarPregunta(int numeroUltimaPregunta, String textUltimaPregunta) {
-        lblNumeroPregunta.setText(Integer.toString(numeroUltimaPregunta));
-        lblPregunta.setText(textUltimaPregunta);
+    private void recuperarPregunta(int numeroSiguienteUltimaPregunta, String textSiguienteUltimaPregunta) {
+        lblNumeroPregunta.setText(Integer.toString(numeroSiguienteUltimaPregunta));
+        lblPregunta.setText(textSiguienteUltimaPregunta);
     }
 
     private void restaurarRadioButtons()
@@ -161,7 +357,7 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
                             {
                                 if(radio instanceof RadioButton)
                                 {
-                                    recuperarRadioButton((RadioButton) radio, respuesta);
+                                    setEstadoRadioButton((RadioButton) radio, respuesta.getTextButton());
                                 }
                             }
                         }
@@ -175,9 +371,9 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
         }
     }
 
-    private void recuperarRadioButton(RadioButton radioButton, Respuesta respuesta)
+    private void setEstadoRadioButton(RadioButton radioButton, String text)
     {
-        if(radioButton.getText().equals(respuesta.getTextButton()))
+        if(radioButton.getText().equals(text))
         {
             radioButton.setSelected(true);
         }
@@ -187,11 +383,11 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
         }
     }
 
-//    private void recuperarRadioButton(ObservableList<RadioButton> radioButtons, Respuesta respuesta)
+//    private void setEstadoRadioButton(ObservableList<RadioButton> radioButtons, Respuesta respuesta)
 //    {
 //        RadioButton radioButton = radioButtons.stream().filter(x->x.getText().equals(respuesta.getTextButton())).findFirst().get();
 //        radioButton.setSelected(true);
-//        setEstado(radioButton);
+//        setEstadoRadioButton(radioButton);
 //    }
 
     private void guardar()

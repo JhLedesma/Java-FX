@@ -5,9 +5,11 @@ import BD.Excepciones.NoExisteObjetoConEseNombreException;
 import Model.GestorScenas;
 import Model.Respuesta;
 import de.saxsys.mvvmfx.ViewModel;
+import javafx.beans.property.IntegerProperty;
 
 public class InputNormalViewModel implements ViewModel
 {
+
     public void crearRespuesta(int numeroRespuesta, String textButton)
     {
         if(!existeRespuesta(numeroRespuesta))
@@ -22,7 +24,7 @@ public class InputNormalViewModel implements ViewModel
 
 
 
-    private boolean existeRespuesta(int numeroRespuesta)
+    public boolean existeRespuesta(int numeroRespuesta)
     {
         return BufferRespuestas.getInstance().existeRespuesta(numeroRespuesta);
     }
