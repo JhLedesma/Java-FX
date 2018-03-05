@@ -108,7 +108,7 @@ public class BufferRespuestas
         try
         {
             setRespuestas(RepoRespuestas.getInstance().buscarListaDeObjetos());
-            //RepoRespuestas.getInstance().eliminarTodos();
+            RepoRespuestas.getInstance().eliminarTodos();
         }
         catch (NoExistenObjetosException e)
         {

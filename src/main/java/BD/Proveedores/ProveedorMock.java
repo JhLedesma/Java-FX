@@ -27,6 +27,7 @@ public class ProveedorMock <T extends TipoDeRepositorio> implements Proveedor<T>
         return lista;
     }
 
+    @Override
     public void setLista(List<T> lista) {
         this.lista = lista;
     }
