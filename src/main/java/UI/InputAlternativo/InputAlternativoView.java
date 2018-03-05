@@ -6,6 +6,10 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import org.controlsfx.control.textfield.CustomTextField;
 
 import java.awt.event.MouseEvent;
@@ -25,9 +29,15 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
     @FXML
     CustomTextField textFieldRespuestas;
 
+    @FXML
+    Label lblNumeroPregunta;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        lblNumeroPregunta.textProperty().bind(viewModel.stringDePreguntaProperty());
         configurarEfectos();
+
     }
 
 
@@ -81,6 +91,50 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
         });
     }
 
+    private void mostrarAlerta(){
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
+        alert.setTitle("Respuestas incompletas");
+        alert.setHeaderText("Error en el ingreso de datos");
+        alert.setContentText("Por favor ingrese las 10 respuestas indicadas para continuar");
+
+        alert.showAndWait();
+
+    }
+
+    public void confirmarRespuestas(){
+
+        if(textFieldRespuestas.getLength() != 10){
+
+            mostrarAlerta();
+
+        }
+        else{
+
+            //No extraigo este codigo porque no lo voy a reutilizar ni tampoco es una "unidad" como mostrarAlerta()
+            viewModel.setNumeroPreguntasActuales(viewModel.getNumeroPreguntasActuales() + 1);
+            viewModel.getListaDeRespuestas().add(textFieldRespuestas.getText());
+            textFieldRespuestas.setText("");
+            viewModel.setStringDePregunta("Preguntas del " + viewModel.getListaNumeroPreguntas().get(viewModel.getNumeroPreguntasActuales()));
+            
+        }
+
+    }
+
+    public void onEnter(KeyEvent evt){
+
+        if(evt.getCode() == KeyCode.ENTER) {
+
+            confirmarRespuestas();
+
+        }
+
+    }
+
+    public void onClick(javafx.scene.input.MouseEvent evt){
+        confirmarRespuestas();
+    }
 
     //Hacer un parser para las respuestas
     //Cuando presiona enter, valida que esten las 10 respuestas, la misma funcionalidad esta en el boton pregunta siguiente

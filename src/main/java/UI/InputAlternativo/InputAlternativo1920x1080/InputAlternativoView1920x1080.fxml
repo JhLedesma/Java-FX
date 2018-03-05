@@ -173,12 +173,12 @@
          </font>
       </JFXButton>
       <JFXProgressBar layoutX="709.0" layoutY="53.0" prefHeight="41.0" prefWidth="729.0" />
-      <JFXButton fx:id="btnPreguntaAnterior1" layoutX="1233.0" layoutY="735.0" prefHeight="45.0" prefWidth="181.0" ripplerFill="#ffffff" style="-fx-background-color: #BDBDBD; -fx-background-radius: 50; -fx-region-border: #ffffff;" text="Pregunta Siguiente">
+      <JFXButton fx:id="btnPreguntaAnterior1" layoutX="1233.0" layoutY="735.0" onMouseClicked="#onClick" prefHeight="45.0" prefWidth="181.0" ripplerFill="#ffffff" style="-fx-background-color: #BDBDBD; -fx-background-radius: 50; -fx-region-border: #ffffff;" text="Pregunta Siguiente">
          <font>
             <Font name="Arial" size="17.0" />
          </font>
       </JFXButton>
-      <CustomTextField fx:id="textFieldRespuestas" alignment="CENTER" layoutX="937.0" layoutY="359.0" prefHeight="41.0" prefWidth="288.0" promptText="Ingrese aqui las respuestas (Ej: 102112)">
+      <CustomTextField fx:id="textFieldRespuestas" alignment="CENTER" layoutX="937.0" layoutY="359.0" onKeyPressed="#onEnter" prefHeight="41.0" prefWidth="288.0" promptText="Ingrese aqui las respuestas (Ej: 102112)">
          <font>
             <Font size="15.0" />
          </font>
