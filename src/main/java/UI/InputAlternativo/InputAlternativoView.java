@@ -1,11 +1,17 @@
 package UI.InputAlternativo;
 
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import org.controlsfx.control.textfield.CustomTextField;
 
 import java.awt.event.MouseEvent;
@@ -25,9 +31,15 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
     @FXML
     CustomTextField textFieldRespuestas;
 
+    @FXML
+    Label lblNumeroPregunta;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        lblNumeroPregunta.textProperty().bind(viewModel.stringDePreguntaProperty());
         configurarEfectos();
+
     }
 
 
@@ -81,6 +93,98 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
         });
     }
 
+    private void mostrarAlerta(){
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
+        alert.setTitle("Respuestas incompletas");
+        alert.setHeaderText("Error en el ingreso de datos");
+        alert.setContentText("Por favor ingrese las 10 respuestas indicadas para continuar");
+
+        alert.showAndWait();
+
+    }
+
+    private void aumentarPreguntasActuales(){
+
+        viewModel.setNumeroPreguntasActuales(viewModel.getNumeroPreguntasActuales() + 1);
+
+    }
+
+    private void aumentarPreguntasAContestar(){
+
+        viewModel.setNumeroPreguntasAContestar(viewModel.getNumeroPreguntasAContestar() + 1);
+
+    }
+
+    private void mostrarSiguientePregunta() {
+
+        textFieldRespuestas.setText("");
+        viewModel.setStringDePregunta("Preguntas del " + viewModel.getListaNumeroPreguntas().get(viewModel.getNumeroPreguntasAContestar()));
+
+    }
+
+    public void confirmarRespuestas(){
+
+        if(textFieldRespuestas.getLength() != 10){
+
+            mostrarAlerta();
+
+        }
+        else{
+
+            if(viewModel.getNumeroPreguntasActuales() == viewModel.getNumeroPreguntasAContestar())
+            {
+
+                aumentarPreguntasActuales();
+                aumentarPreguntasAContestar();
+
+                viewModel.getListaDeRespuestas().add(textFieldRespuestas.getText());
+
+                mostrarSiguientePregunta();
+
+                System.out.println(viewModel.getListaDeRespuestas());
+
+            }
+
+            else{
+
+                viewModel.getListaDeRespuestas().set(viewModel.getNumeroPreguntasActuales(),textFieldRespuestas.getText());
+                viewModel.setNumeroPreguntasActuales(viewModel.getNumeroPreguntasAContestar());
+
+                mostrarSiguientePregunta();
+
+                System.out.println(viewModel.getListaDeRespuestas());
+
+            }
+
+        }
+
+    }
+
+    public void cambiarPregunta(javafx.scene.input.MouseEvent event){
+
+        int id = Integer.parseInt(((Pane) event.getSource()).getId());
+        viewModel.setNumeroPreguntasActuales(id);
+
+        viewModel.setStringDePregunta("Preguntas del " + viewModel.getListaNumeroPreguntas().get(id));
+        textFieldRespuestas.setText(viewModel.getListaDeRespuestas().get(id));
+
+    }
+
+    public void onEnter(KeyEvent evt){
+
+        if(evt.getCode() == KeyCode.ENTER) {
+
+            confirmarRespuestas();
+
+        }
+
+    }
+
+    public void onClick(javafx.scene.input.MouseEvent evt){
+        confirmarRespuestas();
+    }
 
     //Hacer un parser para las respuestas
     //Cuando presiona enter, valida que esten las 10 respuestas, la misma funcionalidad esta en el boton pregunta siguiente
