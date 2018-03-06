@@ -1,5 +1,6 @@
 package UI.InputAlternativo;
 
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.beans.value.ChangeListener;
@@ -10,6 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import org.controlsfx.control.textfield.CustomTextField;
 
 import java.awt.event.MouseEvent;
@@ -103,6 +105,25 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
 
     }
 
+    private void aumentarPreguntasActuales(){
+
+        viewModel.setNumeroPreguntasActuales(viewModel.getNumeroPreguntasActuales() + 1);
+
+    }
+
+    private void aumentarPreguntasAContestar(){
+
+        viewModel.setNumeroPreguntasAContestar(viewModel.getNumeroPreguntasAContestar() + 1);
+
+    }
+
+    private void mostrarSiguientePregunta() {
+
+        textFieldRespuestas.setText("");
+        viewModel.setStringDePregunta("Preguntas del " + viewModel.getListaNumeroPreguntas().get(viewModel.getNumeroPreguntasAContestar()));
+
+    }
+
     public void confirmarRespuestas(){
 
         if(textFieldRespuestas.getLength() != 10){
@@ -112,13 +133,42 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
         }
         else{
 
-            //No extraigo este codigo porque no lo voy a reutilizar ni tampoco es una "unidad" como mostrarAlerta()
-            viewModel.setNumeroPreguntasActuales(viewModel.getNumeroPreguntasActuales() + 1);
-            viewModel.getListaDeRespuestas().add(textFieldRespuestas.getText());
-            textFieldRespuestas.setText("");
-            viewModel.setStringDePregunta("Preguntas del " + viewModel.getListaNumeroPreguntas().get(viewModel.getNumeroPreguntasActuales()));
+            if(viewModel.getNumeroPreguntasActuales() == viewModel.getNumeroPreguntasAContestar())
+            {
+
+                aumentarPreguntasActuales();
+                aumentarPreguntasAContestar();
+
+                viewModel.getListaDeRespuestas().add(textFieldRespuestas.getText());
+
+                mostrarSiguientePregunta();
+
+                System.out.println(viewModel.getListaDeRespuestas());
+
+            }
+
+            else{
+
+                viewModel.getListaDeRespuestas().set(viewModel.getNumeroPreguntasActuales(),textFieldRespuestas.getText());
+                viewModel.setNumeroPreguntasActuales(viewModel.getNumeroPreguntasAContestar());
+
+                mostrarSiguientePregunta();
+
+                System.out.println(viewModel.getListaDeRespuestas());
+
+            }
 
         }
+
+    }
+
+    public void cambiarPregunta(javafx.scene.input.MouseEvent event){
+
+        int id = Integer.parseInt(((Pane) event.getSource()).getId());
+        viewModel.setNumeroPreguntasActuales(id);
+
+        viewModel.setStringDePregunta("Preguntas del " + viewModel.getListaNumeroPreguntas().get(id));
+        textFieldRespuestas.setText(viewModel.getListaDeRespuestas().get(id));
 
     }
 

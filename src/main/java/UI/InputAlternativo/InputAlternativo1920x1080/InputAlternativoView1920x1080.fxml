@@ -60,83 +60,59 @@
                         <Font size="23.0" />
                      </font>
                   </Label>
-                  <Pane layoutX="54.0" layoutY="144.0" prefHeight="41.0" prefWidth="181.0">
+                  <Pane layoutX="96.0" layoutY="144.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <children>
-                        <Text layoutX="99.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1-10">
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1-10">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Text>
-                        <FontAwesomeIconView glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="56.0" layoutY="31.0" size="30" />
+                        <Pane id="0" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
                      </children>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
                   </Pane>
-                  <Pane layoutX="54.0" layoutY="185.0" prefHeight="41.0" prefWidth="181.0">
+                  <Pane layoutX="96.0" layoutY="185.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <children>
-                        <Text layoutX="99.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11-20">
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11-20">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Text>
-                        <FontAwesomeIconView glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="56.0" layoutY="31.0" size="30" />
+                        <Pane id="1" layoutY="-1.0" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
                      </children>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
                   </Pane>
-                  <Pane layoutX="54.0" layoutY="226.0" prefHeight="41.0" prefWidth="181.0">
+                  <Pane layoutX="96.0" layoutY="226.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <children>
-                        <Text layoutX="99.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="31-40">
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21-30">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Text>
-                        <FontAwesomeIconView glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="56.0" layoutY="31.0" size="30" />
+                        <Pane id="2" layoutY="-1.0" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
                      </children>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Pane>
-                  <Pane layoutX="54.0" layoutY="267.0" prefHeight="41.0" prefWidth="181.0">
-                     <children>
-                        <Text layoutX="99.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="41-50">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                        <FontAwesomeIconView glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="56.0" layoutY="31.0" size="30" />
-                     </children>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Pane>
-                  <Pane layoutX="54.0" layoutY="308.0" prefHeight="41.0" prefWidth="181.0">
-                     <children>
-                        <Text layoutX="99.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="51-60">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                        <FontAwesomeIconView glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="56.0" layoutY="31.0" size="30" />
-                     </children>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Pane>
-                  <Pane layoutX="54.0" layoutY="349.0" prefHeight="41.0" prefWidth="181.0">
-                     <children>
-                        <Text layoutX="99.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="61-70">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                        <FontAwesomeIconView glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="56.0" layoutY="31.0" size="30" />
-                     </children>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
                   </Pane>
                </children>
             </AnchorPane>
