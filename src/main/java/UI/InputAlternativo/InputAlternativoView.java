@@ -1,5 +1,6 @@
 package UI.InputAlternativo;
 
+import com.jfoenix.controls.JFXButton;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.beans.value.ChangeListener;
@@ -22,6 +23,10 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
 
     public List<String> caracteresPermitidos = new ArrayList<String>();
 
+    private int cantidadCaracteresDeRespuesta = 10;
+
+    private ChangeListener<String> listenerActualDeTextField;
+
     @InjectViewModel
     private InputAlternativoViewModel viewModel;
 
@@ -30,6 +35,9 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
 
     @FXML
     Label lblNumeroPregunta;
+
+    @FXML
+    JFXButton btnPreguntaSiguiente;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -43,7 +51,7 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
     private void configurarEfectos() {
 
         settearCaracteresPermitidos();
-        configurarTextField();
+        configurarTextField(cantidadCaracteresDeRespuesta);
 
     }
 
@@ -53,12 +61,14 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
         caracteresPermitidos.add("2");
     }
 
-    private void configurarTextField() {
-        textFieldRespuestas.textProperty().addListener(new ChangeListener<String>() {
+    private void configurarTextField(int cantidadCaracteresInput) {
+
+        listenerActualDeTextField = new ChangeListener<String>() {
             @Override
-            public void changed(final ObservableValue<? extends String> ov, final String oldValue, final String newValue) {
-                if (textFieldRespuestas.getText().length() > 10) {
-                    String s = textFieldRespuestas.getText().substring(0, 10);
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+
+                if (textFieldRespuestas.getText().length() > cantidadCaracteresInput) {
+                    String s = textFieldRespuestas.getText().substring(0, cantidadCaracteresInput);
                     textFieldRespuestas.setText(s);
 
                 }
@@ -68,8 +78,8 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
 
                         if(!(caracteresPermitidos.contains(newValue.substring(newValue.length()-1)))){
 
-                        String s = textFieldRespuestas.getText().substring(0,newValue.length()-1);
-                        textFieldRespuestas.setText(s);
+                            String s = textFieldRespuestas.getText().substring(0,newValue.length()-1);
+                            textFieldRespuestas.setText(s);
 
                         }
 
@@ -83,23 +93,70 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
                         //ni causa inconsistencias
 
                     }
-
                 }
-
             }
-        });
+        };
+
+        textFieldRespuestas.textProperty().addListener(listenerActualDeTextField);
+
     }
 
-    private void mostrarAlerta(){
+    private void mostrarAlerta(int cantidadDeCaracteresNecesarios){
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
         alert.setTitle("Respuestas incompletas");
         alert.setHeaderText("Error en el ingreso de datos");
-        alert.setContentText("Por favor ingrese las 10 respuestas indicadas para continuar");
+        alert.setContentText("Por favor ingrese las " + cantidadDeCaracteresNecesarios + " respuestas indicadas para continuar");
 
         alert.showAndWait();
 
+
+    }
+
+    private void chequearPorUltimaRespuesta(){
+
+        if(viewModel.getNumeroPreguntasActuales() != 56){
+
+            cantidadCaracteresDeRespuesta = 10;
+
+        }
+        else{
+
+            cantidadCaracteresDeRespuesta = 7;
+
+            reconfigurarElementosVista();
+
+        }
+
+    }
+
+    private void reconfigurarElementosVista() {
+
+        textFieldRespuestas.textProperty().removeListener(listenerActualDeTextField);
+        configurarTextField(cantidadCaracteresDeRespuesta);
+
+        textFieldRespuestas.setOnKeyPressed((evt -> {
+
+            if(evt.getCode() == KeyCode.ENTER) {
+
+                viewModel.getListaDeRespuestas().add(textFieldRespuestas.getText());
+                mostrarAlerta(235);
+
+            }
+
+
+                })
+        );
+
+        btnPreguntaSiguiente.setOnMouseClicked(evt -> {
+
+            viewModel.getListaDeRespuestas().add(textFieldRespuestas.getText());
+            mostrarAlerta(235);
+
+        });
+
+        btnPreguntaSiguiente.setText("Terminar");
     }
 
     private void aumentarPreguntasActuales(){
@@ -123,9 +180,9 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
 
     public void confirmarRespuestas(){
 
-        if(textFieldRespuestas.getLength() != 10){
+        if(textFieldRespuestas.getLength() != cantidadCaracteresDeRespuesta){
 
-            mostrarAlerta();
+            mostrarAlerta(cantidadCaracteresDeRespuesta);
 
         }
         else{
@@ -138,9 +195,11 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
 
                 viewModel.getListaDeRespuestas().add(textFieldRespuestas.getText());
 
+                chequearPorUltimaRespuesta();
+
                 mostrarSiguientePregunta();
 
-                System.out.println(viewModel.getListaDeRespuestas());
+                System.out.println(viewModel.getNumeroPreguntasActuales());
 
             }
 
@@ -151,7 +210,7 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
 
                 mostrarSiguientePregunta();
 
-                System.out.println(viewModel.getListaDeRespuestas());
+
 
             }
 
@@ -166,6 +225,8 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
 
         viewModel.setStringDePregunta("Preguntas del " + viewModel.getListaNumeroPreguntas().get(id));
         textFieldRespuestas.setText(viewModel.getListaDeRespuestas().get(id));
+
+
 
     }
 
