@@ -5,6 +5,7 @@ import BD.Repositorios.RepoAspirantes;
 import Model.Aspirante;
 import Model.GestorScenas;
 import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXTextField;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
@@ -14,12 +15,16 @@ import de.saxsys.mvvmfx.utils.notifications.NotificationObserver;
 import de.saxsys.mvvmfx.utils.viewlist.ViewListCellFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.geometry.NodeOrientation;
 import javafx.scene.control.MultipleSelectionModel;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 import java.util.Arrays;
+import java.util.List;
 
 public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesViewModel>
 {
@@ -29,6 +34,7 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
 
     @FXML private JFXTextField filtroTextField;
 
+    @FXML private AnchorPane rootPane;
 
     public void initialize()
     {
@@ -60,10 +66,29 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
 
     private void escucharNotificaciones() {
         Model.NotificationCenter.getInstance().subscribe("AspiranteEliminado", (s, objects) -> {
+            viewModel.crearMementoAspirante((Aspirante) objects[0], (int) objects[1]);
             viewModel.buscarItems();
             loadListView();
-            //Poner Toast y Memento
+            showSnackBar();
         });
+    }
+
+    private void showSnackBar()
+    {
+        JFXSnackbar newsSnackBar = new JFXSnackbar(rootPane);
+
+        newsSnackBar.show("Registro eliminado", "Deshacer", 10000, event -> {
+            deshacerAspiranteEliminado();
+            newsSnackBar.unregisterSnackbarContainer(rootPane);
+            event.consume();
+        });
+    }
+
+    private void deshacerAspiranteEliminado()
+    {
+        viewModel.deshacerEliminacionAspirante();
+        viewModel.buscarItems();
+        loadListView();
     }
 
     //--------------------Filtrado----------------------//

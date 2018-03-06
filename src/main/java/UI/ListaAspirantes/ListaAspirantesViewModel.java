@@ -26,6 +26,8 @@ public class ListaAspirantesViewModel implements ViewModel
 
     private StringProperty filtro = new SimpleStringProperty();
 
+    private Aspirante mementoAspirante;
+    private int numeroIndiceMemento;
 
     public void buscarItems()
     {
@@ -61,6 +63,22 @@ public class ListaAspirantesViewModel implements ViewModel
 
 
 
+    public void crearMementoAspirante(Aspirante aspirante, int numeroIndiceAspirante)
+    {
+        this.mementoAspirante = aspirante;
+        this.numeroIndiceMemento = numeroIndiceAspirante;
+    }
+
+    public void deshacerEliminacionAspirante()
+    {
+        try {
+            RepoAspirantes.getInstance().buscarListaDeObjetos().add(numeroIndiceMemento, mementoAspirante);
+        } catch (NoExistenObjetosException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public StringProperty filtroProperty() {
         return filtro;
     }
@@ -73,7 +91,6 @@ public class ListaAspirantesViewModel implements ViewModel
     {
         return listaItems;
     }
-
 
 
 }

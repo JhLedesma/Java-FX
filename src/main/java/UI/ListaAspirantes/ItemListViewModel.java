@@ -1,5 +1,6 @@
 package UI.ListaAspirantes;
 
+import BD.Excepciones.NoExistenObjetosException;
 import BD.Repositorios.RepoAspirantes;
 import Model.Aspirante;
 import de.saxsys.mvvmfx.MvvmFX;
@@ -64,13 +65,20 @@ public class ItemListViewModel implements ViewModel {
 
     public void eliminarAspirante()
     {
-        RepoAspirantes.getInstance().eliminarObjeto(aspirante);
-        this.notificarAspiranteEliminado();
+        try
+        {
+            int numeroIndiceAspirante = RepoAspirantes.getInstance().buscarListaDeObjetos().indexOf(aspirante);
+            RepoAspirantes.getInstance().eliminarObjeto(aspirante);
+            this.notificarAspiranteEliminado(aspirante, numeroIndiceAspirante);
+        }
+        catch (NoExistenObjetosException e) {
+            e.printStackTrace();
+        }
     }
 
-    private void notificarAspiranteEliminado()
+    private void notificarAspiranteEliminado(Aspirante aspirante, int numeroIndiceAspirante)
     {
-        Model.NotificationCenter.getInstance().publish("AspiranteEliminado");
+        Model.NotificationCenter.getInstance().publish("AspiranteEliminado", aspirante, numeroIndiceAspirante);
     }
 
 //-----------------------BotonModificarDatos-----------------------//
