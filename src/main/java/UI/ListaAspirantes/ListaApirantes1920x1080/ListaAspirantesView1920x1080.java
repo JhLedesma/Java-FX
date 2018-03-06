@@ -11,7 +11,8 @@ import de.saxsys.mvvmfx.utils.viewlist.ViewListCellFactory;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Background;
 
-public class ListaAspirantesView1920x1080 extends ListaAspirantesView /*implements FxmlView<ListaAspirantesViewModel>*/ {
+public class ListaAspirantesView1920x1080 extends ListaAspirantesView /*implements FxmlView<ListaAspirantesViewModel>*/
+{
 
     @Override
     protected ViewListCellFactory<ItemListViewModel> crearCell() {

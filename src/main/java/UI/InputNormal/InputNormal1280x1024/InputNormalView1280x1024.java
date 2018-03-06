@@ -15,6 +15,4 @@ public class InputNormalView1280x1024 extends InputNormalView implements FxmlVie
 {
 
 
-
-
 }

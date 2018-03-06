@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="750.0" prefWidth="1125.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ListaAspirantes.ListaAspirante1280x1024.ListaAspirantesView1280x1024">
+   <children>
+      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="727.0" prefWidth="169.0" style="-fx-background-color: #cccccc;">
+         <children>
+            <Pane layoutX="57.0" layoutY="39.0" />
+            <Pane layoutX="57.0" layoutY="391.0" />
+            <Pane layoutX="57.0" layoutY="723.0" />
+            <JFXButton layoutX="27.0" layoutY="352.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <MaterialDesignIconView glyphName="HOME" layoutX="64.0" layoutY="391.0" size="45" text="" />
+            <JFXButton layoutX="29.0" layoutY="645.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <FontAwesomeIconView glyphName="GEAR" layoutX="69.0" layoutY="683.0" size="42" text="" />
+            <JFXButton layoutX="27.0" layoutY="18.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <FontAwesomeIconView glyphName="ARROW_LEFT" layoutX="67.0" layoutY="54.0" size="40" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="169.0" prefHeight="68.0" prefWidth="956.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <MaterialDesignIconView glyphName="MAGNIFY" layoutX="48.0" layoutY="46.0" size="35" wrappingWidth="34.285731822252274" />
+            <JFXTextField fx:id="filtroTextField" labelFloat="true" layoutX="90.0" layoutY="19.0" onKeyPressed="#filtrarAspirantesPorEnter" prefHeight="28.0" prefWidth="742.0" promptText="Busque por Nombre o por Apellido" unFocusColor="#726e6e">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton layoutX="845.0" layoutY="25.0" onMouseClicked="#filtrarAspirantesPorClic" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: DDDDDD;" text="Buscar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <Line endX="855.0" fill="#eeeeee" layoutX="270.0" layoutY="69.0" startX="-100.0" stroke="#f2f2f2" />
+      <JFXListView fx:id="listview" layoutX="169.0" layoutY="69.0" prefHeight="681.0" prefWidth="956.0" />
+   </children>
+</AnchorPane>

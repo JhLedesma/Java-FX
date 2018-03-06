@@ -1,7 +1,5 @@
 package UI.ListaAspirantes;
 
-import BD.Excepciones.NoExistenObjetosException;
-import BD.Repositorios.RepoAspirantes;
 import Model.Aspirante;
 import Model.GestorScenas;
 import com.jfoenix.controls.JFXListView;
@@ -9,22 +7,11 @@ import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXTextField;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
-import de.saxsys.mvvmfx.MvvmFX;
-import de.saxsys.mvvmfx.utils.notifications.NotificationCenter;
-import de.saxsys.mvvmfx.utils.notifications.NotificationObserver;
 import de.saxsys.mvvmfx.utils.viewlist.ViewListCellFactory;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.geometry.NodeOrientation;
-import javafx.scene.control.MultipleSelectionModel;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-
-import java.util.Arrays;
-import java.util.List;
 
 public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesViewModel>
 {
@@ -32,9 +19,9 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
 
     @FXML protected JFXListView<ItemListViewModel> listview;
 
-    @FXML private JFXTextField filtroTextField;
+    @FXML protected JFXTextField filtroTextField;
 
-    @FXML private AnchorPane rootPane;
+    @FXML protected AnchorPane rootPane;
 
     public void initialize()
     {
@@ -52,7 +39,7 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
 
     //--------------------ListView----------------------//
 
-    private void loadListView()
+    protected void loadListView()
     {
         ViewListCellFactory<ItemListViewModel> cell = crearCell();
         listview.setCellFactory(cell);
@@ -64,7 +51,7 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
 
     //--------------------Eliminacion----------------------//
 
-    private void escucharNotificaciones() {
+    protected void escucharNotificaciones() {
         Model.NotificationCenter.getInstance().subscribe("AspiranteEliminado", (s, objects) -> {
             viewModel.crearMementoAspirante((Aspirante) objects[0], (int) objects[1]);
             viewModel.buscarItems();
@@ -73,7 +60,7 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
         });
     }
 
-    private void showSnackBar()
+    protected void showSnackBar()
     {
         JFXSnackbar newsSnackBar = new JFXSnackbar(rootPane);
 
@@ -84,7 +71,7 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
         });
     }
 
-    private void deshacerAspiranteEliminado()
+    protected void deshacerAspiranteEliminado()
     {
         viewModel.deshacerEliminacionAspirante();
         viewModel.buscarItems();
@@ -93,7 +80,7 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
 
     //--------------------Filtrado----------------------//
 
-    private void listenerTextField()
+    protected void listenerTextField()
     {
 //        try
 //        {
@@ -112,7 +99,7 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
     }
 
     @FXML
-    protected void filtrarAspirantesPorEnter(javafx.scene.input.KeyEvent keyEvent)
+    public void filtrarAspirantesPorEnter(javafx.scene.input.KeyEvent keyEvent)
     {
         if(keyEvent.getCode() == KeyCode.ENTER) {
             filtrarAspirante();
@@ -120,7 +107,7 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
     }
 
     @FXML
-    protected void filtrarAspirantesPorClic(MouseEvent mouseEvent)
+    public void filtrarAspirantesPorClic(MouseEvent mouseEvent)
     {
         filtrarAspirante();
     }
@@ -132,17 +119,17 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
 
     //-----------------Barra izquierda-------------------//
 
-    @FXML protected void execBtnPantallaAnterior(MouseEvent mouseEvent)
+    @FXML public void execBtnPantallaAnterior(MouseEvent mouseEvent)
     {
         GestorScenas.getFamily().showMenuEspecialista();
     }
 
-    @FXML protected void execBtnHome(MouseEvent mouseEvent)
+    @FXML public void execBtnHome(MouseEvent mouseEvent)
     {
         GestorScenas.getFamily().showInicio();
     }
 
-    @FXML protected void execBtn(MouseEvent mouseEvent)
+    @FXML public void execBtn(MouseEvent mouseEvent)
     {
         GestorScenas.getFamily().showConfiguraciones();
     }

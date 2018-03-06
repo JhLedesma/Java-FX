@@ -139,10 +139,10 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
     protected void showMenuEditarDatos()
     {
         TranslateTransition transition = new TranslateTransition(Duration.millis(1000), anchorPrincipal);
-        transition.setToX(-1300);
+        transition.setToX(desplazamientoMostarMenuEditar());
         transition.play();
         TranslateTransition transition2 = new TranslateTransition(Duration.millis(1000), anchorMenuEditar);
-        transition2.setToX(-1300);
+        transition2.setToX(desplazamientoMostarMenuEditar());
         transition2.play();
     }
 
@@ -278,6 +278,8 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
 
     protected abstract Double popupInitialPositionY();
 
+    protected abstract double desplazamientoMostarMenuEditar();
 
+    protected abstract double desplazamientoEliminarAspirante();
 
 }
