@@ -1,25 +1,27 @@
-package UI.ListaAspirantes.ListaApirantes1920x1080;
+package UI.ListaAspirantes.ListaAspirante1280x1024;
 
-import Model.NotificationCenter;
 import UI.ListaAspirantes.ItemListView;
+import UI.ListaAspirantes.ItemListViewModel;
+import de.saxsys.mvvmfx.FxmlView;
+import de.saxsys.mvvmfx.InjectViewModel;
 
-public class ItemListView1920x1080 extends ItemListView
+public class ItemListView1280x1024 extends ItemListView
 {
 
     @Override
     protected Double getSizeLabel() {
-        return 15.0;
-    }
+        return 13.0;
+    } //tamañoTexto
 
     @Override
-    protected Double getSizeIconLabel() {
-        return 25.0;
+    protected Double getSizeIconLabel() {    //tamaño icono
+        return 22.0;
     }
 
     @Override
     protected Double getGraphicTextGap() {
-        return 15.0;
-    }
+        return 10.0;
+    } //Espacio entre icono y texto
 
     @Override
     protected Double getLabelPadding() {
@@ -28,38 +30,37 @@ public class ItemListView1920x1080 extends ItemListView
 
     @Override
     protected Double getAlturaListView() {
-        return 230.0;
+        return 211.0;
     }
 
     @Override
     protected Double getVerticalGapListView() {
-        return 10.0;
-    }
+        return 8.0;
+    }  //espacio entre label de la list view
 
     @Override
     protected Double getAnchoListView() {
-        return 195.0;
+        return 170.0;
     }
 
     @Override
     protected Double popupInitialPositionX() {
-        return -205.0;
+        return -191.0;
     }
 
     @Override
     protected Double popupInitialPositionY() {
-        return 10.0;
+        return 12.0;
     }
 
     @Override
     protected double desplazamientoMostarMenuEditar() {
-        return -1300;
+        return -967;
     }
 
     @Override
     protected double desplazamientoEliminarAspirante() {
-        return 1300;
+        return 967;
     }
-
 
 }

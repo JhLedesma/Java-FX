@@ -5,7 +5,9 @@ import UI.IngresoDatosAspirante.IngresoDatosAspirante1280x1024.IngresoDatosAspir
 import UI.Inicio.Inicio1280x1024.InicioView1280x1024;
 import UI.InputAlternativo.InputAlternativo1920x1080.InputAlternativoView1920x1080;
 import UI.InputNormal.InputNormal1280x1024.InputNormalView1280x1024;
+import UI.ListaAspirantes.ListaAspirante1280x1024.ListaAspirantesView1280x1024;
 import UI.Login.Login1280x1024.LoginView1280x1024;
+import UI.Login.Login1920x1080.LoginView1920x1080;
 import UI.MenuEspecialista.MenuEspecialista1280x1024.MenuEspecialistaView1280x1024;
 import de.saxsys.mvvmfx.FluentViewLoader;
 
@@ -24,7 +26,7 @@ public class FXML1280x1024 extends FamilyFXML {
     @Override
     public void showListaAspirantes()
     {
-
+        GestorScenas.show(FluentViewLoader.fxmlView(ListaAspirantesView1280x1024.class).load().getView());
     }
 
     @Override
