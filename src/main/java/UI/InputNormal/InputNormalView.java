@@ -250,6 +250,7 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
     protected void aumentarProgressBar()
     {
         Double nuevoPorcentaje = progressBar.progressProperty().get() + 0.0017;
+
         if(nuevoPorcentaje < 567.0)
         {
             progressBar.progressProperty().setValue(nuevoPorcentaje);
@@ -257,7 +258,6 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
         }
         else
         {
-            progressBar.progressProperty().setValue(100);
             labelProgressBar.setText("100%");
         }
     }
