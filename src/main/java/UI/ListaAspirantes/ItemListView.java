@@ -15,6 +15,7 @@ import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.scene.Cursor;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -221,6 +222,7 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         label.setGraphic(icon);
         label.setGraphicTextGap(getGraphicTextGap());
         label.setPadding(new Insets(getLabelPadding()));
+        label.setCursor(Cursor.HAND);
 
         return label;
     }
@@ -246,6 +248,7 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
         listView.setVerticalGap(getVerticalGapListView());
         listView.setPrefWidth(getAnchoListView());
         listView.setOnMouseClicked(event -> execBotonListView(event));
+        listView.setCursor(Cursor.HAND);
     }
 
     private void configPopup() {
