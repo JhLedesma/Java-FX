@@ -16,11 +16,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="160.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ListaAspirantes.ListaAspirante1280x1024.ItemListView1280x1024">
+<AnchorPane prefHeight="160.0" prefWidth="956.0" stylesheets="@../ItemListView.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ListaAspirantes.ListaAspirante1280x1024.ItemListView1280x1024">
    <children>
       <AnchorPane fx:id="anchorPrincipal" layoutY="-1.0" prefHeight="164.0" prefWidth="956.0">
          <children>
-            <JFXListView fx:id="listView" layoutX="200.0" layoutY="40.0" prefHeight="106.0" prefWidth="110.0" stylesheets="@../ListaApirantes1920x1080/ItemListView.css" visible="false" />
+            <JFXListView fx:id="listView" layoutX="200.0" layoutY="40.0" prefHeight="106.0" prefWidth="110.0" stylesheets="@../ItemListView.css" visible="false" />
             <MaterialDesignIconView id="foto" fill="#5b5a5a" glyphName="ACCOUNT_CIRCLE" layoutX="11.0" layoutY="136.0" size="160" wrappingWidth="150.0" />
             <GridPane layoutX="180.0" layoutY="24.0" prefHeight="106.0" prefWidth="588.0">
                <columnConstraints>

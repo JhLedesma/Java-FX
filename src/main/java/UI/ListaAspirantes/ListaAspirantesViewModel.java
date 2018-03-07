@@ -29,6 +29,7 @@ public class ListaAspirantesViewModel implements ViewModel
     private Aspirante mementoAspirante;
     private int numeroIndiceMemento;
 
+
     public void buscarItems()
     {
         listaItems.clear();
@@ -93,4 +94,11 @@ public class ListaAspirantesViewModel implements ViewModel
     }
 
 
+    public Aspirante getMementoAspirante() {
+        return mementoAspirante;
+    }
+
+    public int getNumeroIndiceMemento() {
+        return numeroIndiceMemento;
+    }
 }

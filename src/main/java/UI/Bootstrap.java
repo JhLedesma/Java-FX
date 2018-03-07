@@ -92,14 +92,15 @@ public class Bootstrap
     public static void iniciarPreguntas()
     {
         RepoPreguntas.getInstance().agregarObjeto(new Pregunta(1, "Me gustan las revistas de mecánica"));
-        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(2, "Saludos"));
-        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(3, "Saludos"));
-        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(4, "Saludos"));
-        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(5, "Saludos"));
-        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(6, "Saludos"));
-        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(7, "Saludos"));
-        RepoPreguntas.getInstance().agregarObjeto(new Pregunta(8, "Saludos"));
 
+        List<Pregunta> preguntas = new ArrayList<Pregunta>();
+        for(int i=2; i<568; i++)
+        {
+            Pregunta preguntaX = new Pregunta(i, "Saludos");
+            preguntas.add(preguntaX);
+        }
+
+        RepoPreguntas.getInstance().agregarListaDeObjetos(preguntas);
     }
 
     public static void iniciarRepositoriosDePrueba()

@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootPane" prefHeight="838.0" prefWidth="1545.0" stylesheets="@ListaAspirante.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ListaAspirantes.ListaApirantes1920x1080.ListaAspirantesView1920x1080">
+<AnchorPane fx:id="rootPane" prefHeight="838.0" prefWidth="1545.0" stylesheets="@../ListaAspirante.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ListaAspirantes.ListaApirantes1920x1080.ListaAspirantesView1920x1080">
 
     <children>
         <JFXListView fx:id="listview" layoutX="228.0" layoutY="69.0" prefHeight="769.0" prefWidth="1318.0" style="-fx-background-color: #FFFFFF;" />
