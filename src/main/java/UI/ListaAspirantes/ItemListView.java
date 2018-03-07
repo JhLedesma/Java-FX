@@ -129,7 +129,7 @@ public abstract class ItemListView implements FxmlView<ItemListViewModel>
 
     private void eliminarAspirante() {
         TranslateTransition transition = new TranslateTransition(Duration.millis(300), anchorPrincipal);
-        transition.setToX(1300);
+        transition.setToX(desplazamientoEliminarAspirante());
         transition.play();
         transition.setOnFinished(event -> viewModel.eliminarAspirante());
     }

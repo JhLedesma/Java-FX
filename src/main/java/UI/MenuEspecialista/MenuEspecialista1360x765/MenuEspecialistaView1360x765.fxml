@@ -79,42 +79,45 @@
       </AnchorPane>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="565.0" prefWidth="169.0" style="-fx-background-color: #cccccc;">
          <children>
-            <Pane layoutX="57.0" layoutY="39.0" />
-            <Pane layoutX="57.0" layoutY="391.0" />
-            <Pane layoutX="57.0" layoutY="723.0" />
-            <JFXButton layoutX="27.0" layoutY="253.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
-               <font>
-                  <Font name="Arial" size="20.0" />
-               </font>
-               <graphic>
-                  <MaterialDesignIconView glyphName="HOME" size="45" text="" />
-               </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton layoutX="27.0" layoutY="494.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
-               <font>
-                  <Font name="Arial" size="20.0" />
-               </font>
-               <graphic>
-                  <FontAwesomeIconView glyphName="GEAR" size="42" text="" />
-               </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton fx:id="backButton" layoutX="27.0" layoutY="14.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
-               <font>
-                  <Font name="Arial" size="20.0" />
-               </font>
-               <graphic>
-                  <FontAwesomeIconView glyphName="ARROW_LEFT" size="40" text="" />
-               </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
+            <Pane layoutX="31.0" layoutY="31.0">
+               <children>
+                  <JFXButton fx:id="backButton" prefHeight="41.0" prefWidth="107.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
+                     <font>
+                        <Font name="Arial" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <FontAwesomeIconView glyphName="ARROW_LEFT" layoutX="36.0" layoutY="33.0" size="35" text="" wrappingWidth="34.28571319580078" />
+               </children>
+            </Pane>
+            <Pane layoutX="32.0" layoutY="262.0">
+               <children>
+                  <JFXButton fx:id="btnHome" prefHeight="41.0" prefWidth="107.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
+                     <font>
+                        <Font name="Arial" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <MaterialDesignIconView glyphName="HOME" layoutX="35.0" layoutY="34.0" size="38" text="" />
+               </children>
+            </Pane>
+            <Pane layoutX="31.0" layoutY="500.0">
+               <children>
+                  <JFXButton fx:id="btnConfig" prefHeight="41.0" prefWidth="107.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
+                     <font>
+                        <Font name="Arial" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <FontAwesomeIconView glyphName="GEAR" layoutX="39.0" layoutY="33.0" size="35" text="" />
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
    </children>

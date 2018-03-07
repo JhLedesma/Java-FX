@@ -25,12 +25,12 @@
                </font>
             </JFXButton>
             <MaterialDesignIconView glyphName="HOME" layoutX="64.0" layoutY="391.0" size="45" text="" />
-            <JFXButton layoutX="29.0" layoutY="645.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
+            <JFXButton layoutX="29.0" layoutY="658.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#fffdfd" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;" text=" ">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
             </JFXButton>
-            <FontAwesomeIconView glyphName="GEAR" layoutX="69.0" layoutY="683.0" size="42" text="" />
+            <FontAwesomeIconView glyphName="GEAR" layoutX="69.0" layoutY="696.0" size="42" text="" />
             <JFXButton layoutX="27.0" layoutY="18.0" prefHeight="46.0" prefWidth="115.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
                <font>
                   <Font name="Arial" size="20.0" />

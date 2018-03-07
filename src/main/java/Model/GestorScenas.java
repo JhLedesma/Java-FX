@@ -62,10 +62,8 @@ public class GestorScenas
             }
 
             else
-                {
-
+            {
                 familyFXML = new FXML1360x765(600,1250,450,600,600,1250);
-
             }
 
         }
