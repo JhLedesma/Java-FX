@@ -50,22 +50,25 @@ public class GestorScenas
         double width = screenSeize.getWidth();
         double height = screenSeize.getHeight();
 
-        if (width >= 1920.0 && height >= 1080.0)
+        if (width > 1440.0 && height > 900.0)
         {
-            familyFXML = new FXML1920x1080(850, 1545, 450, 600, 840, 1545);
+            familyFXML = new FXML1920x1080(840, 1545, 840, 1545, 840, 1545);
+        }
+        else if (width > 1360.0 && height > 765.0)
+        {
+            //familyFXML = new FXML1440x900() Decidir Numeros de Pantalla
+        }
+        else if (width > 1280.0 && height > 1024.0)
+        {
+            familyFXML = new FXML1360x765(600,1250,600,1250,600,1250);
+        }
+        else if (width > 1024.0 && height > 798.0)
+        {
+            familyFXML = new FXML1280x1024(750, 1125, 750, 1125, 750, 1125);
         }
         else
         {
-            if (width == 1280.0 && height == 1024.0)
-            {
-                familyFXML = new FXML1280x1024(750, 1125, 450, 600, 750, 1125);
-            }
-
-            else
-            {
-                familyFXML = new FXML1360x765(600,1250,450,600,600,1250);
-            }
-
+            //familyFXML = FXML1024x798() Decidir Numeros de Pantalla
         }
     }
 
