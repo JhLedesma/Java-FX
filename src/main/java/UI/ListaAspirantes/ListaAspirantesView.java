@@ -10,6 +10,7 @@ import de.saxsys.mvvmfx.InjectViewModel;
 import de.saxsys.mvvmfx.utils.viewlist.ViewListCellFactory;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -65,6 +66,7 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
     protected void showSnackBar()
     {
         JFXSnackbar newsSnackBar = new JFXSnackbar(rootPane);
+        newsSnackBar.setCursor(Cursor.HAND);
 
         newsSnackBar.show("Registro eliminado", "Deshacer", 10000, event -> {
             deshacerAspiranteEliminado();
