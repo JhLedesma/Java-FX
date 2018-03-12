@@ -16,3 +16,7 @@
 .list-view .scroll-bar:horizontal .decrement-button {
     -fx-padding:0;
 }
+
+.list-cell:odd {
+    -fx-background-color: white;
+}

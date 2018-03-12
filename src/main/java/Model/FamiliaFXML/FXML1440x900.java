@@ -1,5 +1,10 @@
 package Model.FamiliaFXML;
 
+import Model.GestorScenas;
+import UI.ListaAspirantes.ListaApirantes1920x1080.ListaAspirantesView1920x1080;
+import UI.ListaAspirantes.ListaAspirantes1440x900.ListaAspirantesView1440x900;
+import de.saxsys.mvvmfx.FluentViewLoader;
+
 public class FXML1440x900 extends FamilyFXML
 {
     public FXML1440x900(int maxHeight, int maxWidth, int minHeight, int minWidth, int height, int width) {
@@ -12,8 +17,9 @@ public class FXML1440x900 extends FamilyFXML
     }
 
     @Override
-    public void showListaAspirantes() {
-
+    public void showListaAspirantes()
+    {
+        GestorScenas.show(FluentViewLoader.fxmlView(ListaAspirantesView1440x900.class).load().getView());
     }
 
     @Override

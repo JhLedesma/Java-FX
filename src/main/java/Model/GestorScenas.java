@@ -1,9 +1,6 @@
 package Model;
 
-import Model.FamiliaFXML.FXML1280x1024;
-import Model.FamiliaFXML.FXML1360x765;
-import Model.FamiliaFXML.FXML1920x1080;
-import Model.FamiliaFXML.FamilyFXML;
+import Model.FamiliaFXML.*;
 import UI.InputNormal.InputNormalView;
 import de.saxsys.mvvmfx.ViewTuple;
 import javafx.scene.Parent;
@@ -56,7 +53,7 @@ public class GestorScenas
         }
         else if (width > 1360.0 && height > 765.0)
         {
-            //familyFXML = new FXML1440x900() Decidir Numeros de Pantalla
+            familyFXML = new FXML1440x900(700, 1240, 700, 1240, 700, 1240);
         }
         else if (width > 1280.0 && height > 1024.0)
         {
@@ -68,7 +65,7 @@ public class GestorScenas
         }
         else
         {
-            //familyFXML = FXML1024x798() Decidir Numeros de Pantalla
+            //familyFXML = FXML1024x798() Decidir Numeros de Pantalla, creo que son 200 menos tanto de ancho como alto
         }
     }
 
