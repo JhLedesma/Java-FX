@@ -8,10 +8,13 @@ import com.jfoenix.controls.JFXTextField;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
 import de.saxsys.mvvmfx.utils.viewlist.ViewListCellFactory;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 
 public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesViewModel>
 {
@@ -55,7 +58,7 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
         Model.NotificationCenter.getInstance().subscribe("AspiranteEliminado", (s, objects) -> {
             viewModel.crearMementoAspirante((Aspirante) objects[0], (int) objects[1]);
             viewModel.buscarItems();
-            loadListView();
+            //loadListView();
             showSnackBar();
         });
     }
@@ -63,6 +66,7 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
     protected void showSnackBar()
     {
         JFXSnackbar newsSnackBar = new JFXSnackbar(rootPane);
+        newsSnackBar.setCursor(Cursor.HAND);
 
         newsSnackBar.show("Registro eliminado", "Deshacer", 10000, event -> {
             deshacerAspiranteEliminado();
@@ -75,27 +79,20 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
     {
         viewModel.deshacerEliminacionAspirante();
         viewModel.buscarItems();
-        loadListView();
+      //  loadListView();
     }
 
     //--------------------Filtrado----------------------//
 
     protected void listenerTextField()
     {
-//        try
-//        {
             filtroTextField.textProperty().addListener((observable, oldValue, newValue) -> {
-                if(newValue == null || newValue.length() == 0) {
 
+                if(newValue == null || newValue.length() == 0)
+                {
                     viewModel.buscarItems();
                 }
             });
-        //}
-//        catch (NoExistenObjetosException e)
-//        {
-//           //No hago nada a proposito, aca quiero que la lista quede vacia
-//        }
-
     }
 
     @FXML
@@ -112,9 +109,12 @@ public abstract class ListaAspirantesView implements FxmlView<ListaAspirantesVie
         filtrarAspirante();
     }
 
-    private void filtrarAspirante() {
+
+    private void filtrarAspirante()
+    {
+        viewModel.buscarItems();
         viewModel.filtrar();
-        this.loadListView();
+       // this.loadListView();
     }
 
     //-----------------Barra izquierda-------------------//

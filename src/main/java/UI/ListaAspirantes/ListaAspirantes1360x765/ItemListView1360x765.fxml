@@ -16,13 +16,13 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="160.0" prefWidth="956.0" stylesheets="@../ItemListView.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ListaAspirantes.ListaAspirante1280x1024.ItemListView1280x1024">
+
+<AnchorPane stylesheets="@../ItemListView.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ListaAspirantes.ListaAspirantes1360x765.ItemListView1360x765">
    <children>
-      <AnchorPane fx:id="anchorPrincipal" layoutY="-1.0" prefHeight="164.0" prefWidth="956.0">
+      <AnchorPane fx:id="anchorPrincipal" prefHeight="144.0" prefWidth="1082.0">
          <children>
-            <JFXListView fx:id="listView" layoutX="200.0" layoutY="40.0" prefHeight="106.0" prefWidth="110.0" stylesheets="@../ItemListView.css" visible="false" />
-            <MaterialDesignIconView id="foto" fill="#5b5a5a" glyphName="ACCOUNT_CIRCLE" layoutX="11.0" layoutY="136.0" size="160" wrappingWidth="150.0" />
-            <GridPane layoutX="180.0" layoutY="24.0" prefHeight="106.0" prefWidth="588.0">
+            <MaterialDesignIconView id="foto" fill="#5b5a5a" glyphName="ACCOUNT_CIRCLE" layoutX="40.0" layoutY="125.0" size="142" wrappingWidth="138.0" />
+            <GridPane layoutX="224.0" layoutY="19.0" prefHeight="100.0" prefWidth="639.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="127.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="0.0" prefWidth="111.0" />
@@ -131,9 +131,9 @@
                   </Label>
                </children>
             </GridPane>
-            <Pane layoutX="768.0" layoutY="23.0">
+            <Pane layoutX="872.0" layoutY="20.0" prefHeight="100.0" prefWidth="146.0">
                <children>
-                  <JFXButton id="btnResultado" layoutX="-1.0" layoutY="2.0" prefHeight="41.0" prefWidth="144.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Ver Resultados">
+                  <JFXButton id="btnResultado" layoutX="5.0" layoutY="2.0" prefHeight="35.0" prefWidth="138.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Ver Resultados">
                      <font>
                         <Font name="Arial" size="16.0" />
                      </font>
@@ -141,7 +141,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton id="btnOpciones" fx:id="opcion" layoutY="65.0" onMouseClicked="#execPopup" prefHeight="41.0" prefWidth="144.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Opciones">
+                  <JFXButton id="btnOpciones" fx:id="opcion" layoutX="5.0" layoutY="63.0" onMouseClicked="#execPopup" prefHeight="35.0" prefWidth="138.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Opciones">
                      <font>
                         <Font name="Arial" size="16.0" />
                      </font>
@@ -149,16 +149,17 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <FontAwesomeIconView fx:id="plus" glyphName="PLUS" layoutX="14.0" layoutY="93.0" size="18" wrappingWidth="14.428571701049805" />
+                  <FontAwesomeIconView fx:id="plus" glyphName="PLUS" layoutX="18.0" layoutY="88.0" size="18" wrappingWidth="14.428571701049805" />
                </children>
             </Pane>
+            <JFXListView fx:id="listView" prefHeight="91.0" prefWidth="110.0" stylesheets="@../ItemListView.css" visible="false" />
+            <Line endX="705.0" layoutX="326.0" layoutY="140.0" startX="-100.0" stroke="#bfbebe" />
          </children>
       </AnchorPane>
-      <Line endX="660.0" layoutX="281.0" layoutY="157.0" startX="-100.0" stroke="#bfbebe" />
-      <AnchorPane fx:id="anchorMenuEditar" layoutX="959.0" layoutY="-1.0" prefHeight="164.0" prefWidth="956.0" style="-fx-background-color: #f3f3f3;">
+      <AnchorPane fx:id="anchorMenuEditar" layoutX="1082.0" prefHeight="144.0" prefWidth="1082.0" style="-fx-background-color: #f3f3f3;">
          <children>
-            <MaterialDesignIconView id="foto" fill="#5b5a5a" glyphName="ACCOUNT_CIRCLE" layoutX="14.0" layoutY="136.0" size="160" wrappingWidth="150.0" />
-            <GridPane layoutX="186.0" layoutY="33.0" prefHeight="106.0" prefWidth="588.0">
+            <MaterialDesignIconView id="foto" fill="#5b5a5a" glyphName="ACCOUNT_CIRCLE" layoutX="30.0" layoutY="125.0" size="142" wrappingWidth="138.0" />
+            <GridPane layoutX="212.0" layoutY="20.0" prefHeight="100.0" prefWidth="639.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="127.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="0.0" prefWidth="111.0" />
@@ -348,9 +349,9 @@
                   </FontAwesomeIconView>
                </children>
             </GridPane>
-            <Pane layoutX="780.0" layoutY="23.0" prefHeight="106.0" prefWidth="145.0">
+            <Pane layoutX="862.0" layoutY="20.0" prefHeight="100.0" prefWidth="146.0">
                <children>
-                  <JFXButton id="btnResultado" fx:id="btnGuardar" graphicTextGap="30.0" layoutX="1.0" onMouseClicked="#execBtnGuardar" prefHeight="41.0" prefWidth="144.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Guardar">
+                  <JFXButton id="btnResultado" fx:id="btnGuardar" graphicTextGap="30.0" layoutX="5.0" layoutY="2.0" onMouseClicked="#execBtnGuardar" prefHeight="35.0" prefWidth="138.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Guardar">
                      <font>
                         <Font name="Arial" size="16.0" />
                      </font>
@@ -358,7 +359,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton id="btnOpciones" fx:id="btnVolver" layoutX="1.0" layoutY="64.0" onMouseClicked="#execBtnVolver" prefHeight="41.0" prefWidth="144.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Volver">
+                  <JFXButton id="btnOpciones" fx:id="btnVolver" layoutX="5.0" layoutY="63.0" onMouseClicked="#execBtnVolver" prefHeight="35.0" prefWidth="138.0" ripplerFill="#fffdfd" style="-fx-background-color: #dddddd; -fx-background-radius: 50;" text="Volver">
                      <font>
                         <Font name="Arial" size="16.0" />
                      </font>
@@ -366,8 +367,8 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <FontAwesomeIconView glyphName="CHECK" layoutX="11.0" layoutY="28.0" size="18" wrappingWidth="14.428571701049805" />
-                  <FontAwesomeIconView glyphName="TIMES" layoutX="15.0" layoutY="91.0" size="18" wrappingWidth="14.428571701049805" />
+                  <FontAwesomeIconView glyphName="CHECK" layoutX="20.0" layoutY="26.0" size="18" wrappingWidth="14.428571701049805" />
+                  <FontAwesomeIconView glyphName="TIMES" layoutX="22.0" layoutY="87.0" size="18" wrappingWidth="14.428571701049805" />
                </children>
             </Pane>
          </children>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="662.0" prefWidth="200.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="49.0" layoutY="21.0">
+         <children>
+            <JFXButton onMouseClicked="#execBtnPantallaAnterior" prefHeight="38.0" prefWidth="103.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <FontAwesomeIconView glyphName="ARROW_LEFT" layoutX="37.0" layoutY="31.0" onMouseClicked="#execBtnPantallaAnterior" size="35" />
+         </children>
+      </Pane>
+      <Pane layoutX="49.0" layoutY="311.0">
+         <children>
+            <JFXButton layoutY="1.0" onMouseClicked="#execBtnPantallaAnterior" prefHeight="38.0" prefWidth="103.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <MaterialDesignIconView glyphName="HOME" layoutX="32.0" layoutY="35.0" onMouseClicked="#execBtnHome" size="40" />
+         </children>
+      </Pane>
+      <Pane layoutX="49.0" layoutY="605.0">
+         <children>
+            <JFXButton onMouseClicked="#execBtnPantallaAnterior" prefHeight="38.0" prefWidth="103.0" ripplerFill="#ffffff" style="-fx-background-color: #ffffff; -fx-background-radius: 50; -fx-region-border: #ffffff;" text=" ">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </JFXButton>
+            <FontAwesomeIconView glyphName="GEAR" layoutX="37.0" layoutY="31.0" onMouseClicked="#execBtn" size="35" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

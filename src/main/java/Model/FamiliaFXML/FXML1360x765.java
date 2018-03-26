@@ -3,6 +3,7 @@ package Model.FamiliaFXML;
 import Model.GestorScenas;
 import UI.Inicio.Inicio1280x1024.InicioView1280x1024;
 import UI.Inicio.Inicio1360x765.InicioView1360x765;
+import UI.ListaAspirantes.ListaAspirantes1360x765.ListaAspirantesView1360x765;
 import UI.Login.Login1280x1024.LoginView1280x1024;
 import UI.Login.Login1360x765.LoginView1360x765;
 import UI.MenuEspecialista.MenuEspecialista1280x1024.MenuEspecialistaView1280x1024;
@@ -24,8 +25,9 @@ public class FXML1360x765 extends FamilyFXML {
     }
 
     @Override
-    public void showListaAspirantes() {
-
+    public void showListaAspirantes()
+    {
+        GestorScenas.show(FluentViewLoader.fxmlView(ListaAspirantesView1360x765.class).load().getView());
     }
 
     @Override
