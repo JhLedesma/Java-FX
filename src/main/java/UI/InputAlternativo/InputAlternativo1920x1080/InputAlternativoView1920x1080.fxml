@@ -143,13 +143,13 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnPreguntaAnterior" layoutX="721.0" layoutY="735.0" prefHeight="45.0" prefWidth="181.0" ripplerFill="#ffffff" style="-fx-background-color: #BDBDBD; -fx-background-radius: 50; -fx-region-border: #ffffff;" text="Pregunta Anterior">
+      <JFXButton fx:id="btnPreguntaAnterior" layoutX="721.0" layoutY="735.0" onMouseClicked="#onClickPreguntaAnterior" prefHeight="45.0" prefWidth="181.0" ripplerFill="#ffffff" style="-fx-background-color: #BDBDBD; -fx-background-radius: 50; -fx-region-border: #ffffff;" text="Pregunta Anterior">
          <font>
             <Font name="Arial" size="17.0" />
          </font>
       </JFXButton>
       <JFXProgressBar layoutX="709.0" layoutY="53.0" prefHeight="41.0" prefWidth="729.0" />
-      <JFXButton fx:id="btnPreguntaSiguiente" layoutX="1233.0" layoutY="735.0" onMouseClicked="#onClick" prefHeight="45.0" prefWidth="181.0" ripplerFill="#ffffff" style="-fx-background-color: #BDBDBD; -fx-background-radius: 50; -fx-region-border: #ffffff;" text="Pregunta Siguiente">
+      <JFXButton fx:id="btnPreguntaSiguiente" layoutX="1233.0" layoutY="735.0" onMouseClicked="#onClickPreguntaSiguiente" prefHeight="45.0" prefWidth="181.0" ripplerFill="#ffffff" style="-fx-background-color: #BDBDBD; -fx-background-radius: 50; -fx-region-border: #ffffff;" text="Pregunta Siguiente">
          <font>
             <Font name="Arial" size="17.0" />
          </font>

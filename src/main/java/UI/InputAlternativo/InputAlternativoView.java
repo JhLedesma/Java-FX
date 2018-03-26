@@ -114,16 +114,26 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
 
     }
 
-    private void chequearPorUltimaRespuesta(){
+    private void chequearPorUltimaRespuesta(){ //Podría crear un metodo para cuando avanzo de pregunta pra que solo chequee si es la última pero prefiero dejar menos codigo y hacer 2 if mas
 
         if(viewModel.getNumeroPreguntasActuales() != 56){
 
-            cantidadCaracteresDeRespuesta = 10;
+            if(cantidadCaracteresDeRespuesta != 10){
+
+                cantidadCaracteresDeRespuesta = 10;
+
+                btnPreguntaSiguiente.setText("Pregunta Siguiente");
+
+                reconfigurarElementosVista();
+
+            }
 
         }
         else{
 
             cantidadCaracteresDeRespuesta = 7;
+
+            btnPreguntaSiguiente.setText("Terminar");
 
             reconfigurarElementosVista();
 
@@ -136,32 +146,17 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
         textFieldRespuestas.textProperty().removeListener(listenerActualDeTextField);
         configurarTextField(cantidadCaracteresDeRespuesta);
 
-        textFieldRespuestas.setOnKeyPressed((evt -> {
-
-            if(evt.getCode() == KeyCode.ENTER) {
-
-                viewModel.getListaDeRespuestas().add(textFieldRespuestas.getText());
-                mostrarAlerta(235);
-
-            }
-
-
-                })
-        );
-
-        btnPreguntaSiguiente.setOnMouseClicked(evt -> {
-
-            viewModel.getListaDeRespuestas().add(textFieldRespuestas.getText());
-            mostrarAlerta(235);
-
-        });
-
-        btnPreguntaSiguiente.setText("Terminar");
     }
 
     private void aumentarPreguntasActuales(){
 
         viewModel.setNumeroPreguntasActuales(viewModel.getNumeroPreguntasActuales() + 1);
+
+    }
+
+    private void decrementarPreguntasActuales(){
+
+        viewModel.setNumeroPreguntasActuales(viewModel.getNumeroPreguntasActuales() - 1);
 
     }
 
@@ -210,8 +205,6 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
 
                 mostrarSiguientePregunta();
 
-
-
             }
 
         }
@@ -223,10 +216,10 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
         int id = Integer.parseInt(((Pane) event.getSource()).getId());
         viewModel.setNumeroPreguntasActuales(id);
 
+        chequearPorUltimaRespuesta();
+
         viewModel.setStringDePregunta("Preguntas del " + viewModel.getListaNumeroPreguntas().get(id));
         textFieldRespuestas.setText(viewModel.getListaDeRespuestas().get(id));
-
-
 
     }
 
@@ -240,18 +233,19 @@ public abstract class InputAlternativoView implements FxmlView<InputAlternativoV
 
     }
 
-    public void onClick(javafx.scene.input.MouseEvent evt){
+    public void onClickPreguntaSiguiente(javafx.scene.input.MouseEvent evt){
         confirmarRespuestas();
     }
 
-    //Hacer un parser para las respuestas
-    //Cuando presiona enter, valida que esten las 10 respuestas, la misma funcionalidad esta en el boton pregunta siguiente
-    //Cuando se hace clic en en algunos de los item del ScrolPane, que se cargue la pantalla que le corresponde
+    public void onClickPreguntaAnterior(javafx.scene.input.MouseEvent evt){
 
-    //Cada item (Pane) del ScrolPane tiene un ID, con ese ID se cargan las respuestas (String) correspondientes a si pantalla
-    //No se van creando las respuestas, se van guardando los String en la lista de string, las respuestas del 1-10 representan un la posicion 1 de la lista de String
-    //Al momento de crear las respuestas se pone un contador para generar el numero de respuestas
+        decrementarPreguntasActuales();
 
+        int id = viewModel.getNumeroPreguntasActuales();
+
+        viewModel.setStringDePregunta("Preguntas del " + viewModel.getListaNumeroPreguntas().get(id));
+        textFieldRespuestas.setText(viewModel.getListaDeRespuestas().get(id));
+
+    } //Falta manejar que pasa cuando toco este boton y estoy en la primer pregunta, ahora tira excepcion
 
 }
-
