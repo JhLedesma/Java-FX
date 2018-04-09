@@ -8,6 +8,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 import java.util.prefs.Preferences;
 
 public class GestorScenas
@@ -18,6 +21,12 @@ public class GestorScenas
 
     private static Preferences preferenciasDeUsuario = Preferences.userNodeForPackage(GestorScenas.class);
 
+    private static List<Resolucion> listaDeResoluciones = new ArrayList<Resolucion>(){{
+        add(new Resolucion(1440.0,900.0));
+        add(new Resolucion(1360.0,765.0));
+        add(new Resolucion(1280.0,1024.0));
+        add(new Resolucion(1024.0,798.0));
+    }};
 
 
     public static FamilyFXML getFamily()
@@ -39,7 +48,25 @@ public class GestorScenas
     }
 
 
+    public static void calcularScreenSize(){
 
+        Dimension screenSeize = Toolkit.getDefaultToolkit().getScreenSize();
+        double width = screenSeize.getWidth();
+        double height = screenSeize.getHeight();
+
+        double minimo = 9999999;
+        double diferenciaResolucion;
+
+        for (Resolucion resolucion : listaDeResoluciones)
+        {
+            diferenciaResolucion = ( Math.abs((width - resolucion.getWidth())) + Math.abs((height - resolucion.height)) );
+            if(diferenciaResolucion < minimo) {minimo = diferenciaResolucion;}
+
+        }
+
+        System.out.println(minimo);
+
+    }
 
     private static void buscarFamily()
     {
