@@ -89,7 +89,7 @@
                               <Font size="20.0" />
                            </font>
                         </Text>
-                        <Pane id="1" layoutY="-1.0" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                        <Pane id="1" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -107,7 +107,259 @@
                               <Font size="20.0" />
                            </font>
                         </Text>
-                        <Pane id="2" layoutY="-1.0" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                        <Pane id="2" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="96.0" layoutY="267.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="31-40">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Pane id="2" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="96.0" layoutY="308.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="41-50">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Pane id="2" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="96.0" layoutY="349.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="51-60">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Pane id="2" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="96.0" layoutY="390.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="61-70">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Pane id="2" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="96.0" layoutY="431.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="71-80">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Pane id="2" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="96.0" layoutY="472.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="81-90">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Pane id="2" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="96.0" layoutY="513.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="91-100">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Pane id="2" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="96.0" layoutY="554.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="101-110">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Pane id="2" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="96.0" layoutY="595.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="111-120">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Pane id="2" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="96.0" layoutY="636.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="121-130">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Pane id="2" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="96.0" layoutY="677.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="131-140">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Pane id="2" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="96.0" layoutY="718.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="141-150">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Pane id="2" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="96.0" layoutY="759.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="151-160">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Pane id="2" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="96.0" layoutY="800.0" prefHeight="41.0" prefWidth="163.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <children>
+                        <FontAwesomeIconView id="0" glyphName="ARROW_CIRCLE_ALT_RIGHT" layoutX="14.0" layoutY="31.0" size="30" />
+                        <Text layoutX="61.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="161-170">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Pane id="2" onMouseClicked="#cambiarPregunta" prefHeight="41.0" prefWidth="163.0">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
