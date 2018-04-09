@@ -1,11 +1,22 @@
 package UI.Inicio;
 
 import Model.GestorScenas;
+import de.saxsys.mvvmfx.FxmlView;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.paint.Color;
 
-public abstract class InicioView {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public abstract class InicioView implements FxmlView<InicioViewModel>, Initializable
+{
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        configurarEfectos();
+    }
 
     @FXML
     private javafx.scene.image.ImageView imagenEspecialista;

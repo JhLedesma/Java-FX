@@ -1,6 +1,8 @@
 package Model.FamiliaFXML;
 
 import Model.GestorScenas;
+import UI.Inicio.Inicio1920x1080.InicioView1920x1080;
+import UI.Inicio.InicioView;
 import UI.InputAlternativo.InputAlternativo1920x1080.InputAlternativoView1920x1080;
 import UI.ListaAspirantes.ListaApirantes1920x1080.ListaAspirantesView1920x1080;
 import UI.Login.Login1920x1080.LoginView1920x1080;
@@ -34,7 +36,7 @@ public class FXML1920x1080 extends FamilyFXML
     @Override
     public void showInicio()
     {
-
+        GestorScenas.show(FluentViewLoader.fxmlView(InicioView1920x1080.class).load().getView());
     }
 
     @Override

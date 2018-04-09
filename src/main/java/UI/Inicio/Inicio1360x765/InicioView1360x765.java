@@ -7,13 +7,7 @@ import javafx.fxml.Initializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class InicioView1360x765 extends InicioView implements FxmlView<InicioViewModel>, Initializable {
-
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        configurarEfectos();
-    }
-
+public class InicioView1360x765 extends InicioView
+{
 
 }
