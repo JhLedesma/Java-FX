@@ -16,7 +16,8 @@ public class Main extends Application
     public void start(Stage primaryStage)
     {
 
-        primaryStage.setTitle("Test MMPI 2");
+        GestorScenas.calcularScreenSize();
+/*        primaryStage.setTitle("Test MMPI 2");
 
         try {
             new Bootstrap().iniciarObjetos();
@@ -26,7 +27,7 @@ public class Main extends Application
 
         GestorScenas.setStageApp(primaryStage);
 
-        GestorScenas.getFamily().showInputAlternativo();
+        GestorScenas.getFamily().showInicio();*/
     }
 
 
