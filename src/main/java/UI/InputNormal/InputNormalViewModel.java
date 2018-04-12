@@ -43,7 +43,7 @@ public class InputNormalViewModel implements ViewModel
                 respuesta = new Respuesta(numeroRespuesta, 0, "No");
                 break;
             default:
-                respuesta = new Respuesta(numeroRespuesta, 0, "N/C");
+                respuesta = new Respuesta(numeroRespuesta, 2, "N/C");
                 break;
         }
 

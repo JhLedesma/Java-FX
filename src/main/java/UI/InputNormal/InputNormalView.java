@@ -5,10 +5,9 @@ import BD.Excepciones.NoExisteObjetoConEseNombreException;
 import BD.Repositorios.RepoPreguntas;
 import Model.GestorScenas;
 import Model.Respuesta;
-import Model.X;
+import Model.Escalas.ItemEscala;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXProgressBar;
-import com.sun.org.apache.xpath.internal.operations.Number;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.application.Platform;
@@ -27,7 +26,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
-import javax.swing.text.html.parser.Parser;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,11 +62,6 @@ public abstract class InputNormalView implements FxmlView<InputNormalViewModel>
 
         ocultarBtnPreguntaAnteriorSiEsPrimerPregunta();
 
-        List<X> lx = new ArrayList<>();
-        for(int i=0; i<800; i++)
-        {
-            lx.add(new X(26, true));
-        }
     }
 
 
