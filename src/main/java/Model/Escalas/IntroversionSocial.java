@@ -1,0 +1,136 @@
+package Model.Escalas;
+
+public class IntroversionSocial extends Escala {
+
+
+    @Override
+    protected void iniciarItemsEscala() {
+
+    }
+
+    @Override
+    protected void inicarPT() {
+
+        puntajeTVaron.put(10,30);
+        puntajeTVaron.put(11,31);
+        puntajeTVaron.put(12,32);
+        puntajeTVaron.put(13,33);
+        puntajeTVaron.put(14,34);
+        puntajeTVaron.put(15,35);
+        puntajeTVaron.put(16,37);
+        puntajeTVaron.put(17,38);
+        puntajeTVaron.put(18,39);
+        puntajeTVaron.put(19,40);
+        puntajeTVaron.put(20,41);
+        puntajeTVaron.put(21,42);
+        puntajeTVaron.put(22,43);
+        puntajeTVaron.put(23,45);
+        puntajeTVaron.put(24,46);
+        puntajeTVaron.put(25,47);
+        puntajeTVaron.put(26,48);
+        puntajeTVaron.put(27,49);
+        puntajeTVaron.put(28,50);
+        puntajeTVaron.put(29,52);
+        puntajeTVaron.put(30,53);
+        puntajeTVaron.put(31,54);
+        puntajeTVaron.put(32,55);
+        puntajeTVaron.put(33,56);
+        puntajeTVaron.put(34,57);
+        puntajeTVaron.put(35,58);
+        puntajeTVaron.put(36,60);
+        puntajeTVaron.put(37,61);
+        puntajeTVaron.put(38,62);
+        puntajeTVaron.put(39,63);
+        puntajeTVaron.put(40,64);
+        puntajeTVaron.put(41,65);
+        puntajeTVaron.put(42,67);
+        puntajeTVaron.put(43,68);
+        puntajeTVaron.put(44,69);
+        puntajeTVaron.put(45,70);
+        puntajeTVaron.put(46,71);
+        puntajeTVaron.put(47,72);
+        puntajeTVaron.put(48,73);
+        puntajeTVaron.put(49,75);
+        puntajeTVaron.put(50,76);
+        puntajeTVaron.put(51,77);
+        puntajeTVaron.put(52,78);
+        puntajeTVaron.put(53,79);
+        puntajeTVaron.put(54,80);
+        puntajeTVaron.put(55,82);
+        puntajeTVaron.put(56,83);
+        puntajeTVaron.put(57,84);
+        puntajeTVaron.put(58,85);
+        puntajeTVaron.put(59,86);
+        puntajeTVaron.put(60,87);
+        puntajeTVaron.put(61,88);
+        puntajeTVaron.put(62,90);
+        puntajeTVaron.put(63,91);
+        puntajeTVaron.put(64,92);
+        puntajeTVaron.put(65,93);
+        puntajeTVaron.put(66,94);
+        puntajeTVaron.put(67,95);
+        puntajeTVaron.put(68,97);
+        puntajeTVaron.put(69,98);
+
+        puntajeTMujer.put(11,30);
+        puntajeTMujer.put(12,31);
+        puntajeTMujer.put(13,33);
+        puntajeTMujer.put(14,34);
+        puntajeTMujer.put(15,35);
+        puntajeTMujer.put(16,36);
+        puntajeTMujer.put(17,37);
+        puntajeTMujer.put(18,38);
+        puntajeTMujer.put(19,39);
+        puntajeTMujer.put(20,41);
+        puntajeTMujer.put(21,42);
+        puntajeTMujer.put(22,43);
+        puntajeTMujer.put(23,44);
+        puntajeTMujer.put(24,45);
+        puntajeTMujer.put(25,46);
+        puntajeTMujer.put(26,48);
+        puntajeTMujer.put(27,49);
+        puntajeTMujer.put(28,50);
+        puntajeTMujer.put(29,51);
+        puntajeTMujer.put(30,52);
+        puntajeTMujer.put(31,53);
+        puntajeTMujer.put(32,54);
+        puntajeTMujer.put(33,56);
+        puntajeTMujer.put(34,57);
+        puntajeTMujer.put(35,58);
+        puntajeTMujer.put(36,59);
+        puntajeTMujer.put(37,60);
+        puntajeTMujer.put(38,61);
+        puntajeTMujer.put(39,62);
+        puntajeTMujer.put(40,64);
+        puntajeTMujer.put(41,65);
+        puntajeTMujer.put(42,66);
+        puntajeTMujer.put(43,67);
+        puntajeTMujer.put(44,68);
+        puntajeTMujer.put(45,69);
+        puntajeTMujer.put(46,70);
+        puntajeTMujer.put(47,72);
+        puntajeTMujer.put(48,73);
+        puntajeTMujer.put(49,74);
+        puntajeTMujer.put(50,75);
+        puntajeTMujer.put(51,76);
+        puntajeTMujer.put(52,77);
+        puntajeTMujer.put(53,79);
+        puntajeTMujer.put(54,80);
+        puntajeTMujer.put(55,81);
+        puntajeTMujer.put(56,82);
+        puntajeTMujer.put(57,83);
+        puntajeTMujer.put(58,84);
+        puntajeTMujer.put(59,85);
+        puntajeTMujer.put(60,87);
+        puntajeTMujer.put(61,88);
+        puntajeTMujer.put(62,89);
+        puntajeTMujer.put(63,90);
+        puntajeTMujer.put(64,91);
+        puntajeTMujer.put(65,92);
+        puntajeTMujer.put(66,93);
+        puntajeTMujer.put(67,95);
+        puntajeTMujer.put(68,96);
+        puntajeTMujer.put(69,97);
+
+    }
+}
