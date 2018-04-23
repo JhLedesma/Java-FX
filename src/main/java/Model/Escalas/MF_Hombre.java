@@ -67,5 +67,44 @@ public class MF_Hombre extends Escala
     @Override
     protected void inicarPT() {
 
+        //No corresponden puntos T de mujer
+        puntajeTVaron.put(17,30);
+        puntajeTVaron.put(18,32);
+        puntajeTVaron.put(19,35);
+        puntajeTVaron.put(20,37);
+        puntajeTVaron.put(21,40);
+        puntajeTVaron.put(22,42);
+        puntajeTVaron.put(23,44);
+        puntajeTVaron.put(24,47);
+        puntajeTVaron.put(25,49);
+        puntajeTVaron.put(26,51);
+        puntajeTVaron.put(27,54);
+        puntajeTVaron.put(28,56);
+        puntajeTVaron.put(29,59);
+        puntajeTVaron.put(30,61);
+        puntajeTVaron.put(31,63);
+        puntajeTVaron.put(32,66);
+        puntajeTVaron.put(33,68);
+        puntajeTVaron.put(34,71);
+        puntajeTVaron.put(35,73);
+        puntajeTVaron.put(36,75);
+        puntajeTVaron.put(37,79);
+        puntajeTVaron.put(38,80);
+        puntajeTVaron.put(39,82);
+        puntajeTVaron.put(40,85);
+        puntajeTVaron.put(41,87);
+        puntajeTVaron.put(42,90);
+        puntajeTVaron.put(43,92);
+        puntajeTVaron.put(44,94);
+        puntajeTVaron.put(45,97);
+        puntajeTVaron.put(46,99);
+        puntajeTVaron.put(47,101);
+        puntajeTVaron.put(48,104);
+        puntajeTVaron.put(49,106);
+        puntajeTVaron.put(50,109);
+        puntajeTVaron.put(51,111);
+        puntajeTVaron.put(52,113);
+        puntajeTVaron.put(53,116);
+        puntajeTVaron.put(54,118);
     }
 }

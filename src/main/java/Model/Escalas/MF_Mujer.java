@@ -66,5 +66,44 @@ public class MF_Mujer extends Escala
     @Override
     protected void inicarPT() {
 
+        //No corresponde puntos T de Hombre
+        puntajeTMujer.put(40,30);
+        puntajeTMujer.put(39,33);
+        puntajeTMujer.put(38,35);
+        puntajeTMujer.put(37,38);
+        puntajeTMujer.put(36,40);
+        puntajeTMujer.put(35,43);
+        puntajeTMujer.put(34,45);
+        puntajeTMujer.put(33,48);
+        puntajeTMujer.put(32,50);
+        puntajeTMujer.put(31,53);
+        puntajeTMujer.put(30,55);
+        puntajeTMujer.put(29,58);
+        puntajeTMujer.put(28,60);
+        puntajeTMujer.put(27,63);
+        puntajeTMujer.put(26,65);
+        puntajeTMujer.put(25,68);
+        puntajeTMujer.put(24,70);
+        puntajeTMujer.put(23,72);
+        puntajeTMujer.put(22,75);
+        puntajeTMujer.put(21,77);
+        puntajeTMujer.put(20,80);
+        puntajeTMujer.put(19,82);
+        puntajeTMujer.put(18,85);
+        puntajeTMujer.put(17,87);
+        puntajeTMujer.put(16,90);
+        puntajeTMujer.put(15,92);
+        puntajeTMujer.put(14,95);
+        puntajeTMujer.put(13,97);
+        puntajeTMujer.put(12,100);
+        puntajeTMujer.put(11,102);
+        puntajeTMujer.put(10,105);
+        puntajeTMujer.put(9,107);
+        puntajeTMujer.put(8,110);
+        puntajeTMujer.put(7,112);
+        puntajeTMujer.put(6,115);
+        puntajeTMujer.put(5,117);
+        puntajeTMujer.put(4,120);
+
     }
 }
