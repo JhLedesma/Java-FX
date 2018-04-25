@@ -1,11 +1,80 @@
 package Model.Escalas;
 
-public class IntroversionSocial extends Escala {
+public class Introversion_Social extends Escala {
 
 
     @Override
-    protected void iniciarItemsEscala() {
-
+    protected void iniciarItemsEscala()
+    {
+        //60 Items: 13V y 47F
+        itemsEscala.add(new ItemEscala(31,1));
+        itemsEscala.add(new ItemEscala(56,1));
+        itemsEscala.add(new ItemEscala(70,1));
+        itemsEscala.add(new ItemEscala(100,1));
+        itemsEscala.add(new ItemEscala(104,1));
+        itemsEscala.add(new ItemEscala(110,1));
+        itemsEscala.add(new ItemEscala(127,1));
+        itemsEscala.add(new ItemEscala(135,1));
+        itemsEscala.add(new ItemEscala(158,1));
+        itemsEscala.add(new ItemEscala(161,1));
+        itemsEscala.add(new ItemEscala(167,1));
+        itemsEscala.add(new ItemEscala(185,1));
+        itemsEscala.add(new ItemEscala(215,1));
+        itemsEscala.add(new ItemEscala(243,1));
+        itemsEscala.add(new ItemEscala(251,1));
+        itemsEscala.add(new ItemEscala(265,1));
+        itemsEscala.add(new ItemEscala(275,1));
+        itemsEscala.add(new ItemEscala(284,1));
+        itemsEscala.add(new ItemEscala(289,1));
+        itemsEscala.add(new ItemEscala(296,1));
+        itemsEscala.add(new ItemEscala(302,1));
+        itemsEscala.add(new ItemEscala(308,1));
+        itemsEscala.add(new ItemEscala(326,1));
+        itemsEscala.add(new ItemEscala(328,1));
+        itemsEscala.add(new ItemEscala(337,1));
+        itemsEscala.add(new ItemEscala(338,1));
+        itemsEscala.add(new ItemEscala(347,1));
+        itemsEscala.add(new ItemEscala(351,1));
+        itemsEscala.add(new ItemEscala(352,1));
+        itemsEscala.add(new ItemEscala(357,1));
+        itemsEscala.add(new ItemEscala(358,1));
+        itemsEscala.add(new ItemEscala(364,1));
+        itemsEscala.add(new ItemEscala(367,1));
+        itemsEscala.add(new ItemEscala(368,1));
+        itemsEscala.add(new ItemEscala(369,1));
+        itemsEscala.add(new ItemEscala(25,0));
+        itemsEscala.add(new ItemEscala(32,0));
+        itemsEscala.add(new ItemEscala(49,0));
+        itemsEscala.add(new ItemEscala(79,0));
+        itemsEscala.add(new ItemEscala(86,0));
+        itemsEscala.add(new ItemEscala(106,0));
+        itemsEscala.add(new ItemEscala(112,0));
+        itemsEscala.add(new ItemEscala(131,0));
+        itemsEscala.add(new ItemEscala(181,0));
+        itemsEscala.add(new ItemEscala(189,0));
+        itemsEscala.add(new ItemEscala(207,0));
+        itemsEscala.add(new ItemEscala(209,0));
+        itemsEscala.add(new ItemEscala(231,0));
+        itemsEscala.add(new ItemEscala(237,0));
+        itemsEscala.add(new ItemEscala(255,0));
+        itemsEscala.add(new ItemEscala(262,0));
+        itemsEscala.add(new ItemEscala(267,0));
+        itemsEscala.add(new ItemEscala(280,0));
+        itemsEscala.add(new ItemEscala(321,0));
+        itemsEscala.add(new ItemEscala(335,0));
+        itemsEscala.add(new ItemEscala(340,0));
+        itemsEscala.add(new ItemEscala(342,0));
+        itemsEscala.add(new ItemEscala(344,0));
+        itemsEscala.add(new ItemEscala(345,0));
+        itemsEscala.add(new ItemEscala(350,0));
+        itemsEscala.add(new ItemEscala(353,0));
+        itemsEscala.add(new ItemEscala(354,0));
+        itemsEscala.add(new ItemEscala(359,0));
+        itemsEscala.add(new ItemEscala(360,0));
+        itemsEscala.add(new ItemEscala(362,0));
+        itemsEscala.add(new ItemEscala(363,0));
+        itemsEscala.add(new ItemEscala(366,0));
+        itemsEscala.add(new ItemEscala(370,0));
     }
 
     @Override

@@ -5,8 +5,8 @@ public class Histeria extends Escala
     @Override
     protected void iniciarItemsEscala()
     {
-        //itemsEscala.add(new ItemEscala(,));
         //60 Items: 13V y 47F
+        //itemsEscala.add(new ItemEscala(,));
         itemsEscala.add(new ItemEscala(11,1));
         itemsEscala.add(new ItemEscala(18, 1));
         itemsEscala.add(new ItemEscala(31, 1));
