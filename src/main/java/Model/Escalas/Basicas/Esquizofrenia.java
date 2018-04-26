@@ -1,6 +1,9 @@
-package Model.Escalas;
+package Model.Escalas.Basicas;
 
-public class Ezquizofrenia extends Escala
+import Model.Escalas.Escala;
+import Model.Escalas.ItemEscala;
+
+public class Esquizofrenia extends Escala
 {
     //78 Items: 59V y 19F
     @Override
