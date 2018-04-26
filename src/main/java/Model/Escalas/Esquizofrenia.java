@@ -1,6 +1,6 @@
 package Model.Escalas;
 
-public class Ezquizofrenia extends Escala
+public class Esquizofrenia extends Escala
 {
     //78 Items: 59V y 19F
     @Override
