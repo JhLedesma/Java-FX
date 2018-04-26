@@ -1,4 +1,6 @@
-package Model.Escalas;
+package Model.Escalas.Contenido;
+
+import Model.Escalas.Escala;
 
 public class Ansiedad extends Escala {
 

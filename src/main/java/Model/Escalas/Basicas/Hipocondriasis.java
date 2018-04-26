@@ -1,4 +1,7 @@
-package Model.Escalas;
+package Model.Escalas.Basicas;
+
+import Model.Escalas.Escala;
+import Model.Escalas.ItemEscala;
 
 public class Hipocondriasis extends Escala
 {

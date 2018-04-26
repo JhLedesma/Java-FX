@@ -1,4 +1,7 @@
-package Model.Escalas;
+package Model.Escalas.Harris_Lingoes;
+
+import Model.Escalas.Escala;
+import Model.Escalas.ItemEscala;
 
 public class Preocupacion extends Escala
 {
