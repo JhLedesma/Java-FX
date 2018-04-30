@@ -1,4 +1,4 @@
-package Model.Escalas.Harris_Lingoes;
+package Model.Escalas.Harris_Lingoes.D;
 
 import Model.Escalas.Escala;
 import Model.Escalas.ItemEscala;
