@@ -63,7 +63,7 @@ public class ideacion_bizarra extends Escala {
         puntajeTMujer.put(21,109);
         puntajeTMujer.put(22,112);
         puntajeTMujer.put(23,115);
-        
+
 
     }
 }
