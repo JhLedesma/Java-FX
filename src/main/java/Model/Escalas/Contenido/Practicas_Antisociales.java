@@ -2,7 +2,7 @@ package Model.Escalas.Contenido;
 
 import Model.Escalas.Escala;
 
-public class Practicaas_Antisociales extends Escala {
+public class Practicas_Antisociales extends Escala {
 
 
     @Override

@@ -2,7 +2,7 @@ package Model.Escalas.Contenido;
 
 import Model.Escalas.Escala;
 
-public class ideacion_bizarra extends Escala {
+public class Ideacion_Bizarra extends Escala {
 
     @Override
     protected void iniciarItemsEscala() {
