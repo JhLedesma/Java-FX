@@ -65,6 +65,6 @@ public class Baja_Autoestima extends Escala {
         puntajeTVaron.put(22,87);
         puntajeTVaron.put(23,90);
         puntajeTVaron.put(24,92);
-        
+
     }
 }
